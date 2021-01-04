@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     TextView f_name;
     TextView l_name;
     TextView greeting;
-    String userEmail,firstName, LastName;
+    String userEmail,firstName, lastName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,19 +25,24 @@ public class MainActivity extends AppCompatActivity {
 
 //   TODO : Input Code
     public void RegisterMe(View view){
-//        Input
+//        Input -- getText()
         enterEmail = findViewById(R.id.EnterEmail);
         enterFname = findViewById(R.id.EnterFirstName);
         enterLname= findViewById(R.id.EnterLastName);
-//        TextView
+//        TextView -- setText()
         email = findViewById(R.id.e_Mail);
         f_name = findViewById(R.id.f_Name);
         l_name = findViewById(R.id.l_Name);
         greeting = findViewById(R.id.greetings);
-//        setText
+//        getText to String
         userEmail = enterEmail.getText().toString();
         firstName = enterFname.getText().toString();
-        LastName = enterLname.getText().toString();
+        lastName = enterLname.getText().toString();
+
+        email.setText(userEmail);
+        f_name.setText(firstName);
+        l_name.setText(lastName);
+        greeting.setText("You Just Registered !! ");
 
 
 
