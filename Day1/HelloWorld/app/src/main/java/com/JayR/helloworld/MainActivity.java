@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
         firstName = enterFname.getText().toString();
         lastName = enterLname.getText().toString();
 
-        email.setText("Email :"+userEmail);
-        f_name.setText("First Name"+firstName);
-        l_name.setText("Second Name"+lastName);
+        email.setText("Email : "+userEmail);
+        f_name.setText("First Name : "+firstName);
+        l_name.setText("Last Name : "+lastName);
         greeting.setText("You Just Registered !! ");
 
 
