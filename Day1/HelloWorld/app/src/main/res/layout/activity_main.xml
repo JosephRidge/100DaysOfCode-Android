@@ -7,59 +7,96 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/greetings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="394dp" />
+        android:text="Hello User!"
+        app:layout_constraintBottom_toTopOf="@+id/f_Name"
+        app:layout_constraintEnd_toEndOf="@+id/registerMe"
+        app:layout_constraintStart_toStartOf="@+id/registerMe"
+        app:layout_constraintTop_toBottomOf="@+id/registerMe" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/registerMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register Me"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="301dp" />
+        app:layout_constraintBottom_toTopOf="@+id/greetings"
+        app:layout_constraintEnd_toEndOf="@+id/EnterEmail"
+        app:layout_constraintStart_toStartOf="@+id/EnterEmail"
+        app:layout_constraintTop_toBottomOf="@+id/EnterEmail"
+        android:onClick="RegisterMe"/>
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/EnterEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="center"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="203dp" />
+        app:layout_constraintBottom_toTopOf="@+id/registerMe"
+        app:layout_constraintEnd_toEndOf="@+id/EnterLastName"
+        app:layout_constraintStart_toStartOf="@+id/EnterLastName"
+        app:layout_constraintTop_toBottomOf="@+id/EnterLastName" />
 
     <EditText
-        android:id="@+id/LastName"
+        android:id="@+id/EnterLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:gravity="center"
         android:hint="Last Name"
-        android:gravity="center"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="143dp" />
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/EnterEmail"
+        app:layout_constraintEnd_toEndOf="@+id/EnterFirstName"
+        app:layout_constraintStart_toStartOf="@+id/EnterFirstName"
+        app:layout_constraintTop_toBottomOf="@+id/EnterFirstName" />
 
     <EditText
-        android:id="@+id/FirstName"
+        android:id="@+id/EnterFirstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="First Name"
         android:gravity="center"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="92dp" />
+        android:hint="First Name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/EnterLastName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/f_Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="174dp"
-        tools:layout_editor_absoluteY="432dp" />
+        android:text="FirstName"
+        app:layout_constraintBottom_toTopOf="@+id/l_Name"
+        app:layout_constraintEnd_toEndOf="@+id/greetings"
+        app:layout_constraintStart_toStartOf="@+id/greetings"
+        app:layout_constraintTop_toBottomOf="@+id/greetings" />
+
+    <TextView
+        android:id="@+id/l_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LastName"
+        app:layout_constraintBottom_toTopOf="@+id/e_Mail"
+        app:layout_constraintEnd_toEndOf="@+id/f_Name"
+        app:layout_constraintStart_toStartOf="@+id/f_Name"
+        app:layout_constraintTop_toBottomOf="@+id/f_Name" />
+
+    <TextView
+        android:id="@+id/e_Mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="Email"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/l_Name"
+        app:layout_constraintStart_toStartOf="@+id/l_Name"
+        app:layout_constraintTop_toBottomOf="@+id/l_Name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

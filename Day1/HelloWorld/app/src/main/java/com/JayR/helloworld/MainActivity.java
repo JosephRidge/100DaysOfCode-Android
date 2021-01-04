@@ -3,8 +3,19 @@ package com.JayR.helloworld;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    EditText enterEmail;
+    EditText enterFname;
+    EditText enterLname;
+    TextView email;
+    TextView f_name;
+    TextView l_name;
+    TextView greeting;
+    String userEmail,firstName, LastName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,4 +24,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
 //   TODO : Input Code
+    public void RegisterMe(View view){
+//        Input
+        enterEmail = findViewById(R.id.EnterEmail);
+        enterFname = findViewById(R.id.EnterFirstName);
+        enterLname= findViewById(R.id.EnterLastName);
+//        TextView
+        email = findViewById(R.id.e_Mail);
+        f_name = findViewById(R.id.f_Name);
+        l_name = findViewById(R.id.l_Name);
+        greeting = findViewById(R.id.greetings);
+//        setText
+        userEmail = enterEmail.getText().toString();
+        firstName = enterFname.getText().toString();
+        LastName = enterLname.getText().toString();
+
+
+
+    }
 }
