@@ -48,13 +48,13 @@ public class GuessIT {
         int randomNumber = random.nextInt(20)+1;
 
         for (int i=0; i<5; i++){
-            System.out.println((i+1)+" :");
+        System.out.println((i+1)+" :");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Kindly guess a number between 0 and 21 ... ");
         Integer guess = scanner.nextInt();
             System.out.println("--> "+randomNumber);
             if (i == 4){
-                System.out.println("Game Over ");
+                System.out.println("\nGame Over !!");
                 System.out.println("Would you like to try again? (type Yes or No) ");
                 String decision = scanner.next();
 
@@ -66,24 +66,24 @@ public class GuessIT {
                         System.out.println("Thank you and have a nice time..\nBye.");
                 }
             }
-        if (guess == randomNumber){
-            System.out.println("Congradulations U wonn!!!!!!");
-            break;
-        }else if(guess != randomNumber && guess<21){
+
+        if(guess != randomNumber && guess<21){
             if (guess>randomNumber){
                 System.out.println("Guess Higher than your guess : "+guess);
             }
-            continue;
         }else if (guess<randomNumber  && guess<21){
             System.out.println("Guess Lower than your guess : "+guess);
         }
 
         else if (guess>20){
                 System.out.println("Must be less than 21 , your input is  : "+guess);
-
             StartGame();
             }
-
+        else if (guess == randomNumber) {
+            System.out.println("Congradulations U wonn!!!!!!");
+            break;
+        }
+        break;
         }
     }
 }
