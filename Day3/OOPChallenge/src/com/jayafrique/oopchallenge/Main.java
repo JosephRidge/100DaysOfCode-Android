@@ -4,16 +4,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String name =null;
-        Integer age=null;
         Scanner scanner = new Scanner(System.in);
-        DoctorDiagnosis(name, age,scanner);
+        DoctorDiagnosis(scanner);
 
 
 
     }
-    public static void DoctorDiagnosis(String name, Integer age, Scanner scanner){
-        Patient patient = new Patient(null, age);
+    public static void DoctorDiagnosis( Scanner scanner){
+        Patient patient = new Patient();
         patient.setName("Paul");
         patient.setAge(15);
         System.out.println("Name: "+patient.getName());
@@ -37,30 +35,36 @@ public class Main {
                 System.out.println("Name: "+eye.Name);
                 System.out.println("Medical Condition: "+eye.MedicalCondition);
                 System.out.println("Color: "+eye.Behavior);
-
+                System.out.println("\n1 . Close the Eye.");
+                System.out.println("2 . Select another Option.\n");
                 System.out.println("Select either 1 or 2");
                 Integer SecondChoice = scanner.nextInt();
                 if(SecondChoice == 1){
-                    System.out.println("Left Eye Closed.");
+                    System.out.println("Left Eye Closed.\n");
+                    DoctorDiagnosis(scanner);
                 }else if(SecondChoice ==2 ){
-
+                    DoctorDiagnosis(scanner);
+                    break;
                 }
-                System.out.println("");
 
             }else if(choice == 2){
                 Eye eye = new Eye("Right Eye","Normal","Blue");
                 System.out.println("Name: "+eye.Name);
                 System.out.println("Medical Condition: "+eye.MedicalCondition);
                 System.out.println("Color: "+eye.Behavior);
-
+                System.out.println("\n1 . Close the Eye.");
+                System.out.println("2 . Select another Option.\n");
                 System.out.println("Select either 1 or 2");
                 Integer SecondChoice = scanner.nextInt();
                 if(SecondChoice == 1){
-                    System.out.println("1 . Close the Eye.");
+                    System.out.println("1 . Close the Eye.\n");
+                    DoctorDiagnosis(scanner);
+                }else if(SecondChoice ==2 ){
+                    DoctorDiagnosis(scanner);
                 }
-                System.out.println("");
 
             }else if(choice == 3){
+//                Heart heart = new Heart();
 
             }else if(choice == 4){
 

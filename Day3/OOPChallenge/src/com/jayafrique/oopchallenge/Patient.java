@@ -5,9 +5,8 @@ public class Patient {
     String Name;
     Integer Age;
 
-    public Patient(String name, Integer age) {
-        Name = name;
-        Age = age;
+    public Patient() {
+
     }
 
     public String getName() {
