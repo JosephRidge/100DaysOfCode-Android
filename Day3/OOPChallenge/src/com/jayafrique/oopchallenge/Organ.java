@@ -5,6 +5,9 @@ public class Organ {
     String MedicalCondition;
     String Behavior;
 
+    public Organ() {
+    }
+
     public Organ(String name, String medicalCondition, String behavior) {
         this.Name = name;
         this.MedicalCondition = medicalCondition;
