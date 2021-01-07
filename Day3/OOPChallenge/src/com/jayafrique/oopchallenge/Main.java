@@ -95,34 +95,8 @@ public class Main {
 
         }
             else if(choice == 4){
-                Stomach stomach = new Stomach("Stomach","PUD","Need to be Fed");
-                System.out.println("Name: "+stomach.Name);
-                System.out.println("Medical Condition: "+stomach.MedicalCondition);
-                System.out.println("Heart Rate: "+stomach.getBehavior());
+                Stomach stomach = new Stomach();
 
-                System.out.println("\n1 . Digest.");
-                System.out.println("2 . Select another Option.\n");
-                System.out.println("Select either 1 or 2");
-
-                Integer SecondChoice = scanner.nextInt();
-                Integer heartRate = scanner.nextInt();
-                if(SecondChoice == 1){
-                    System.out.println("Digesting begin.....\n");
-                    DoctorDiagnosis(scanner);
-                }else if(SecondChoice ==2 ){
-                    DoctorDiagnosis(scanner);
-                    break;
-            }
-            }else if (choice == 5) {
-                Skin skin = new Skin("Skin", "Burned", "Turned White");
-                System.out.println("Name: " + skin.Name);
-                System.out.println("Medical Condition: " + skin.MedicalCondition);
-
-                DoctorDiagnosis(scanner);
-
-            }else if(choice == 6 ){
-                System.out.println("Thank you for visiting Dr.JayR");
-                break;
             }
         }
     }
