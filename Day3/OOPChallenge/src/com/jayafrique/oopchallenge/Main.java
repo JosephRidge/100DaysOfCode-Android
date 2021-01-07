@@ -95,8 +95,23 @@ public class Main {
 
         }
             else if(choice == 4){
-                Stomach stomach = new Stomach();
+                Stomach stomach = new Stomach("Stomach","PUD","Need to be Fed");
+                System.out.println("Name: "+stomach.Name);
+                System.out.println("Medical Condition: "+stomach.MedicalCondition);
+                System.out.println("Heart Rate: "+stomach.getBehavior());
 
+                System.out.println("\n1 . Digest.");
+                System.out.println("2 . Select another Option.\n");
+                System.out.println("Select either 1 or 2");
+
+                Integer SecondChoice = scanner.nextInt();
+                Integer heartRate = scanner.nextInt();
+                if(SecondChoice == 1){
+                    System.out.println("Digesting begin.....\n");
+                    DoctorDiagnosis(scanner);
+                }else if(SecondChoice ==2 ){
+                    DoctorDiagnosis(scanner);
+                    break;
             }
         }
     }
