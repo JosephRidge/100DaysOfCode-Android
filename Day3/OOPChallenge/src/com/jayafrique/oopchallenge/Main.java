@@ -63,9 +63,27 @@ public class Main {
                     DoctorDiagnosis(scanner);
                 }
 
-            }else if(choice == 3){
-//                Heart heart = new Heart();
+            }
+            else if(choice == 3){
+                Heart heart = new Heart("Heart","Normal","Pumping well");
+                heart.HeartRate = 65;
+                System.out.println("Name: "+heart.Name);
+                System.out.println("Medical Condition: "+heart.MedicalCondition);
+                System.out.println("Heart Rate: "+heart.getHeartRate());
 
+                System.out.println("\n1 . Change Heart rate.");
+                System.out.println("2 . Select another Option.\n");
+                System.out.println("Select either 1 or 2");
+
+                Integer SecondChoice = scanner.nextInt();
+                Integer heartRate = scanner.nextInt();
+                if(SecondChoice == 1){
+                    System.out.println("Enter the new heart rate : .\n");
+                    System.out.println("Heart rate changed to : "+heartRate);
+                    DoctorDiagnosis(scanner);
+                }else if(SecondChoice ==2 ){
+                    DoctorDiagnosis(scanner);
+                    break;
             }else if(choice == 4){
 
             }else if(choice == 5){
@@ -75,6 +93,11 @@ public class Main {
                 break;
             }
 
+        }
+            else if(choice == 4){
+                Stomach stomach = new Stomach();
+
+            }
         }
     }
 }
