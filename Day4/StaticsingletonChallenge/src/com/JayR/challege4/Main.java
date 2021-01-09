@@ -134,8 +134,10 @@ public class Main {
                 System.out.println("Messages : \n");
 
                 for(int i=0; i<messages.size(); i++) {
-                    System.out.println("PhoneNumber : "+receiverPhoneNumbers.get(i)+"Message"+messages.get(i));
+                    System.out.println(".  Message"+messages.get(i)+"PhoneNumber : "+receiverPhoneNumbers.get(i));
                 }
+                landingPage();
+
                 break;
             case 2:
                 System.out.println("Kindly input the message you would like to send : \n");
@@ -146,7 +148,7 @@ public class Main {
                 System.out.println("Kindly input the contact you would like to send to : \n");
                 Integer receiverPhoneNumber = scanner.nextInt();
                 receiverPhoneNumbers.add(receiverPhoneNumber);
-
+                landingPage();
 
            break;
 
