@@ -1,5 +1,6 @@
 package com.JayR.challege4;
 
+import javax.naming.Name;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -7,10 +8,13 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static ArrayList<Message>messages = new ArrayList<>();
-    private static ArrayList<Contact> contactDetails = new ArrayList<>();
-    private static Map<String, String> myContacts = new HashMap<>();
-    private static Map<Contact,Message> chat = new HashMap<>();
+    private static ArrayList<Chat>messages = new ArrayList<>();
+//    private static ArrayList<Contact> contactDetails = new ArrayList<>();
+//    private static ArrayList<String> contactPhon = new ArrayList<>();
+    private static ArrayList<String> contacts= new ArrayList<>();
+    private static ArrayList<String> phoneNumbers= new ArrayList<>();
+    private static Map<Contact, Chat> chat = new HashMap<>();
+
     /*
     * Simulate your phone's contacts and messages applications
     *
@@ -39,9 +43,8 @@ public class Main {
     public static void landingPage(){
         System.out.println("1. Manage Contacts.");
         System.out.println("2. Messages.");
-        System.out.println("3. Quit\n");
+        System.out.println("3. Quit\n\n");
         Scanner scanner = new Scanner(System.in);
-
         Integer choice = scanner.nextInt();
 
         if (choice == 1) {
@@ -60,51 +63,43 @@ public class Main {
         System.out.println("\t4. Delete contact. ");
         System.out.println("\t5. Go Back to previous menu. ");
         Scanner scanner = new Scanner(System.in);
-        Contact contact = new Contact();
+
         int choice = scanner.nextInt();
-        int i=1;
+
 
         switch(choice){
             case 1:
                 System.out.println("Contacts : \n");
-//                System.out.println("Name :"+myContacts.get(contact.getName())+" Tel. : "+myContacts.get(contact.getPhoneNumber()));
-                System.out.println( myContacts.keySet());
-                System.out.println( myContacts.values());
-                for (Contact c: contactDetails) {
-
-
-                System.out.println(contact.userContacts(););
+                for(int i=0; i<contacts.size(); i++) {
+                    System.out.println("Name : " + contacts.get(i)+"."
+                            + " \nPhoneNumber : "+phoneNumbers.get(i)+".\n\n");
         }
                 landingPage();
             case 2:
+
                 System.out.println("Add new Contact : \n Input name: ");
-                String newContactname = scanner.next();
+                String newContactName = scanner.next();
                 System.out.println("Input PhoneNumber: ");
                 Integer newContactNumber = scanner.nextInt();
+                Contact contact = new Contact(newContactName,newContactNumber.toString());
+                contacts.add(contact.getName());
+                phoneNumbers.add(contact.getPhoneNumber());
 
-                contact.setName(newContactname);
-                contact.setPhoneNumber(newContactNumber.toString());
-
-
-                contactDetails.add(contact.getName(),contact.getPhoneNumber());
-                myContacts.put(contact.getName(), contact.getPhoneNumber());
-
-                System.out.println(" Contact Successfully Added ..");
                 landingPage();
 
             case 3:
                 System.out.println("Kindly input the name of the contact you would like to get : \n");
                 String contactToSearch = scanner.next();
-                myContacts.containsKey(contactToSearch);
-
-                System.out.println("Your contact is : "+myContacts.containsKey(contactToSearch) +myContacts.containsValue(contactToSearch));
                 landingPage();
+
             case 4:
                 System.out.println("Which contact would you like to Remove  : \n");
                 String contactToRemove = scanner.next();
                 landingPage();
+
             case 5:
                 landingPage();
+
             default:
                 return;
 
