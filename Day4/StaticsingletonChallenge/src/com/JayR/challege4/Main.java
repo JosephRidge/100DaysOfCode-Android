@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static ArrayList<Chat>messages = new ArrayList<>();
+    private static ArrayList<String>messages = new ArrayList<>();
 //    private static ArrayList<Contact> contactDetails = new ArrayList<>();
 //    private static ArrayList<String> contactPhon = new ArrayList<>();
     private static ArrayList<String> contacts= new ArrayList<>();
@@ -131,10 +131,19 @@ public class Main {
         switch(choice) {
             case 1:
                 System.out.println("Messages : \n");
+                Contact.getMessage();
+                for(int i=0;i<messages.size();i++) {
+                    System.out.println(messages.get(i));
+                }
                 break;
             case 2:
                 System.out.println("Kindly input the message you would like to send : \n");
+                String text = scanner.next();
+                Contact.setMessage(text);
+                messages.add(Contact.getMessage());
                 System.out.println("Kindly input the contact you would like to send to : \n");
+                Integer receiverPhoneNumber = scanner.nextInt();
+
 
                 break;
 
