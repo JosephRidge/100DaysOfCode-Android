@@ -68,9 +68,12 @@ public class Main {
             case 1:
                 System.out.println("Contacts : \n");
 //                System.out.println("Name :"+myContacts.get(contact.getName())+" Tel. : "+myContacts.get(contact.getPhoneNumber()));
-                System.out.println(new StringBuilder().append(i).append(" .Name : ")
-                        .append(myContacts.get(contact.getName()))
-                        .append(".\nTelephon No. : ").append(myContacts.get(contact.getPhoneNumber()))
+                for (Contact c:myContacts) {
+
+                }
+                System.out.println(new StringBuilder().append(i).append(" Name : ")
+                        .append(myContacts)
+                        .append(".\nTelephone No. : ").append(myContacts.get(contact.getPhoneNumber()))
                         .append(".\n").toString());
 
                 landingPage();
