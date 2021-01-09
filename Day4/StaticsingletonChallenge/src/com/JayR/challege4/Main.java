@@ -44,7 +44,7 @@ public class Main {
             firstChoice();
 
         } else if (choice == 2) {
-
+            secondChoice();
         }else if (choice == 3){
             return;
         }
