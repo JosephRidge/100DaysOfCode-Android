@@ -66,7 +66,7 @@ public class Main {
             }
             else if(choice == 3){
                 Heart heart = new Heart("Heart","Normal","Pumping well");
-                heart.HeartRate = 65;
+                heart.setHeartRate(65);
                 System.out.println("Name: "+heart.Name);
                 System.out.println("Medical Condition: "+heart.MedicalCondition);
                 System.out.println("Heart Rate: "+heart.getHeartRate());
@@ -79,33 +79,26 @@ public class Main {
                 Integer heartRate = scanner.nextInt();
                 if(SecondChoice == 1){
                     System.out.println("Enter the new heart rate : .\n");
-                    System.out.println("Heart rate changed to : "+heartRate);
+                    heart.setHeartRate(heartRate);
+                    System.out.println("Heart rate changed to : "+heart.getHeartRate());
                     DoctorDiagnosis(scanner);
                 }else if(SecondChoice ==2 ){
                     DoctorDiagnosis(scanner);
                     break;
-            }else if(choice == 4){
-
-            }else if(choice == 5){
-
-            }else{
-                System.out.println("Kindly pick a choice using the number.");
-                break;
             }
-
         }
             else if(choice == 4){
                 Stomach stomach = new Stomach("Stomach","PUD","Need to be Fed");
                 System.out.println("Name: "+stomach.Name);
                 System.out.println("Medical Condition: "+stomach.MedicalCondition);
-                System.out.println("Heart Rate: "+stomach.getBehavior());
+                System.out.println(stomach.getBehavior());
 
                 System.out.println("\n1 . Digest.");
                 System.out.println("2 . Select another Option.\n");
                 System.out.println("Select either 1 or 2");
 
                 Integer SecondChoice = scanner.nextInt();
-                Integer heartRate = scanner.nextInt();
+
                 if(SecondChoice == 1){
                     System.out.println("Digesting begin.....\n");
                     DoctorDiagnosis(scanner);
@@ -116,12 +109,12 @@ public class Main {
             }else if (choice == 5) {
                 Skin skin = new Skin("Skin", "Burned", "Turned White");
                 System.out.println("Name: " + skin.Name);
-                System.out.println("Medical Condition: " + skin.MedicalCondition);
+                System.out.println("Medical Condition: " + skin.MedicalCondition+"\n\n");
 
                 DoctorDiagnosis(scanner);
 
             }else if(choice == 6 ){
-                System.out.println("Thank you for visiting Dr.JayR");
+                System.out.println("Thank you for visiting Dr.JayR\n\n");
                 break;
             }
         }
