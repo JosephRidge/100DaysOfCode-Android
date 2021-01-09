@@ -1,6 +1,5 @@
 package com.JayR.challege4;
 
-import javax.naming.Name;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +8,7 @@ import java.util.Scanner;
 public class Main {
 
     private static ArrayList<Message>messages = new ArrayList<>();
+    private static ArrayList<Contact> contactDetails = new ArrayList<>();
     private static Map<String, String> myContacts = new HashMap<>();
     private static Map<Contact,Message> chat = new HashMap<>();
     /*
@@ -68,25 +68,28 @@ public class Main {
             case 1:
                 System.out.println("Contacts : \n");
 //                System.out.println("Name :"+myContacts.get(contact.getName())+" Tel. : "+myContacts.get(contact.getPhoneNumber()));
-                for (Contact c:myContacts) {
+                System.out.println( myContacts.keySet());
+                System.out.println( myContacts.values());
+                for (Contact c: contactDetails) {
 
-                }
-                System.out.println(new StringBuilder().append(i).append(" Name : ")
-                        .append(myContacts)
-                        .append(".\nTelephone No. : ").append(myContacts.get(contact.getPhoneNumber()))
-                        .append(".\n").toString());
 
+                System.out.println(contact.userContacts(););
+        }
                 landingPage();
             case 2:
                 System.out.println("Add new Contact : \n Input name: ");
                 String newContactname = scanner.next();
                 System.out.println("Input PhoneNumber: ");
                 Integer newContactNumber = scanner.nextInt();
+
                 contact.setName(newContactname);
                 contact.setPhoneNumber(newContactNumber.toString());
-                myContacts.put(contact.getName(), contact.getPhoneNumber());
-                System.out.println(myContacts);
 
+
+                contactDetails.add(contact.getName(),contact.getPhoneNumber());
+                myContacts.put(contact.getName(), contact.getPhoneNumber());
+
+                System.out.println(" Contact Successfully Added ..");
                 landingPage();
 
             case 3:

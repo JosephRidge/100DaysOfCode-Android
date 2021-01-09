@@ -4,6 +4,9 @@ public class Contact implements ChatInterface{
     private static String Name;
     private static String PhoneNumber;
 
+    public Contact() {
+    }
+
     public String getName() {
         return Name;
     }
