@@ -1,8 +1,6 @@
 package com.JayR.challege4;
 
-import org.w3c.dom.ls.LSOutput;
-
-import javax.swing.*;
+import javax.naming.Name;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,9 +8,9 @@ import java.util.Scanner;
 
 public class Main {
 
-    ArrayList<Message>messages = new ArrayList<>();
-    ArrayList<Contact>contacts = new ArrayList<>();
-    Map<Contact,Message> chat = new HashMap<>();
+    private static ArrayList<Message>messages = new ArrayList<>();
+    private static Map<String, Integer> myContacts = new HashMap<>();
+    private static Map<Contact,Message> chat = new HashMap<>();
     /*
     * Simulate your phone's contacts and messages applications
     *
@@ -62,19 +60,37 @@ public class Main {
         System.out.println("\t4. Delete contact. ");
         System.out.println("\t5. Go Back to previous menu. ");
         Scanner scanner = new Scanner(System.in);
+        Contact contact = new Contact();
         int choice = scanner.nextInt();
+        int i=1;
 
         switch(choice){
             case 1:
                 System.out.println("Contacts : \n");
+//                System.out.println("Name :"+myContacts.get(contact.getName())+" Tel. : "+myContacts.get(contact.getPhoneNumber()));
+                System.out.println(new StringBuilder().append(i).append(" .Name : ")
+                        .append(myContacts.get(contact.getName()))
+                        .append(".\nTelephon No. : ").append(myContacts.get(contact.getPhoneNumber()))
+                        .append(".\n").toString());
 
                 landingPage();
             case 2:
-                System.out.println("Add new Contact : \n");
+                System.out.println("Add new Contact : \n Input name: ");
+                String newContactname = scanner.next();
+                System.out.println("Input PhoneNumber: ");
+                Integer newContactNumber = scanner.nextInt();
+                contact.setName(newContactname);
+                contact.setPhoneNumber(newContactNumber);
+                myContacts.put(contact.getName(), contact.getPhoneNumber());
+                i++;
                 landingPage();
+
             case 3:
                 System.out.println("Kindly input the name of the contact you would like to get : \n");
                 String contactToSearch = scanner.next();
+                myContacts.containsKey(contactToSearch);
+
+                System.out.println("Your contact is : "+myContacts.containsKey(contactToSearch) +myContacts.containsValue(contactToSearch));
                 landingPage();
             case 4:
                 System.out.println("Which contact would you like to Remove  : \n");

@@ -1,8 +1,8 @@
 package com.JayR.challege4;
 
 public class Contact implements ChatInterface{
-    private String Name;
-    private Integer PhoneNumber;
+    private static String Name;
+    private static Integer PhoneNumber;
 
     public String getName() {
         return Name;
@@ -27,6 +27,6 @@ public class Contact implements ChatInterface{
 
     @Override
     public void userContacts(String name) {
-
+        System.out.println("Name :"+getName() + ".\n Telephone No. "+getPhoneNumber());
     }
 }
