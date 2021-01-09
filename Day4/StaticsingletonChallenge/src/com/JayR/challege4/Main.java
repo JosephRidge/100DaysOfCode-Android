@@ -131,8 +131,8 @@ public class Main {
         switch(choice) {
             case 1:
                 System.out.println("Messages : \n");
-                Contact.getMessage();
-                for(int i=0;i<messages.size();i++) {
+
+                for(int i=0; i<messages.size(); i++) {
                     System.out.println(messages.get(i));
                 }
                 break;
@@ -144,8 +144,7 @@ public class Main {
                 System.out.println("Kindly input the contact you would like to send to : \n");
                 Integer receiverPhoneNumber = scanner.nextInt();
 
-
-                break;
+           break;
 
             case 3:
                 landingPage();
