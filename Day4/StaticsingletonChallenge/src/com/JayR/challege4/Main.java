@@ -76,7 +76,7 @@ public class Main {
                     System.out.println("Name : " + contacts.get(i)+"."
                             + " \nPhoneNumber : "+phoneNumbers.get(i)+".");
                     System.out.println("************************\n");
-        }
+                 }
                 landingPage();
             case 2:
                 System.out.println("Add new Contact : \n Input name: ");
@@ -100,10 +100,16 @@ public class Main {
                 System.out.println("Which contact would you like to Remove  : \n");
                 String contactToRemove = scanner.next();
                 Integer indexDelete = contacts.indexOf(contactToRemove);
-                contacts.remove(indexDelete);
-                phoneNumbers.remove(indexDelete);
-                System.out.println("Successfully Deleted.."+"\n"+contacts);
+                contacts.remove(contactToRemove);
+                String contactsNumber= phoneNumbers.get(indexDelete);
+                phoneNumbers.remove(contactsNumber);
+                contactMap.remove(contactToRemove);
+                System.out.println(contacts+"\n\n");
+                System.out.println(phoneNumbers+"\n\n");
+                System.out.println(contactMap);
+
                 landingPage();
+
 
             case 5:
                 landingPage();
@@ -135,7 +141,6 @@ public class Main {
             case 3:
                 landingPage();
             default:
-                return;
 
         }
     }
