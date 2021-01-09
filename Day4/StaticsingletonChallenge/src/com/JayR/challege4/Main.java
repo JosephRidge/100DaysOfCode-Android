@@ -8,14 +8,14 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static ArrayList<String>messages = new ArrayList<>();
-    private static ArrayList<Integer>receiverPhoneNumbers = new ArrayList<>();
+    private static ArrayList<String>messages ;
+    private static ArrayList<Integer>receiverPhoneNumbers ;
 //    private static ArrayList<Contact> contactDetails = new ArrayList<>();
 //    private static ArrayList<String> contactPhon = new ArrayList<>();
-    private static ArrayList<String> contacts= new ArrayList<>();
-    private static ArrayList<String> phoneNumbers= new ArrayList<>();
-    private  static Map<String,String>contactMap = new HashMap();
-    private static Map<Contact, Chat> chat = new HashMap<>();
+    private static ArrayList<String> contacts;
+    private static ArrayList<String> phoneNumbers;
+    private  static Map<String,String>contactMap ;
+    private static Map<Contact, Chat> chat ;
 
     /*
     * Simulate your phone's contacts and messages applications
@@ -36,6 +36,12 @@ public class Main {
     * */
 
     public static void main(String[] args) {
+        messages = new ArrayList<>();
+        receiverPhoneNumbers = new ArrayList<>();
+        contacts= new ArrayList<>();
+        phoneNumbers= new ArrayList<>();
+        contactMap= new HashMap();
+        chat= new HashMap<>();
         Boolean inactive = true;
         System.out.println("Hello There good person, Welcome! Kindly pick an option");
         landingPage();
