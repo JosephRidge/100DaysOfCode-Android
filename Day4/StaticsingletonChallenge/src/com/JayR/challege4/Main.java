@@ -12,7 +12,7 @@ public class Main {
     * Greet user
     * Show 3 options : 1. Manage contacts 2. Messages 3. Quite
     * in case of selecting 1 -> Show this options:
-    *       1.Show all contacts
+    *       1. Show all contacts
     *       2. Add new contact
     *       3. Search for a contact
     *       4. Delete contact
@@ -26,16 +26,16 @@ public class Main {
 
     public static void main(String[] args) {
         Boolean inactive = true;
+        System.out.println("Hello There good person, Welcome! Kindly pick an option");
         landingPage();
 
 
     }
 
     public static void landingPage(){
-        System.out.println("Hello There good person, Welcome! Kindly pick an option");
         System.out.println("1. Manage Contacts.");
         System.out.println("2. Messages.");
-        System.out.println("3. Quit");
+        System.out.println("3. Quit\n");
         Scanner scanner = new Scanner(System.in);
 
         Integer choice = scanner.nextInt();
@@ -61,20 +61,18 @@ public class Main {
         switch(choice){
             case 1:
                 System.out.println("Contacts : \n");
-                break;
+                landingPage();
             case 2:
                 System.out.println("Add new Contact : \n");
-                break;
+                landingPage();
             case 3:
-                System.out.println("Kindly input the contact you would like to get : \n");
+                System.out.println("Kindly input the name of the contact you would like to get : \n");
                 String contactToSearch = scanner.next();
-
-                break;
+                landingPage();
             case 4:
                 System.out.println("Which contact would you like to Remove  : \n");
                 String contactToRemove = scanner.next();
-
-                break;
+                landingPage();
             case 5:
                 landingPage();
             default:
