@@ -162,7 +162,8 @@ public class Main {
                 landingPage();
             default:
 
-        }
+        }}
+        public static void manageContacts(){}
     }
 }
 
