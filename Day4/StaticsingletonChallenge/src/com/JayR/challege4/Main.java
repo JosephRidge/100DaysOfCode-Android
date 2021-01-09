@@ -13,6 +13,7 @@ public class Main {
 //    private static ArrayList<String> contactPhon = new ArrayList<>();
     private static ArrayList<String> contacts= new ArrayList<>();
     private static ArrayList<String> phoneNumbers= new ArrayList<>();
+    private  static Map<String,String>contactMap = new HashMap();
     private static Map<Contact, Chat> chat = new HashMap<>();
 
     /*
@@ -71,12 +72,13 @@ public class Main {
             case 1:
                 System.out.println("Contacts : \n");
                 for(int i=0; i<contacts.size(); i++) {
+                    System.out.println("************ "+i+" ************");
                     System.out.println("Name : " + contacts.get(i)+"."
-                            + " \nPhoneNumber : "+phoneNumbers.get(i)+".\n\n");
+                            + " \nPhoneNumber : "+phoneNumbers.get(i)+".");
+                    System.out.println("************************\n");
         }
                 landingPage();
             case 2:
-
                 System.out.println("Add new Contact : \n Input name: ");
                 String newContactName = scanner.next();
                 System.out.println("Input PhoneNumber: ");
@@ -84,12 +86,12 @@ public class Main {
                 Contact contact = new Contact(newContactName,newContactNumber.toString());
                 contacts.add(contact.getName());
                 phoneNumbers.add(contact.getPhoneNumber());
-
                 landingPage();
 
             case 3:
                 System.out.println("Kindly input the name of the contact you would like to get : \n");
                 String contactToSearch = scanner.next();
+
                 landingPage();
 
             case 4:
