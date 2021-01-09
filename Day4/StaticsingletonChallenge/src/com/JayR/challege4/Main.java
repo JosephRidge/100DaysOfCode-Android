@@ -86,17 +86,23 @@ public class Main {
                 Contact contact = new Contact(newContactName,newContactNumber.toString());
                 contacts.add(contact.getName());
                 phoneNumbers.add(contact.getPhoneNumber());
+                contactMap.put(contact.getName(),contact.getPhoneNumber());
                 landingPage();
 
             case 3:
                 System.out.println("Kindly input the name of the contact you would like to get : \n");
                 String contactToSearch = scanner.next();
-
+                Integer indexSearch = contacts.indexOf(contactToSearch);
+                System.out.println("Name : "+contacts.get(indexSearch)+".\n"+"PhoneNumber : "+phoneNumbers.get(indexSearch));
                 landingPage();
 
             case 4:
                 System.out.println("Which contact would you like to Remove  : \n");
                 String contactToRemove = scanner.next();
+                Integer indexDelete = contacts.indexOf(contactToRemove);
+                contacts.remove(indexDelete);
+                phoneNumbers.remove(indexDelete);
+                System.out.println("Successfully Deleted.."+"\n"+contacts);
                 landingPage();
 
             case 5:
