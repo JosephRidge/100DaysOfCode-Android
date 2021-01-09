@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class Main {
 
     private static ArrayList<String>messages = new ArrayList<>();
+    private static ArrayList<Integer>receiverPhoneNumbers = new ArrayList<>();
 //    private static ArrayList<Contact> contactDetails = new ArrayList<>();
 //    private static ArrayList<String> contactPhon = new ArrayList<>();
     private static ArrayList<String> contacts= new ArrayList<>();
@@ -133,16 +134,19 @@ public class Main {
                 System.out.println("Messages : \n");
 
                 for(int i=0; i<messages.size(); i++) {
-                    System.out.println(messages.get(i));
+                    System.out.println("PhoneNumber : "+receiverPhoneNumbers.get(i)+"Message"+messages.get(i));
                 }
                 break;
             case 2:
                 System.out.println("Kindly input the message you would like to send : \n");
-                String text = scanner.next();
+                String text = scanner.next().replaceAll("\\s","");
+
                 Contact.setMessage(text);
                 messages.add(Contact.getMessage());
                 System.out.println("Kindly input the contact you would like to send to : \n");
                 Integer receiverPhoneNumber = scanner.nextInt();
+                receiverPhoneNumbers.add(receiverPhoneNumber);
+
 
            break;
 
