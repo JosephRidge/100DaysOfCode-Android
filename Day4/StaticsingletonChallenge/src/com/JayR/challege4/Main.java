@@ -3,9 +3,16 @@ package com.JayR.challege4;
 import org.w3c.dom.ls.LSOutput;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
+
+    ArrayList<Message>messages = new ArrayList<>();
+    ArrayList<Contact>contacts = new ArrayList<>();
+    Map<Contact,Message> chat = new HashMap<>();
     /*
     * Simulate your phone's contacts and messages applications
     *
@@ -28,7 +35,6 @@ public class Main {
         Boolean inactive = true;
         System.out.println("Hello There good person, Welcome! Kindly pick an option");
         landingPage();
-
 
     }
 
@@ -61,6 +67,7 @@ public class Main {
         switch(choice){
             case 1:
                 System.out.println("Contacts : \n");
+
                 landingPage();
             case 2:
                 System.out.println("Add new Contact : \n");
