@@ -2,7 +2,7 @@ package com.JayR.challege4;
 
 public class Contact implements ChatInterface{
     private static String Name;
-    private static Integer PhoneNumber;
+    private static String PhoneNumber;
 
     public String getName() {
         return Name;
@@ -12,11 +12,11 @@ public class Contact implements ChatInterface{
         Name = name;
     }
 
-    public Integer getPhoneNumber() {
+    public String getPhoneNumber() {
         return PhoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         PhoneNumber = phoneNumber;
     }
 

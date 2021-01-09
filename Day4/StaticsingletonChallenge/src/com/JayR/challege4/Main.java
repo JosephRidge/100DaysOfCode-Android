@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main {
 
     private static ArrayList<Message>messages = new ArrayList<>();
-    private static Map<String, Integer> myContacts = new HashMap<>();
+    private static Map<String, String> myContacts = new HashMap<>();
     private static Map<Contact,Message> chat = new HashMap<>();
     /*
     * Simulate your phone's contacts and messages applications
@@ -80,9 +80,10 @@ public class Main {
                 System.out.println("Input PhoneNumber: ");
                 Integer newContactNumber = scanner.nextInt();
                 contact.setName(newContactname);
-                contact.setPhoneNumber(newContactNumber);
+                contact.setPhoneNumber(newContactNumber.toString());
                 myContacts.put(contact.getName(), contact.getPhoneNumber());
-                i++;
+                System.out.println(myContacts);
+
                 landingPage();
 
             case 3:
