@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch(v.getId()){
-            case  R.id.btnGreet:
+            case  R.id.btnSave:
                 personalizedGreetings.setText(nameInput.getText().toString());
                 Toast.makeText(this, "Hellow  "+nameInput.getText().toString()+" !! .", Toast.LENGTH_SHORT).show();
                 break;
@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        personalizedGreetings =findViewById(R.id.textHellow);
-        btnGreetings = findViewById(R.id.btnGreet);
+        personalizedGreetings =findViewById(R.id.UserDetails);
+        btnGreetings = findViewById(R.id.btnSave);
         nameInput = findViewById(R.id.userName);
         btnGreetings.setOnClickListener(this);
 
