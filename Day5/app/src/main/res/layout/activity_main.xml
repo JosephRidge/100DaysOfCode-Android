@@ -23,6 +23,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/userName"
+        android:textColor="@color/teal_700"
+        android:textStyle="bold|italic"
         android:layout_marginTop="15dp"
         android:textSize="12dp"
         android:text="Which one would you go for ? "/>
@@ -77,6 +79,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/favMovie"
             android:textSize="12dp"
+            android:textColor="@color/teal_700"
+            android:textStyle="bold|italic"
             android:text="You r going to an Island that you've never heard off, which one would you carry?"
             />
         <CheckBox
