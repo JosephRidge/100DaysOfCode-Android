@@ -15,7 +15,6 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:hint="1. Full Name"
-            android:textColor="@color/teal_700"
             android:textSize="12dp" />
 
         <TextView
@@ -24,8 +23,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/userName"
             android:layout_marginTop="5dp"
+            android:textColor="@color/black"
             android:text="2. Which one would you go for ? "
-            android:textColor="@color/teal_700"
             android:textSize="13dp"
            />
 
@@ -41,6 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Books"
+                android:textColor="@color/teal_700"
                 android:textSize="10dp" />
 
             <RadioButton
@@ -48,6 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Music"
+                android:textColor="@color/teal_700"
                 android:textSize="10dp" />
 
             <RadioButton
@@ -55,6 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sports"
+                android:textColor="@color/teal_700"
                 android:textSize="10dp" />
         </RadioGroup>
 
@@ -84,8 +86,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/favMovie"
             android:layout_marginTop="5dp"
-            android:text="5. You r going to an Island that you've never heard off, which one would you carry?"
-            android:textColor="@color/teal_700"
+            android:textColor="@color/black"
+            android:text="5. You are going to an Island that you've never heard off, which three items would you carry?"
             android:textSize="13dp"
            />
 
@@ -100,6 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Umbrella"
+                android:textColor="@color/teal_700"
                 android:textSize="10dp" />
 
             <CheckBox
@@ -107,6 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/option1"
+                android:textColor="@color/teal_700"
                 android:text="Math Sticks"
                 android:textSize="10dp" />
 
@@ -115,6 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/option2"
+                android:textColor="@color/teal_700"
                 android:text="Mosquito repellant"
                 android:textSize="10dp" />
 
@@ -123,6 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/option3"
+                android:textColor="@color/teal_700"
                 android:text="Machette and Firt Aid Kit"
                 android:textSize="10dp" />
         </RelativeLayout>
@@ -136,6 +142,7 @@
             android:layout_centerVertical="true"
             android:layout_marginTop="5dp"
             android:text="Hello World!"
+            android:textColor="@color/teal_700"
             android:textSize="12dp" />
 
         <Button
