@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:textSize="12dp"
-    android:padding="50dp">
+    android:padding="30dp">
 
 
         <EditText
@@ -27,7 +27,7 @@
             android:text="2. Which one would you go for ? "
             android:textColor="@color/teal_700"
             android:textSize="13dp"
-            android:textStyle="bold" />
+           />
 
         <RadioGroup
             android:id="@+id/choiceHobbyRadiobtn"
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/choiceHobbyRadiobtn"
             android:layout_marginTop="5dp"
-            android:hint="3. Whats your favourite meal? "
+            android:hint="3. Whats your favourite meal ? "
             android:textColor="@color/teal_700"
             android:textSize="12dp" />
 
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/favFood"
             android:layout_marginTop="5dp"
-            android:hint="4. What is your favorite"
+            android:hint="4. What is your favorite Movie ?"
             android:textColor="@color/teal_700"
             android:textSize="12dp" />
 
@@ -87,7 +87,7 @@
             android:text="5. You r going to an Island that you've never heard off, which one would you carry?"
             android:textColor="@color/teal_700"
             android:textSize="13dp"
-            android:textStyle="bold" />
+           />
 
         <RelativeLayout
             android:id="@+id/checkList"
