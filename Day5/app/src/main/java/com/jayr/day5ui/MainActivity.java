@@ -37,8 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         nameInput = findViewById(R.id.userName);
         btnGreetings.setOnClickListener(this);
 
-//        nameInput = findViewById(R.id.userName);
-
     }
 
 
