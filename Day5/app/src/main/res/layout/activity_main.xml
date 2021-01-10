@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:textSize="12dp"
     android:padding="50dp">
 
     <EditText
@@ -13,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:hint="Full Name"
+        android:textSize="12dp"
         android:textColor="@color/teal_700"
         />
 
@@ -21,27 +23,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/userName"
+        android:layout_marginTop="15dp"
+        android:textSize="12dp"
         android:text="Which one would you go for ? "/>
 
         <RadioGroup
             android:id="@+id/choiceHobbyRadiobtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="15dp"
             android:layout_below="@+id/choiceHobby">
             <RadioButton
                 android:id="@+id/choiceBook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Books"/>
+                android:text="Books"
+                android:textSize="12dp"
+                />
             <RadioButton
                 android:id="@+id/choiceMusic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="12dp"
                 android:text="Music"/>
             <RadioButton
                 android:id="@+id/choiceSports"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="12dp"
                 android:text="Sports"/>
         </RadioGroup>
 
@@ -50,6 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/teal_700"
+            android:textSize="12dp"
             android:hint="Whats your favourite meal? "
             android:layout_below="@+id/choiceHobbyRadiobtn"/>
 
@@ -59,22 +69,26 @@
             android:layout_height="wrap_content"
             android:textColor="@color/teal_700"
             android:hint="What is your favorite"
+            android:textSize="12dp"
             android:layout_below="@+id/favFood"/>
         <TextView
             android:id="@+id/isalandQue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/favMovie"
+            android:textSize="12dp"
             android:text="You r going to an Island that you've never heard off, which one would you carry?"
             />
         <CheckBox
             android:id="@+id/option1"
+            android:textSize="12dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Umbrella"
             android:layout_below="@+id/isalandQue"/>
         <CheckBox
             android:id="@+id/option2"
+            android:textSize="12dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Math Sticks"
@@ -82,12 +96,14 @@
             />
         <CheckBox
             android:id="@+id/option3"
+            android:textSize="12dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mosquito repellant"
             android:layout_below="@+id/option2"/>
         <CheckBox
             android:id="@+id/option4"
+            android:textSize="12dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Machette and Firt Aid Kit"
@@ -95,15 +111,14 @@
 
         <TextView
             android:layout_marginTop="15dp"
-
             android:id="@+id/UserDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hello World!"
+            android:textSize="12dp"
             android:layout_centerInParent="true"
             android:layout_below="@+id/btnSave"
             android:layout_centerVertical="true"
-
             />
 
         <Button
@@ -114,6 +129,7 @@
             android:layout_centerVertical="true"
             android:layout_below="@+id/option4"
             android:text="Send Message"
+            android:textSize="12dp"
             android:layout_marginTop="15dp"
            />
 
