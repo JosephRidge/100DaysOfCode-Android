@@ -22,8 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/userName"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/purple_500"
             android:text="2. Which one would you go for ? "
             android:textSize="13dp"
            />
@@ -62,17 +62,16 @@
 
         <EditText
             android:id="@+id/favFood"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/choiceHobbyRadiobtn"
             android:layout_marginTop="5dp"
             android:hint="3. Whats your favourite meal ? "
-            android:textColor="@color/teal_700"
             android:textSize="12dp" />
 
         <EditText
             android:id="@+id/favMovie"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/favFood"
             android:layout_marginTop="5dp"
@@ -85,8 +84,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/favMovie"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/purple_500"
             android:text="5. You are going to an Island that you've never heard off, which three items would you carry?"
             android:textSize="13dp"
            />
@@ -98,7 +97,7 @@
             android:layout_below="@+id/isalandQue">
 
             <CheckBox
-                android:id="@+id/option1"
+                android:id="@+id/optionUmbrella"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Umbrella"
@@ -106,28 +105,28 @@
                 android:textSize="10dp" />
 
             <CheckBox
-                android:id="@+id/option2"
+                android:id="@+id/optionMachSticks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/option1"
+                android:layout_below="@+id/optionUmbrella"
                 android:textColor="@color/teal_700"
                 android:text="Math Sticks"
                 android:textSize="10dp" />
 
             <CheckBox
-                android:id="@+id/option3"
+                android:id="@+id/optionRepellant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/option2"
+                android:layout_below="@+id/optionMachSticks"
                 android:textColor="@color/teal_700"
                 android:text="Mosquito repellant"
                 android:textSize="10dp" />
 
             <CheckBox
-                android:id="@+id/option4"
+                android:id="@+id/optionMachette"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/option3"
+                android:layout_below="@id/optionRepellant"
                 android:textColor="@color/teal_700"
                 android:text="Machette and Firt Aid Kit"
                 android:textSize="10dp" />
