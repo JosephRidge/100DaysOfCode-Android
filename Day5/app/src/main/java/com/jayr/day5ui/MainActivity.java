@@ -111,6 +111,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             survivaltools.add(" Mosquito Repellant");
         }
 
+
+        Toast.makeText(this,"Survival Kit : "+ survivaltools, Toast.LENGTH_LONG).show();
     }
 
 
