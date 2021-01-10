@@ -6,133 +6,145 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:textSize="12dp"
-    android:padding="30dp">
+    android:padding="50dp">
 
-    <EditText
-        android:id="@+id/userName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:hint="Full Name"
-        android:textSize="12dp"
-        android:textColor="@color/teal_700"
-        />
 
-    <TextView
-        android:id="@+id/choiceHobby"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/userName"
-        android:textColor="@color/teal_700"
-        android:textStyle="bold|italic"
-        android:layout_marginTop="15dp"
-        android:textSize="12dp"
-        android:text="1. Which one would you go for ? "/>
+        <EditText
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="1. Full Name"
+            android:textColor="@color/teal_700"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/choiceHobby"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/userName"
+            android:layout_marginTop="5dp"
+            android:text="2. Which one would you go for ? "
+            android:textColor="@color/teal_700"
+            android:textSize="13dp"
+            android:textStyle="bold" />
 
         <RadioGroup
             android:id="@+id/choiceHobbyRadiobtn"
             android:layout_width="wrap_content"
+            android:orientation="horizontal"
             android:layout_height="wrap_content"
             android:layout_below="@+id/choiceHobby">
+
             <RadioButton
                 android:id="@+id/choiceBook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Books"
-                android:textSize="10dp"
-                />
+                android:textSize="10dp" />
+
             <RadioButton
                 android:id="@+id/choiceMusic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="10dp"
-                android:text="Music"/>
+                android:text="Music"
+                android:textSize="10dp" />
+
             <RadioButton
                 android:id="@+id/choiceSports"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="10dp"
-                android:text="Sports"/>
+                android:text="Sports"
+                android:textSize="10dp" />
         </RadioGroup>
 
         <EditText
             android:id="@+id/favFood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/choiceHobbyRadiobtn"
+            android:layout_marginTop="5dp"
+            android:hint="3. Whats your favourite meal? "
             android:textColor="@color/teal_700"
-            android:textSize="12dp"
-            android:hint="Whats your favourite meal? "
-            android:layout_below="@+id/choiceHobbyRadiobtn"/>
+            android:textSize="12dp" />
 
         <EditText
             android:id="@+id/favMovie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/favFood"
+            android:layout_marginTop="5dp"
+            android:hint="4. What is your favorite"
             android:textColor="@color/teal_700"
-            android:hint="What is your favorite"
-            android:textSize="12dp"
-            android:layout_below="@+id/favFood"/>
+            android:textSize="12dp" />
+
         <TextView
             android:id="@+id/isalandQue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/favMovie"
-            android:textSize="12dp"
+            android:layout_marginTop="5dp"
+            android:text="5. You r going to an Island that you've never heard off, which one would you carry?"
             android:textColor="@color/teal_700"
-            android:textStyle="bold|italic"
-            android:text="2. You r going to an Island that you've never heard off, which one would you carry?"
-            />
-        <CheckBox
-            android:id="@+id/option1"
-            android:textSize="10dp"
+            android:textSize="13dp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/checkList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Umbrella"
-            android:layout_below="@+id/isalandQue"/>
-        <CheckBox
-            android:id="@+id/option2"
-            android:textSize="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Math Sticks"
-            android:layout_below="@+id/option1"
-            />
-        <CheckBox
-            android:id="@+id/option3"
-            android:textSize="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mosquito repellant"
-            android:layout_below="@+id/option2"/>
-        <CheckBox
-            android:id="@+id/option4"
-            android:textSize="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Machette and Firt Aid Kit"
-            android:layout_below="@id/option3"/>
+            android:layout_below="@+id/isalandQue">
+
+            <CheckBox
+                android:id="@+id/option1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Umbrella"
+                android:textSize="10dp" />
+
+            <CheckBox
+                android:id="@+id/option2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/option1"
+                android:text="Math Sticks"
+                android:textSize="10dp" />
+
+            <CheckBox
+                android:id="@+id/option3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/option2"
+                android:text="Mosquito repellant"
+                android:textSize="10dp" />
+
+            <CheckBox
+                android:id="@+id/option4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/option3"
+                android:text="Machette and Firt Aid Kit"
+                android:textSize="10dp" />
+        </RelativeLayout>
 
         <TextView
-            android:layout_marginTop="15dp"
             android:id="@+id/UserDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            android:textSize="12dp"
-            android:layout_centerInParent="true"
             android:layout_below="@+id/btnSave"
+            android:layout_centerInParent="true"
             android:layout_centerVertical="true"
-            />
+            android:layout_marginTop="5dp"
+            android:text="Hello World!"
+            android:textSize="12dp" />
 
         <Button
             android:id="@+id/btnSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/checkList"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_below="@+id/option4"
             android:text="Send Message"
-            android:textSize="12dp"
-           />
-
+            android:textSize="12dp" />
 </RelativeLayout>
