@@ -78,17 +78,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Math Sticks"
+            android:layout_below="@+id/option1"
             />
         <CheckBox
             android:id="@+id/option3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mosquito repellant"/>
+            android:text="Mosquito repellant"
+            android:layout_below="@+id/option2"/>
         <CheckBox
             android:id="@+id/option4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Machette and Firt Aid Kit"/>
+            android:text="Machette and Firt Aid Kit"
+            android:layout_below="@id/option3"/>
 
         <TextView
             android:id="@+id/UserDetails"
@@ -98,6 +101,7 @@
             android:layout_centerInParent="true"
             android:layout_below="@+id/btnSave"
             android:layout_centerVertical="true"
+
             />
 
         <Button
@@ -105,7 +109,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:layout_below="@+id/option3"
             android:text="Send Message"
            />
 
