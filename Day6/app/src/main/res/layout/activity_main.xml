@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="30dp"
     tools:context=".MainActivity">
 
     <TextView
@@ -30,10 +31,9 @@
         />
     <Spinner
         android:id="@+id/userPlaylists"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Names "
-
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
@@ -46,8 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/userPlaylists"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        android:background="#E6DCF3"
+        android:background="#DAD9D9"
         ></ListView>
 
 

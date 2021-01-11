@@ -6,8 +6,8 @@
     android:text="Artist Name"
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
-    android:textColor="@color/purple_500"
-    android:textSize="20dp"
+    android:textColor="@color/teal_700"
+    android:textSize="10dp"
     android:layout_centerInParent="true"
     xmlns:android="http://schemas.android.com/apk/res/android" />
 
