@@ -151,6 +151,6 @@
             android:layout_below="@+id/checkList"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="Send Message"
+            android:text="Save Deatails"
             android:textSize="12dp" />
 </RelativeLayout>

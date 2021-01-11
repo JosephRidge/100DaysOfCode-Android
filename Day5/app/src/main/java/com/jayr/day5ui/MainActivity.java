@@ -3,6 +3,7 @@ package com.jayr.day5ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -22,14 +23,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText favFood;
     EditText favMovie;
 
-
-
     String name;
     String favoriteMeal;
     String favoriteMovie;
     String radioChoice;
     ArrayList <String>survivaltools;
-
 
     CheckBox repellantChoice;
     CheckBox umbrellaChoice;
@@ -47,7 +45,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch(v.getId()){
             case  R.id.btnSave:
                 personalizedGreetings.setText(nameInput.getText().toString());
-                Toast.makeText(this, "Hello  "+nameInput.getText().toString()+" !! ."+"\n"+"Survival Kit : "+ survivaltools, Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Hello  "+nameInput.getText().toString()+" !! ."+"\n"+"Favorite Meal : "+
+                        favFood.getText().toString()+"\n Favorite Movie: "+
+                        favMovie.getText().toString(), Toast.LENGTH_SHORT).show();
+                SystemClock.sleep(100);
+                Toast.makeText(this, "Survival Gear : /n"+survivaltools, Toast.LENGTH_SHORT).show();
+                SystemClock.sleep(100);
 
                 break;
             default:
@@ -113,6 +116,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
 
+
+    }
+    public void getSurvivalPackage(ArrayList<String> survivalList){
+        for (String n :survivalList) {
+            System.out.println(n);
+        }
 
     }
 
