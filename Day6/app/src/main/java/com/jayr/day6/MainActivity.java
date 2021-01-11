@@ -18,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        spinner.findViewById(R.id.userPlaylists);
+        listView.findViewById(R.id.goodMusic);
+
         ArrayList<String> userMusic = new ArrayList<>();
         userMusic.add("Green Day - Walk Alone.");
         userMusic.add("Linking Park - In The End.");
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         userMusic.add("Swedish House Mafia - Don't you Wprry Child.");
         userMusic.add("Daughtry - Life After You");
         userMusic.add("Evanscence - Stronger");
+        userMusic.add("Kwame - Malkia");
 
         ArrayList<String> Artists = new ArrayList<>();
         Artists.add("Green Day");
@@ -35,14 +39,18 @@ public class MainActivity extends AppCompatActivity {
         Artists.add("The Creed");
         Artists.add("Evanscence ");
 
-        ArrayAdapter<String>ListAdapter = new ArrayAdapter(
+        ArrayAdapter<String>listAdapter = new ArrayAdapter(
                 this,
                 R.layout.list_view_activity,
                 userMusic);
-        ArrayAdapter<String>SpinnerAdapter = new ArrayAdapter(
+        ArrayAdapter<String>spinnerAdapter = new ArrayAdapter(
                 this,
                 R.layout.support_simple_spinner_dropdown_item,
                 Artists
         );
+
+        spinner.setAdapter(spinnerAdapter);
+        listView.setAdapter(listAdapter);
+
     }
 }
