@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         ArrayList<String> userMusic = new ArrayList<>();
         userMusic.add("Green Day - Walk Alone.");
         userMusic.add("Linking Park - In The End.");
