@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,9 +27,8 @@ public class MainActivity extends AppCompatActivity {
     String name;
     String favoriteMeal;
     String favoriteMovie;
-    String radioChoice;
-    String personalDetails;
-    ArrayList <String>survivaltools;
+    String personalDetails,hobby;
+    Integer id ;
 
     CheckBox repellantChoice;
     CheckBox umbrellaChoice;
@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     RadioButton bookRadBtn;
     RadioButton musicRadBtn;
     RadioButton sportRadBtn;
+
+    RelativeLayout relativeLayout;
 
 
 //    @Override
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         personalDetails="";
+        hobby="";
+        id = 0;
 
         personalizedGreetings = findViewById(R.id.UserDetails);
         btnGreetings = findViewById(R.id.btnSave);
@@ -84,13 +88,19 @@ public class MainActivity extends AppCompatActivity {
         machettechoice = findViewById(R.id.optionMachette);
         repellantChoice = findViewById(R.id.optionRepellant);
 
+        relativeLayout =findViewById(R.id.checkList);
+
         btnGreetings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 personalDetails +=("\n\nName: " + nameInput.getText().toString());
+                personalDetails +=("\nHobby: " + userHobby());
                 personalDetails+=("\nFavorite Meal : " + favFood.getText().toString());
                 personalDetails+=("\nFavorite Movie :" + favMovie.getText().toString());
-                personalDetails+=("\nMy Survival Kit : " + checkBox(umbrellaChoice, machstickChoice, machettechoice, repellantChoice));
+                personalDetails+=("\nMy Survival Kit : "
+                        + checkBox(umbrellaChoice)+","
+                        + checkBox(umbrellaChoice)+","
+                        +checkBox(umbrellaChoice));
                 System.out.println("\nPersonal Details : " + personalDetails);
                 Toast.makeText(MainActivity.this, "My Details : " + personalDetails, Toast.LENGTH_LONG).show();
             }
@@ -117,24 +127,52 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public ArrayList<String> checkBox(CheckBox choice1, CheckBox choice2, CheckBox choice3, CheckBox choice4){
-        ArrayList <String>checked ;
-        checked = new ArrayList<>();
+    private String userHobby() {
+        int radioChoice =  radioGroup.getCheckedRadioButtonId();
+        switch(radioChoice) {
+            case R.id.choiceBook:
+                hobby ="Book";
+            case R.id.choiceMusic:
+                hobby ="Music";
+                break;
+            case R.id.choiceSports:
+                hobby ="Sports";
+            default:
+                hobby = "None";
+                break;
+        }
+        return hobby;
+    }
 
-        if(choice1.isChecked()){
-            checked.add("\nUmbrella");
-        }else if(choice2.isChecked()){
-            checked.add("\nMatchBox");
+    public String checkBox(CheckBox checkBoxElement){
+        String checked;
+        checked = "";
+        // Check which checkbox was clicked
+        switch(checkBoxElement.getId()) {
+            case R.id.optionMachette:
+                if (checkBoxElement.isChecked()){
+                    checked+="Machette n FirstAidkit :";
+                }
+            else
+              ;
+            case R.id.optionUmbrella:
+                if (checkBoxElement.isChecked()){
+                    checked+="Umbrella ;";
+                }
+
+            case R.id.optionRepellant:
+                if (checkBoxElement.isChecked()){
+                    checked+="Mosquito Repellant ;";
+                }
+
+            case R.id.optionMachSticks:
+                if (checkBoxElement.isChecked()){
+                    checked+="MatchSticks";
+                }
+            else
+                break;
         }
-        else if(choice3.isChecked()){
-            checked.add("\nMachette and FirstAid Kit");
-        }
-        else if(choice4.isChecked()){
-            checked.add("\nMosquito Repellent");
-        }
-        else{
-            Toast.makeText(this, "Few choices add more", Toast.LENGTH_SHORT).show();
-        }
+
         return checked;
     }
 
