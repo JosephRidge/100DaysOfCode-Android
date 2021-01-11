@@ -117,21 +117,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public String checkBox(CheckBox choice1,CheckBox choice2,CheckBox choice3,CheckBox choice4){
-        String checked;
-        checked = "";
+    public ArrayList<String> checkBox(CheckBox choice1, CheckBox choice2, CheckBox choice3, CheckBox choice4){
+        ArrayList <String>checked ;
+        checked = new ArrayList<>();
+
         if(choice1.isChecked()){
-            checked += "\nUmbrella";
+            checked.add("\nUmbrella");
         }else if(choice2.isChecked()){
-            checked += "\nMatchBox";
+            checked.add("\nMatchBox");
         }
         else if(choice3.isChecked()){
-            checked += "\nMachette and FirstAid Kit";
+            checked.add("\nMachette and FirstAid Kit");
         }
         else if(choice4.isChecked()){
-            checked += "\nMosquito Repellent";
+            checked.add("\nMosquito Repellent");
         }
-        else{checked ="";
+        else{
+            Toast.makeText(this, "Few choices add more", Toast.LENGTH_SHORT).show();
         }
         return checked;
     }
