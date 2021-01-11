@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch(v.getId()){
             case  R.id.btnSave:
                 personalizedGreetings.setText(nameInput.getText().toString());
-                Toast.makeText(this, "Hello  "+nameInput.getText().toString()+" !! .", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Hello  "+nameInput.getText().toString()+" !! ."+"\n"+"Survival Kit : "+ survivaltools, Toast.LENGTH_SHORT).show();
+
                 break;
             default:
                 break;
@@ -112,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
 
-        Toast.makeText(this,"Survival Kit : "+ survivaltools, Toast.LENGTH_LONG).show();
+
     }
 
 
