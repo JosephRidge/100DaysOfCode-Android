@@ -10,7 +10,8 @@
         android:id="@+id/greetings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="The playList"
+        android:textStyle="bold"
         android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,7 +25,7 @@
         android:layout_centerHorizontal="true"
         android:layout_height="120dp"
         android:src="@drawable/jayr"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
         android:layout_below="@+id/greetings"
         />
     <Spinner
@@ -34,7 +35,7 @@
         android:text="Names "
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         />
 
 
@@ -46,8 +47,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
         android:background="@color/purple_200"
-
-        />
+        ></ListView>
 
 
 </RelativeLayout>

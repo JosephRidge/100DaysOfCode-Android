@@ -18,8 +18,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        spinner.findViewById(R.id.userPlaylists);
-        listView.findViewById(R.id.goodMusic);
+
+        spinner = findViewById(R.id.userPlaylists);
+        listView = findViewById(R.id.goodMusic);
 
         ArrayList<String> userMusic = new ArrayList<>();
         userMusic.add("Green Day - Walk Alone.");
