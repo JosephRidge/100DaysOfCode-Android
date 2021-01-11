@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
     TextView personalizedGreetings;
     Button btnGreetings;
 
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CheckBox umbrellaChoice;
     CheckBox machstickChoice;
     CheckBox machettechoice;
+    CheckBox checkBox;
 
     RadioGroup radioGroup;
     RadioButton bookRadBtn;
@@ -41,31 +42,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     RadioButton sportRadBtn;
 
 
-    @Override
-    public void onClick(View v) {
-        switch(v.getId()){
-            case  R.id.btnSave:
-                personalizedGreetings.setText(nameInput.getText().toString());
-                Toast.makeText(this, "Hello  "+nameInput.getText().toString()+" !! ."+"\n"+"Favorite Meal : "+
-                        favFood.getText().toString()+"\n Favorite Movie: "+
-                        favMovie.getText().toString(), Toast.LENGTH_SHORT).show();
-                SystemClock.sleep(100);
-                Toast.makeText(this, "Survival Gear : /n"+survivaltools, Toast.LENGTH_SHORT).show();
-                SystemClock.sleep(100);
-
-                break;
-            default:
-                break;
-        }
-    }
+//    @Override
+//    public void onClick(View v) {
+//        switch(v.getId()){
+//            case  R.id.btnSave:
+//                personalizedGreetings.setText(nameInput.getText().toString());
+//                Toast.makeText(this, "My Details : "+personalDetails, Toast.LENGTH_SHORT).show();
+//              /*  Toast.makeText(this, "Hello  "+nameInput.getText().toString()+" !! ."+"\n"+"Favorite Meal : "+
+//                        favFood.getText().toString()+"\n Favorite Movie: "+
+//                        favMovie.getText().toString(), Toast.LENGTH_SHORT).show();*/
+//                SystemClock.sleep(100);
+//                //Toast.makeText(this, "Survival Gear : /n"+survivaltools, Toast.LENGTH_SHORT).show();
+//                SystemClock.sleep(100);
+//
+//                break;
+//            default:
+//                break;
+//        }
+//    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         personalDetails="";
 
-        personalizedGreetings =findViewById(R.id.UserDetails);
+        personalizedGreetings = findViewById(R.id.UserDetails);
         btnGreetings = findViewById(R.id.btnSave);
 //        INPUTS
         nameInput = findViewById(R.id.userName);
@@ -73,37 +74,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         favMovie = findViewById(R.id.favMovie);
 //       CHOICES
         radioGroup = findViewById(R.id.choiceHobbyRadiobtn);
-        btnGreetings.setOnClickListener(this);
 
         name = nameInput.getText().toString();
         favoriteMeal = favFood.getText().toString();
         favoriteMovie = favMovie.getText().toString();
-
-//        radioChoiceID = radioGroup.getCheckedRadioButtonId();
-
-   /*     switch (radioChoiceID){
-            case R.id.choiceBook:
-                radioChoice = "Book";
-                break;
-            case R.id.choiceSports:
-                radioChoice = "Sports";
-                break;
-            case R.id.choiceMusic:
-                radioChoice = "Music";
-                break;
-            default:
-                break;
-        }*/
 
         umbrellaChoice = findViewById(R.id.optionUmbrella);
         machstickChoice = findViewById(R.id.optionMachSticks);
         machettechoice = findViewById(R.id.optionMachette);
         repellantChoice = findViewById(R.id.optionRepellant);
 
+        btnGreetings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                personalDetails +=("\n\nName: " + nameInput.getText().toString());
+                personalDetails+=("\nFavorite Meal : " + favFood.getText().toString());
+                personalDetails+=("\nFavorite Movie :" + favMovie.getText().toString());
+                personalDetails+=("\nMy Survival Kit : " + checkBox(umbrellaChoice, machstickChoice, machettechoice, repellantChoice));
+                System.out.println("\nPersonal Details : " + personalDetails);
+                Toast.makeText(MainActivity.this, "My Details : " + personalDetails, Toast.LENGTH_LONG).show();
+            }
+        });
+
+
+/*
         survivaltools = new ArrayList<>();
 
         if (umbrellaChoice.isChecked()) {
-            survivaltools.add("Umbrella");
+            umbrellaChoice.getId();
+
         }
         else if(machstickChoice.isChecked()){
             survivaltools.add("MatchBox");
@@ -112,23 +111,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             survivaltools.add("Machette and FirstAid Kit");
         }
         else if(repellantChoice.isChecked()){
-            survivaltools.add(" Mosquito Repellant");
+            survivaltools.add(" Mosquito Repellent");
         }
-
-        SystemClock.sleep(1500);
-        getSurvivalPackage(survivaltools);
-
-        personalDetails.concat("\nName: "+nameInput.getText().toString());
-        personalDetails.concat("\nFavorite Meal : "+favFood.getText().toString());
-        personalDetails.concat("\nFavorite Movie :"+favMovie.getText().toString());
+*/
 
     }
 
-    public void getSurvivalPackage(ArrayList<String> survivalList){
-        for (String n :survivalList) {
-            System.out.println(n);
+    public String checkBox(CheckBox choice1,CheckBox choice2,CheckBox choice3,CheckBox choice4){
+        String checked;
+        checked = "";
+        if(choice1.isChecked()){
+            checked += "\nUmbrella";
+        }else if(choice2.isChecked()){
+            checked += "\nMatchBox";
         }
-
+        else if(choice3.isChecked()){
+            checked += "\nMachette and FirstAid Kit";
+        }
+        else if(choice4.isChecked()){
+            checked += "\nMosquito Repellent";
+        }
+        else{checked ="";
+        }
+        return checked;
     }
 
 
