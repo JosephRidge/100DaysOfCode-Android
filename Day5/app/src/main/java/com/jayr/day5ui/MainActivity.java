@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String favoriteMeal;
     String favoriteMovie;
     String radioChoice;
+    String personalDetails;
     ArrayList <String>survivaltools;
 
     CheckBox repellantChoice;
@@ -62,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        personalDetails="";
+
         personalizedGreetings =findViewById(R.id.UserDetails);
         btnGreetings = findViewById(R.id.btnSave);
 //        INPUTS
@@ -96,28 +99,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         machstickChoice = findViewById(R.id.optionMachSticks);
         machettechoice = findViewById(R.id.optionMachette);
         repellantChoice = findViewById(R.id.optionRepellant);
-        survivaltools = new ArrayList<>();
 
+        survivaltools = new ArrayList<>();
 
         if (umbrellaChoice.isChecked()) {
             survivaltools.add("Umbrella");
-
         }
         else if(machstickChoice.isChecked()){
             survivaltools.add("MatchBox");
-
         }
         else if (machettechoice.isChecked()) {
             survivaltools.add("Machette and FirstAid Kit");
-
         }
         else if(repellantChoice.isChecked()){
             survivaltools.add(" Mosquito Repellant");
         }
 
+        SystemClock.sleep(1500);
+        getSurvivalPackage(survivaltools);
 
+        personalDetails.concat("\nName: "+nameInput.getText().toString());
+        personalDetails.concat("\nFavorite Meal : "+favFood.getText().toString());
+        personalDetails.concat("\nFavorite Movie :"+favMovie.getText().toString());
 
     }
+
     public void getSurvivalPackage(ArrayList<String> survivalList){
         for (String n :survivalList) {
             System.out.println(n);
