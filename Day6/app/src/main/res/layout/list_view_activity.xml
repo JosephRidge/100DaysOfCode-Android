@@ -7,7 +7,7 @@
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
     android:textColor="@color/teal_700"
-    android:textSize="10dp"
+    android:textSize="15dp"
     android:layout_centerInParent="true"
     xmlns:android="http://schemas.android.com/apk/res/android" />
 

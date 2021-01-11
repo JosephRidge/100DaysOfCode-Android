@@ -4,16 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="30dp"
     tools:context=".MainActivity">
 
-    <TextView
+    <RelativeLayout
         android:id="@+id/greetings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        >
+
+    <TextView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="The playList"
         android:textStyle="bold"
-        android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -27,8 +32,8 @@
         android:layout_height="120dp"
         android:src="@drawable/jayr"
         android:layout_marginTop="30dp"
-        android:layout_below="@+id/greetings"
         />
+
     <Spinner
         android:id="@+id/userPlaylists"
         android:layout_width="match_parent"
@@ -37,17 +42,18 @@
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
+        android:background="#79018786"
         />
-
+</RelativeLayout>
 
     <ListView
         android:id="@+id/goodMusic"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/userPlaylists"
+        android:layout_below="@+id/greetings"
+        android:layout_centerVertical="true"
         android:layout_marginTop="15dp"
-        android:background="#DAD9D9"
-        ></ListView>
+        android:background="#DAD9D9"></ListView>
 
 
 </RelativeLayout>
