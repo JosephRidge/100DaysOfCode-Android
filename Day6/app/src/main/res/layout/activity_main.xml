@@ -33,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Names "
+
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
@@ -46,7 +47,7 @@
         android:layout_below="@+id/userPlaylists"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:background="@color/purple_200"
+        android:background="#E6DCF3"
         ></ListView>
 
 
