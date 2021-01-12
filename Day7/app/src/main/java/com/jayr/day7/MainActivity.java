@@ -2,6 +2,7 @@ package com.jayr.day7;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -9,14 +10,19 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity {
     FloatingActionButton floatingActionButton;
+    CardView cardView;
+
+    RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         floatingActionButton = findViewById(R.id.fab);
+        cardView = findViewById(R.id.card);
+        relativeLayout = findViewById(R.id.parent);
+
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,6 +40,21 @@ public class MainActivity extends AppCompatActivity {
                 SystemClock.sleep(1000);
                 Toast.makeText(MainActivity.this, "It worked " +
                         "!!! \n", Toast.LENGTH_SHORT).show();
+            }
+        });
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(relativeLayout,"You r your biggest fan !!",Snackbar.LENGTH_INDEFINITE)
+                        .setAction("Show", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(MainActivity.this, "I'll Travaille ! ! " , Toast.LENGTH_SHORT).show();
+                            }
+                        })
+
+                        .show();
+
             }
         });
     }
