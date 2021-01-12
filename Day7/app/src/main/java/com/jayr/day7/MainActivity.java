@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "I'll Travaille ! ! " , Toast.LENGTH_SHORT).show();
                             }
                         })
-
+                        .setBackgroundTint(getResources().getColor(R.color.orange))
+                        .setActionTextColor(getResources().getColor(R.color.purple_700))
                         .show();
 
             }
