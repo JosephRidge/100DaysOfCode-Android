@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Day7</string>
+    <string name="hello">Hello Joseph!</string>
+    <string name="language">Language</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
 </resources>

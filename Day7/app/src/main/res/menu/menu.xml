@@ -3,14 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:title="Settings"
+        android:title="@string/settings"
         android:id="@+id/settings"
         app:showAsAction="always"
         android:icon="@drawable/ic_settings_24"/>
     <item
-        android:title="Profile"
+        android:title="@string/profile"
         android:id="@+id/profile"
         android:icon="@drawable/ic_baseline_people_24"
         app:showAsAction="ifRoom"
         />
+    <item
+        android:title="@string/language"
+        android:id="@+id/language"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_baseline_language_24"
+/>
 </menu>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Septieme Jour</string>
+    <string name="hello">Bonjour Joseph!</string>
+    <string name="language">La langue</string>
+    <string name="profile">Votre Profile</string>
+</resources>
