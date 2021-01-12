@@ -4,19 +4,35 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity {
+    FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        floatingActionButton = findViewById(R.id.fab);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "FAB Clicked", Toast.LENGTH_SHORT).show();
+                SystemClock.sleep(1000);
+                Toast.makeText(MainActivity.this, "It worked " +
+                        "!!! \n", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -36,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Your profile", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.language:
-                Toast.makeText(this, "Your profile", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Select Language", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;
