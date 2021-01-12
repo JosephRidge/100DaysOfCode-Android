@@ -44,7 +44,20 @@
         android:layout_marginTop="15dp"
         android:background="#79018786"
         />
-</RelativeLayout>
+        <Spinner
+            android:id="@+id/userPlaylistsString"
+            android:layout_height="wrap_content"
+            android:text="Names "
+            android:background="#00BCD4"
+            android:layout_below="@+id/userPlaylists"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:padding="5dp"
+            android:entries="@array/musicGenres"
+            />
+
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/goodMusic"

@@ -10,7 +10,7 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    Spinner spinner;
+    Spinner spinner,spinner2;
     ListView listView;
 
     @Override
@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         spinner = findViewById(R.id.userPlaylists);
+        spinner2 = findViewById(R.id.userPlaylistsString);
         listView = findViewById(R.id.goodMusic);
 
         ArrayList<String> userMusic = new ArrayList<>();

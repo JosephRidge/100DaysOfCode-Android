@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Day6</string>
+    <string-array name="musicGenres">
+        <item>"House Music"</item>
+        <item>"Jazz Music"</item>
+        <item>"Riddim Music"</item>
+        <item>"Hip-Hop Music"</item>
+
+    </string-array>
 </resources>
