@@ -49,7 +49,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
         userName = itemView.findViewById(R.id.names);
-        recyclerView = itemView.findViewById(R.id.parent);
+        recyclerView = itemView.findViewById(R.id.contRecylView);
 
         }
 
