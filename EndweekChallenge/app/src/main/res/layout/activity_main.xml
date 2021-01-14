@@ -4,22 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="25dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/imageSection">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:id="@+id/userImage"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_logo_1"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="25dp"
+            android:layout_toRightOf="@id/userImage"
+            android:text="Pick Image"
+            android:layout_marginLeft="20dp" />
+
+    </RelativeLayout>
+
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/imageSection"
         android:id="@+id/UserForm">
 
     <EditText
@@ -52,28 +67,84 @@
         android:layout_below="@id/userPassword"
         android:inputType="textPassword"
         android:id="@+id/passwordVerification"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtGender"
+            android:layout_below="@id/passwordVerification"
+            android:layout_marginTop="10dp"
+            android:text="Gender : "/>
       <RadioGroup
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:orientation="horizontal"
+          android:layout_marginTop="10dp"
+          android:id="@+id/radioGroup"
+          android:layout_below="@id/txtGender"
           >
           <RadioButton
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:id="@+id/radioBtnMale"
+              android:textSize="12dp"
               android:text="Male"/>
           <RadioButton
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-
+                android:id="@+id/radioBtnFemale"
+              android:textSize="12dp"
               android:text="Female"/>
           <RadioButton
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
+              android:id="@+id/radioBtnOther"
+              android:textSize="12dp"
               android:text="Other"/>
 
       </RadioGroup>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Country : "
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/radioGroup"
+            android:id="@+id/txtCountry"/>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/countryListSpinner"
+            android:text="Kenya"
+            android:layout_below="@id/radioGroup"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/txtCountry"/>
+
 </RelativeLayout>
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@id/UserForm"
+    android:layout_below="@id/imageSection"
+    android:id="@+id/licenceAgreement">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:id="@+id/termsNconditions"
+        android:text="This is our Licence Agreement. You can share this app wherever you want however you want , just remember to have fun. "
+        />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/userAgree"
+        android:layout_below="@id/termsNconditions"
+        android:text="Agree ? "/>
+</RelativeLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/UserForm"/>
     
 
 
