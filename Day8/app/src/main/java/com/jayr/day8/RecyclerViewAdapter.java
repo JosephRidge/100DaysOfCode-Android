@@ -4,12 +4,15 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -35,12 +38,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.userName.setText(contacts.get(position).getName());
         holder.userEmail.setText(contacts.get(position).getEmail());
-        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context,contacts.get(position).getName() +" Selected.", Toast.LENGTH_SHORT).show();
             }
         });
+        Glide.with(context)
+                .asBitmap()
+                .load(contacts.get(position).getImageUrl()).
+                into(holder.imageURL);
 
 
     }
@@ -55,14 +62,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView userName, userEmail;
+        ImageView imageURL;
         RecyclerView recyclerView;
-        RelativeLayout relativeLayout;
+        CardView cardView;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-        userName = itemView.findViewById(R.id.names);
-        userEmail = itemView.findViewById(R.id.email);
-        relativeLayout = itemView.findViewById(R.id.parent);
-        recyclerView = itemView.findViewById(R.id.contRecylView);
+            userName = itemView.findViewById(R.id.names);
+            userEmail = itemView.findViewById(R.id.email);
+            imageURL = itemView.findViewById(R.id.image);
+            cardView = itemView.findViewById(R.id.parent);
+            recyclerView = itemView.findViewById(R.id.contRecylView);
 
         }
 
