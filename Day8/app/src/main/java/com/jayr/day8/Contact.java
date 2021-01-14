@@ -3,14 +3,14 @@ package com.jayr.day8;
 import android.widget.ImageView;
 
 public class Contact {
-    private String name;
-    private String email;
-    private ImageView imageView;
+   private String name;
+   private  String email;
+   private String imageUrl;
 
-    public Contact(String name, String email, ImageView imageView) {
+    public Contact(String name, String email, String imageUrl) {
         this.name = name;
         this.email = email;
-        this.imageView = imageView;
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {
@@ -29,12 +29,12 @@ public class Contact {
         this.email = email;
     }
 
-    public ImageView getImageView() {
-        return imageView;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImageView(ImageView imageView) {
-        this.imageView = imageView;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     @Override
@@ -42,7 +42,9 @@ public class Contact {
         return "Contact{" +
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", imageView=" + imageView +
+                ", imageUrl='" + imageUrl + '\'' +
                 '}';
     }
+
+
 }

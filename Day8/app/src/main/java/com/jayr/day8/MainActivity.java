@@ -7,12 +7,15 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 RecyclerView recyclerView;
+RecyclerViewAdapter recyclerViewAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
     recyclerView = findViewById(R.id.contRecylView);
+    recyclerViewAdapter = new RecyclerViewAdapter();
+
 
     }
 }
