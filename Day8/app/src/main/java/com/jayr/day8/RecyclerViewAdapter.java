@@ -1,5 +1,7 @@
 package com.jayr.day8;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -7,23 +9,38 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
 {
+    ArrayList<Contact>contacts= new ArrayList<>() ;
+
+    public RecyclerViewAdapter() {
+
+    }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.contact_list,parent, false);
+        ViewHolder holder = new ViewHolder(view);
+        return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.userName.setText(contacts.get(position).getName());
+
 
     }
-
+    public void setContacts(ArrayList<Contact>contacts){
+            this.contacts=contacts;
+            notifyDataSetChanged(); // this allows you to receive update when the datas et has changed
+    }
     @Override
     public int getItemCount() {
-        return 0;
+        return contacts.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -35,6 +52,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         recyclerView = itemView.findViewById(R.id.parent);
 
         }
+
+
     }
 
 }
