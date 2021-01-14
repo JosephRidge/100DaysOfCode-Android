@@ -34,6 +34,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:layout_marginTop="10dp"
+        android:fontFamily="cursive"
+
         android:layout_below="@+id/imageSection"
         android:id="@+id/UserForm">
 
@@ -75,6 +77,8 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_marginTop="10dp"
+            android:fontFamily="cursive"
+
             android:text="Gender : "/>
       <RadioGroup
           android:layout_width="wrap_content"
@@ -90,18 +94,24 @@
               android:layout_width="wrap_content"
               android:layout_height="match_parent"
               android:text="Male"
+              android:fontFamily="cursive"
+
               android:textSize="12dp" />
           <RadioButton
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
                 android:id="@+id/radioBtnFemale"
               android:textSize="12dp"
+              android:fontFamily="cursive"
+
               android:text="Female"/>
           <RadioButton
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:id="@+id/radioBtnOther"
               android:textSize="12dp"
+              android:fontFamily="cursive"
+
               android:text="Other"/>
 
       </RadioGroup>
@@ -109,6 +119,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Country : "
+            android:fontFamily="cursive"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_marginTop="15dp"
@@ -117,7 +128,7 @@
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/countryListSpinner"
+            android:id="@+id/continentSpinner"
             android:text="Kenya"
             android:layout_below="@id/radioGroup"
             android:layout_marginTop="15dp"
@@ -130,13 +141,14 @@
     android:layout_toRightOf="@id/UserForm"
     android:layout_below="@id/imageSection"
     android:id="@+id/licenceAgreement">
+
     <TextView
+        android:id="@+id/termsNconditions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:id="@+id/termsNconditions"
-        android:text="This is our Licence Agreement. You can share this app wherever you want however you want , just remember to have fun. "
-        />
+        android:fontFamily="cursive"
+        android:text="This is our Licence Agreement. You can share this app wherever you want however you want , just remember to have fun. " />
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
