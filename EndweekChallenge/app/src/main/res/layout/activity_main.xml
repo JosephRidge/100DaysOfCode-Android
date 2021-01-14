@@ -15,6 +15,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/UserForm">
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,7 +33,47 @@
         android:layout_height="wrap_content"
         android:hint="Enter your Full Name .."
         android:inputType="textEmailAddress"
-        android:id="@+id/userEmail"/>
+        android:id="@+id/userEmail"
+        android:layout_below="@id/userName"/>
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:layout_below="@id/userEmail"
+        android:id="@+id/userPassword"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="ReType Password"
+        android:layout_below="@id/userPassword"
+        android:inputType="textPassword"
+        android:id="@+id/passwordVerification"/>
+      <RadioGroup
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          >
+          <RadioButton
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/radioBtnMale"
+              android:text="Male"/>
+          <RadioButton
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+
+              android:text="Female"/>
+          <RadioButton
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Other"/>
+
+      </RadioGroup>
+</RelativeLayout>
     
 
 
