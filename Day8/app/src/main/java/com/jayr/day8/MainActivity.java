@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     recyclerView = findViewById(R.id.contRecylView);
-    recyclerViewAdapter = new RecyclerViewAdapter();
+    recyclerViewAdapter = new RecyclerViewAdapter(this); //since we are in our activity we pass this
     contacts = new ArrayList<>();
 
     contacts.add(new Contact("Agent Cow Mc Cow ","cowmcow@yahoo.com","https://s3-wp-lyleprintingandp.netdna-ssl.com/wp-content/uploads/2018/01/09060054/cow-354428_1280.jpg"));
