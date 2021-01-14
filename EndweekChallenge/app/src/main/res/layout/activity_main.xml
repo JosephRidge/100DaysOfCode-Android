@@ -65,14 +65,14 @@
         android:layout_below="@id/userEmail"
         android:id="@+id/userPassword"/>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="ReType Password"
-        android:textSize="12dp"
-        android:layout_below="@id/userPassword"
-        android:inputType="textPassword"
-        android:id="@+id/passwordVerification"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="ReType Password"
+            android:textSize="12dp"
+            android:layout_below="@id/userPassword"
+            android:inputType="textPassword"
+            android:id="@+id/passwordVerification"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
