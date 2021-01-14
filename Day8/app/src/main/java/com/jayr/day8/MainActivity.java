@@ -1,6 +1,7 @@
 package com.jayr.day8;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
     recyclerViewAdapter.setContacts(contacts);
     recyclerView.setAdapter(recyclerViewAdapter);
     recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    recyclerView.setLayoutManager(LayoutInflater.LIN);
+//        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+//    recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
 
     }
 }
