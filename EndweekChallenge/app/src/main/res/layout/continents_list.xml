@@ -2,6 +2,9 @@
 <TextView android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/continentName"
+    android:layout_margin="5dp"
+    android:padding="15dp"
+    android:textStyle="italic"
     xmlns:android="http://schemas.android.com/apk/res/android" />
 
 
