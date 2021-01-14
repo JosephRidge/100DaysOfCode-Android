@@ -1,6 +1,7 @@
 package com.jayr.day8;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -28,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
     contacts.add(new Contact("Bugz Bugz bunny","bugz@rabbitHelm.com","https://d2lv662meabn0u.cloudfront.net/boomerang/dynamic/video/00000006/6884/68582fbfa6afcd8f15539e82ca76b626378b0644_1573702001.jpg"));
     contacts.add(new Contact("Amoeba Boyz","amoiba@germs.inc","https://i.pinimg.com/originals/51/ce/eb/51ceeb5b1493d9421177245ef9299bad.png"));
 
-
+    recyclerViewAdapter.setContacts(contacts);
+    recyclerView.setAdapter(recyclerViewAdapter);
+    recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
     }
 }
