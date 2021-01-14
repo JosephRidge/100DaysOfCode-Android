@@ -119,7 +119,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Country : "
+            android:text="Continent : "
             android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_marginTop="30dp"
@@ -129,7 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/continentSpinner"
-            android:text="Kenya"
+            android:text="Africa"
             android:layout_below="@id/radioGroup"
             android:layout_marginTop="15dp"
             android:layout_toRightOf="@id/txtCountry"/>
