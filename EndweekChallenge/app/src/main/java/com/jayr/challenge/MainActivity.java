@@ -7,11 +7,14 @@ import android.widget.ArrayAdapter;
 
 import android.widget.Spinner;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     Spinner spinner;
+    Snackbar snackbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,6 @@ public class MainActivity extends AppCompatActivity {
                 continents);
 
         spinner.setAdapter(ListAdapter);
-
+// TODO : work on the POJO and Logic of getting user input selecting items in spinner and buttons(normal and radio)
     }
 }
