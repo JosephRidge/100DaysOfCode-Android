@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
     recyclerViewAdapter.setContacts(contacts);
     recyclerView.setAdapter(recyclerViewAdapter);
-    recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+//    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 //    recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
 
     }
