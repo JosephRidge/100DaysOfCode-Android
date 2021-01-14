@@ -13,9 +13,9 @@
         android:id="@+id/imageSection">
 
         <ImageView
-            android:layout_width="150dp"
+            android:layout_width="120dp"
             android:id="@+id/userImage"
-            android:layout_height="150dp"
+            android:layout_height="120dp"
             android:src="@drawable/ic_logo_1"/>
         <Button
             android:layout_width="wrap_content"
