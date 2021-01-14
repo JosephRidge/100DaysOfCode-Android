@@ -31,6 +31,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.userName.setText(contacts.get(position).getName());
+        holder.userEmail.setText(contacts.get(position).getEmail());
 
 
     }
@@ -44,11 +45,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView userName;
+        TextView userName, userEmail;
         RecyclerView recyclerView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
         userName = itemView.findViewById(R.id.names);
+        userEmail = itemView.findViewById(R.id.email);
         recyclerView = itemView.findViewById(R.id.contRecylView);
 
         }
