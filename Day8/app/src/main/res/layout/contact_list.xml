@@ -15,26 +15,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         >
-    <TextView
-        android:id="@+id/names"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Name"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/email"
-        android:textStyle="italic"
-        android:layout_centerHorizontal="true"
+        <TextView
+            android:id="@+id/names"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="cursive"
+            android:text="Name"
+            android:textStyle="bold" />
 
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_below="@+id/names"
-        android:text="email"/>
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/names"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="cursive"
+            android:text="email"
+            android:textStyle="italic" />
 
     <ImageView
         android:layout_width="150dp"

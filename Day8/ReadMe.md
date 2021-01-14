@@ -6,3 +6,6 @@
 * ![IMG_20210114_210603_577](https://user-images.githubusercontent.com/42699812/104630901-591a2900-5693-11eb-8006-ed897bca575a.jpg)
 
 ##After adding permission it might take time to load images , hence uninstall the app then install again
+
+*Altered Fonts*
+* ![Screenshot_20210114-212205](https://user-images.githubusercontent.com/42699812/104632462-a1d2e180-5695-11eb-8e1c-6d7378f3ea2b.png)
