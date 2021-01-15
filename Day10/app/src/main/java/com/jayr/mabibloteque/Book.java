@@ -19,6 +19,7 @@ public class Book {
         this.longDesc = longDesc;
     }
 
+
     public String getId() {
         return id;
     }
