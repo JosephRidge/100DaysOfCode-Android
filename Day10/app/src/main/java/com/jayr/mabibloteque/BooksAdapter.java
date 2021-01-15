@@ -33,6 +33,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.BookName.setText(myBooks.get(position).getName());
 
     }
 
@@ -49,8 +50,8 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageUrl;
         private TextView BookName;
-        private String shortDesc;
-        private String longDesc;
+//        private String shortDesc;
+//        private String longDesc;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
