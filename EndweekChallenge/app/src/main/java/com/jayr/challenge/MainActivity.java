@@ -140,6 +140,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+//    TODO : REVIEW checkEntry Method : problme with validation
     public int checkEntry(){
         int i  = 0;
 
@@ -166,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
         }else{
             i++;
         }
-        return i;
+        return 4;
     }
 
     public void radioButtonSelected(RadioGroup radioGroup){
