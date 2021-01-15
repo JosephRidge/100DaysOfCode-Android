@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -28,11 +29,14 @@ public class MainActivity extends AppCompatActivity {
     private EditText email;
     private EditText password;
     private EditText passEnrty2;
+    private EditText name;
     private String stringEmail;
     private String stringPass;
+    private  String stringName;
     private String stringPass2;
     private  RadioButton radioMale,radioFemale,radioOther;
     private RadioGroup radioGroup;
+    private Button imageChange,btnRegister;
     private CheckBox checkBox;
 
     @Override
@@ -42,13 +46,15 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<String> continents = new ArrayList<>();
         spinner = findViewById(R.id.continentSpinner);
-        EditText name = findViewById(R.id.userName);
+        name= findViewById(R.id.userName);
         email = findViewById(R.id.userEmail);
         password = findViewById(R.id.userPassword);
         passEnrty2 = findViewById(R.id.passwordVerification);
         radioFemale = findViewById(R.id.radioBtnFemale);
         radioMale = findViewById(R.id.radioBtnMale);
         radioOther = findViewById(R.id.radioBtnOther);
+        imageChange = findViewById(R.id.pickImageBtn);
+        btnRegister = findViewById(R.id.btnRegister);
 
         continents.add("Africa");
         continents.add("Antarctica");
@@ -65,26 +71,31 @@ public class MainActivity extends AppCompatActivity {
 
         spinner.setAdapter(arrayAdapter);
 
-        String stringName = name.getText().toString().trim();
+        stringName = name.getText().toString().trim();
         stringEmail = email.getText().toString().trim();
         stringPass = password.getText().toString().trim();
         stringPass2 = passEnrty2.getText().toString().trim();
 
 //        SPINNER
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, "You are in : "+parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
-            }
+        spinnerItemSelection(spinner);
+        //    VALIDATION
+        inputValidation(stringName,stringEmail,stringPass,stringPass2,name,email,password);
 
+//        RADIO BUTTON
+       radioButtonSelected(radioFemale,radioMale,radioOther);
+//      CHECKBox
+        checkBoxSelection(checkBox);
+// TODO : work on the POJO and Logic of getting user input selecting items in spinner and buttons(normal and radio)
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Toast.makeText(MainActivity.this, "Remembre to Select the Continent you are in.", Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+
             }
         });
 
-        //    VALIDATION
-
+    }
+    
+    public void inputValidation(String stringName,String stringEmail,String stringPass,String stringPass2, EditText name,EditText email, EditText password){
         if (stringName.isEmpty()) {
             name.setError(" Kindly input your name !!");
             name.requestFocus();
@@ -108,12 +119,15 @@ public class MainActivity extends AppCompatActivity {
             password.requestFocus();
             return;
         }
-
-//        RADIO BUTTON
         if (stringPass.length() < 8) {
             password.setError("Minimun legnth is 8");
             password.requestFocus();
         }
+
+    }
+
+    public void radioButtonSelected(RadioButton radioFemale,RadioButton radioMale, RadioButton radioOther){
+
         if( radioMale.isChecked()){
             Toast.makeText(this, "Male Checked!", Toast.LENGTH_SHORT).show();
         }
@@ -124,9 +138,27 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Other Checked!", Toast.LENGTH_SHORT).show();
         }
 
-//      CHECKBox
+    }
 
-// TODO : work on the POJO and Logic of getting user input selecting items in spinner and buttons(normal and radio)
+    public void checkBoxSelection(CheckBox checkBox)
+    {
+        if (checkBox.isChecked()) {
+            Toast.makeText(this, "Welcome to the start of a Journey of a lifetime..", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+    public void spinnerItemSelection(Spinner spinner){
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(MainActivity.this, "You are in : "+parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Toast.makeText(MainActivity.this, "Remembre to Select the Continent you are in.", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 }

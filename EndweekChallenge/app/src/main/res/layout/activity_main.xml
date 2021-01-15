@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:elevation="10dp"
-
+            android:id="@+id/pickImageBtn"
             android:layout_marginStart="25dp"
             android:layout_toRightOf="@id/userImage"
             android:text="Pick Image"
@@ -163,6 +163,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
+        android:id="@+id/btnRegister"
         android:elevation="10dp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="15dp"
