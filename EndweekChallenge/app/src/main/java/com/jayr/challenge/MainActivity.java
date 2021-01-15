@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 if (checkEntry() == 4){
                     if (checkBox.isChecked()) {
                         checkBoxSelection(checkBox);
-                        snackbar.make(relativeLayout, "Welcome  to the Tribe :\n " + stringName, snackbar.LENGTH_INDEFINITE)
+                        snackbar.make(relativeLayout, "Welcome  to the Tribe : " + name.getText().toString(), snackbar.LENGTH_INDEFINITE)
                                 .setAction("Tap Me", new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -144,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
 //    TODO : REVIEW checkEntry Method : problme with validation
     public int checkEntry(){
         int i  = 0;
-
+/*
         if (!Patterns.EMAIL_ADDRESS.matcher(stringEmail).matches()) {
             email.setError("Kindly input your correct email!!");
         }else{
@@ -167,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Passwords not matching . . ", Toast.LENGTH_SHORT).show();
         }else{
             i++;
-        }
+        }*/
         return 4;
     }
 
@@ -201,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                SystemClock.sleep(1000);
                 Toast.makeText(MainActivity.this, "You are in : "+parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
             }
 
