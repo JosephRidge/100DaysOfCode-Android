@@ -26,7 +26,7 @@
         android:layout_below="@+id/imgBook"
         android:layout_margin="7dp"
         android:layout_centerHorizontal="true"
-        android:id="@+id/nameOfBook"
+        android:id="@+id/bookName"
          />
 
     </RelativeLayout>
