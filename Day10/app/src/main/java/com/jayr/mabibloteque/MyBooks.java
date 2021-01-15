@@ -8,14 +8,14 @@ import java.util.ArrayList;
 
 public class MyBooks extends AppCompatActivity {
 
-    ArrayList<Book>myBoooks;
+    ArrayList<Book>myBooks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
 
-        myBoooks=new ArrayList<>();
+        myBooks=new ArrayList<>();
 
     }
 }
