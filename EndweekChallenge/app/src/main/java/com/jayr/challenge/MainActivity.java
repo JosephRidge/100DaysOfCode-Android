@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         radioFemale = findViewById(R.id.radioBtnFemale);
         radioMale = findViewById(R.id.radioBtnMale);
         radioOther = findViewById(R.id.radioBtnOther);
+        radioGroup =findViewById(R.id.radioGroup);
         imageChange = findViewById(R.id.pickImageBtn);
         btnRegister = findViewById(R.id.btnRegister);
         relativeLayout = findViewById(R.id.parent);
@@ -149,24 +150,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void radioButtonSelected(View view){
-radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-    @Override
-    public void onCheckedChanged(RadioGroup group, int checkedId) {
-        switch(checkedId){
-            case R.id.radioBtnMale:
-                    Toast.makeText(MainActivity.this, "Male Checked!", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.radioBtnFemale:
-                    Toast.makeText(MainActivity.this, "Female Checked!", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.radioBtnOther:
-                    Toast.makeText(MainActivity.this, "Other Checked!", Toast.LENGTH_SHORT).show();
-                break;
-        }
-    }
-});
-
+    public void radioButtonSelected(RadioGroup radioGroup){
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch(checkedId){
+                    case R.id.radioBtnMale:
+                            Toast.makeText(MainActivity.this, "Male Checked!", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.radioBtnFemale:
+                            Toast.makeText(MainActivity.this, "Female Checked!", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.radioBtnOther:
+                            Toast.makeText(MainActivity.this, "Other Checked!", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        });
     }
 
     public void checkBoxSelection(CheckBox checkBox)
