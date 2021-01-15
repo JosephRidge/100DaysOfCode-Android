@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import android.widget.CheckBox;
@@ -69,6 +70,19 @@ public class MainActivity extends AppCompatActivity {
         stringPass = password.getText().toString().trim();
         stringPass2 = passEnrty2.getText().toString().trim();
 
+//        SPINNER
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(MainActivity.this, "You are in : "+parent.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Toast.makeText(MainActivity.this, "Remembre to Select the Continent you are in.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         //    VALIDATION
 
         if (stringName.isEmpty()) {
@@ -95,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+//        RADIO BUTTON
         if (stringPass.length() < 8) {
             password.setError("Minimun legnth is 8");
             password.requestFocus();
@@ -104,13 +119,12 @@ public class MainActivity extends AppCompatActivity {
         }
         else if( radioFemale.isChecked()){
             Toast.makeText(this, "Female Checked!", Toast.LENGTH_SHORT).show();
-
         }
         else if( radioOther.isChecked()){
             Toast.makeText(this, "Other Checked!", Toast.LENGTH_SHORT).show();
-
         }
 
+//      CHECKBox
 
 // TODO : work on the POJO and Logic of getting user input selecting items in spinner and buttons(normal and radio)
 
