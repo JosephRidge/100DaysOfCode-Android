@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Patterns;
+import android.view.View;
 import android.widget.ArrayAdapter;
 
 import android.widget.CheckBox;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -36,10 +38,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ArrayList<String>continents = new ArrayList<>();
-        spinner  = findViewById(R.id.continentSpinner);
+
+        ArrayList<String> continents = new ArrayList<>();
+        spinner = findViewById(R.id.continentSpinner);
         EditText name = findViewById(R.id.userName);
-        email= findViewById(R.id.userEmail);
+        email = findViewById(R.id.userEmail);
         password = findViewById(R.id.userPassword);
         passEnrty2 = findViewById(R.id.passwordVerification);
         radioFemale = findViewById(R.id.radioBtnFemale);
@@ -48,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         continents.add("Africa");
         continents.add("Antarctica");
-        continents.add( "Asia");
+        continents.add("Asia");
         continents.add("Australia");
         continents.add("Europe");
         continents.add("North America");
@@ -68,34 +71,45 @@ public class MainActivity extends AppCompatActivity {
 
         //    VALIDATION
 
-        if (stringName.isEmpty()){
+        if (stringName.isEmpty()) {
             name.setError(" Kindly input your name !!");
             name.requestFocus();
             return;
         }
-        if (stringEmail.isEmpty()){
+        if (stringEmail.isEmpty()) {
             email.setError("Kindly input your Email !!");
             email.requestFocus();
             return;
         }
-        if (stringPass.isEmpty()){
+        if (stringPass.isEmpty()) {
             password.setError(" Kindly input your password!!");
             password.requestFocus();
             return;
         }
-        if(!Patterns.EMAIL_ADDRESS.matcher(stringEmail).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(stringEmail).matches()) {
             email.setError("Kindly input your correct email!!");
         }
-        if(stringPass.isEmpty()){
+        if (stringPass.isEmpty()) {
             password.setError("You need me for security !!");
             password.requestFocus();
             return;
         }
-        if (stringPass.length()<8){
+
+        if (stringPass.length() < 8) {
             password.setError("Minimun legnth is 8");
             password.requestFocus();
         }
+        if( radioMale.isChecked()){
+            Toast.makeText(this, "Male Checked!", Toast.LENGTH_SHORT).show();
+        }
+        else if( radioFemale.isChecked()){
+            Toast.makeText(this, "Female Checked!", Toast.LENGTH_SHORT).show();
 
+        }
+        else if( radioOther.isChecked()){
+            Toast.makeText(this, "Other Checked!", Toast.LENGTH_SHORT).show();
+
+        }
 
 
 // TODO : work on the POJO and Logic of getting user input selecting items in spinner and buttons(normal and radio)
