@@ -96,23 +96,25 @@ public class MainActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkBox.isChecked()) {
-                    checkBoxSelection(checkBox);
-                    snackbar.make(relativeLayout,"Welcome  to the Tribe : "+stringName,snackbar.LENGTH_INDEFINITE)
-                            .setAction("Show Gratitude", new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    Toast.makeText(MainActivity.this, "Thank you !", Toast.LENGTH_SHORT).show();
-
-                                }
-                            })
-                            .setActionTextColor(getResources().getColor(R.color.purple_700))
-                            .setBackgroundTint(getResources().getColor(R.color.teal_700))
-                            .show();
-                }else{
-                    Toast.makeText(MainActivity.this, "Please Check the box first inorder to be registered", Toast.LENGTH_SHORT).show();
+                if (checkEntry() == 4){
+                    if (checkBox.isChecked()) {
+                        checkBoxSelection(checkBox);
+                        snackbar.make(relativeLayout, "Welcome  to the Tribe :\n " + stringName, snackbar.LENGTH_INDEFINITE)
+                                .setAction("Tap Me", new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Toast.makeText(MainActivity.this, "Thank you !", Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .setActionTextColor(getResources().getColor(R.color.purple_700))
+                                .setBackgroundTint(getResources().getColor(R.color.teal_700))
+                                .show();
+                    } else {
+                        Toast.makeText(MainActivity.this, "Please Check the box first inorder to be registered", Toast.LENGTH_SHORT).show();
+                    }
+            }else{
+                    Toast.makeText(MainActivity.this, "Kindly check your inputs ", Toast.LENGTH_SHORT).show();
                 }
-
 
             }
         });
@@ -122,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
     public void inputValidation(String stringName,String stringEmail,String stringPass,String stringPass2, EditText name,EditText email, EditText password){
         if (stringName.isEmpty()) {
             name.setError(" Kindly input your name !!");
-            name.requestFocus();
+
             return;
         }
         if (stringEmail.isEmpty()) {
@@ -135,19 +137,36 @@ public class MainActivity extends AppCompatActivity {
             password.requestFocus();
             return;
         }
+
+
+    }
+    public int checkEntry(){
+        int i  = 0;
+
         if (!Patterns.EMAIL_ADDRESS.matcher(stringEmail).matches()) {
             email.setError("Kindly input your correct email!!");
+        }else{
+            i++;
         }
         if (stringPass.isEmpty()) {
             password.setError("You need me for security !!");
             password.requestFocus();
-            return;
+
+        }else{
+            i++;
         }
         if (stringPass.length() < 8) {
             password.setError("Minimun legnth is 8");
             password.requestFocus();
+        } else{
+            i++;
         }
-
+        if(!stringPass.equals(stringPass2)){
+            Toast.makeText(this, "Passwords not matching . . ", Toast.LENGTH_SHORT).show();
+        }else{
+            i++;
+        }
+        return i;
     }
 
     public void radioButtonSelected(RadioGroup radioGroup){
