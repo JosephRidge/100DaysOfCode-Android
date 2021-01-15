@@ -1,8 +1,10 @@
-This build taught me a number of things :
+# This build taught me a number of things :
 Impementation of the snack bar : snackbar.make(layout,String entry,snackbar.LENGTH_INDEFINITE).setAction("MethodName",new View.OnClickListener{}).setBackgroundTint()show();
 
 implementing a listener for the radio button: to attiain an onClicklistener we use the radiogroup as the main veiew to set the listener (radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {}--> will generate the method automatically...
 using a Relative layout is way better as compared to other layouts for parent view. unless u r adding a listview or recycler view
+
+ It also taught me the value of Revision. I loved the challenge.
 
 So this is what i managed to attain/achieve after :
 
