@@ -13,6 +13,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private Button imageChange,btnRegister;
     private CheckBox checkBox;
+    private RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         radioOther = findViewById(R.id.radioBtnOther);
         imageChange = findViewById(R.id.pickImageBtn);
         btnRegister = findViewById(R.id.btnRegister);
+        relativeLayout = findViewById(R.id.parent);
 
         continents.add("Africa");
         continents.add("Antarctica");
@@ -76,20 +79,28 @@ public class MainActivity extends AppCompatActivity {
         stringPass = password.getText().toString().trim();
         stringPass2 = passEnrty2.getText().toString().trim();
 
-//        SPINNER
+            /*     SPINNER     */
         spinnerItemSelection(spinner);
-        //    VALIDATION
+          /*  VALIDATION     */
         inputValidation(stringName,stringEmail,stringPass,stringPass2,name,email,password);
-
-//        RADIO BUTTON
+         /*   RADIO BUTTON    */
        radioButtonSelected(radioFemale,radioMale,radioOther);
-//      CHECKBox
-        checkBoxSelection(checkBox);
+
+
 // TODO : work on the POJO and Logic of getting user input selecting items in spinner and buttons(normal and radio)
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                checkBoxSelection(checkBox);
+                snackbar.make(relativeLayout,"Welcome  to the Tribe : "+stringName,snackbar.LENGTH_INDEFINITE)
+                        .setAction("Show Details", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
 
+                            }
+                        })
+                        .setBackgroundTint(getResources().getColor(R.color.teal_700))
+                        .show();
             }
         });
 
