@@ -2,6 +2,7 @@ package com.jayr.challenge;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -59,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         btnRegister = findViewById(R.id.btnRegister);
         relativeLayout = findViewById(R.id.parent);
         checkBox = findViewById(R.id.userAgree);
+        Context context;
+
 
         continents.add("Africa");
         continents.add("Antarctica");
@@ -85,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
           /*  VALIDATION     */
         inputValidation(stringName,stringEmail,stringPass,stringPass2,name,email,password);
          /*   RADIO BUTTON    */
-       radioButtonSelected(radioFemale,radioMale,radioOther);
+       radioButtonSelected(radioGroup);
 
 
 // TODO : work on the POJO and Logic of getting user input selecting items in spinner and buttons(normal and radio)
@@ -95,9 +98,10 @@ public class MainActivity extends AppCompatActivity {
                 if (checkBox.isChecked()) {
                     checkBoxSelection(checkBox);
                     snackbar.make(relativeLayout,"Welcome  to the Tribe : "+stringName,snackbar.LENGTH_INDEFINITE)
-                            .setAction("Show Details", new View.OnClickListener() {
+                            .setAction("Show Gratitude", new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
+                                    Toast.makeText(MainActivity.this, "Thank you !", Toast.LENGTH_SHORT).show();
 
                                 }
                             })
@@ -145,17 +149,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void radioButtonSelected(RadioButton radioFemale,RadioButton radioMale, RadioButton radioOther){
-
-        if( radioMale.isChecked()){
-            Toast.makeText(this, "Male Checked!", Toast.LENGTH_SHORT).show();
+    public void radioButtonSelected(View view){
+radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+    @Override
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+        switch(checkedId){
+            case R.id.radioBtnMale:
+                    Toast.makeText(MainActivity.this, "Male Checked!", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.radioBtnFemale:
+                    Toast.makeText(MainActivity.this, "Female Checked!", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.radioBtnOther:
+                    Toast.makeText(MainActivity.this, "Other Checked!", Toast.LENGTH_SHORT).show();
+                break;
         }
-        else if( radioFemale.isChecked()){
-            Toast.makeText(this, "Female Checked!", Toast.LENGTH_SHORT).show();
-        }
-        else if( radioOther.isChecked()){
-            Toast.makeText(this, "Other Checked!", Toast.LENGTH_SHORT).show();
-        }
+    }
+});
 
     }
 
