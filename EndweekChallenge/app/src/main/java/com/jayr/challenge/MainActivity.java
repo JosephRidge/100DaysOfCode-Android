@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         imageChange = findViewById(R.id.pickImageBtn);
         btnRegister = findViewById(R.id.btnRegister);
         relativeLayout = findViewById(R.id.parent);
+        checkBox = findViewById(R.id.userAgree);
 
         continents.add("Africa");
         continents.add("Antarctica");
