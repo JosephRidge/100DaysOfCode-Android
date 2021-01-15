@@ -1,6 +1,8 @@
 package com.jayr.mabibloteque;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
@@ -9,6 +11,8 @@ import java.util.ArrayList;
 public class MyBooks extends AppCompatActivity {
 
     ArrayList<Book>myBooks;
+    RecyclerView recyclerView;
+    BooksAdapter booksAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +20,8 @@ public class MyBooks extends AppCompatActivity {
         setContentView(R.layout.activity_book);
 
         myBooks=new ArrayList<>();
+        recyclerView = findViewById(R.id.bookRecyclerView);
+        booksAdapter = new BooksAdapter(this);
 
         myBooks.add(new Book("A001",
                 "Laws Of Human Nature",
@@ -37,5 +43,9 @@ public class MyBooks extends AppCompatActivity {
                         " Whether at work, in relationships, or in shaping the world around you," +
                         " The Laws of Human Nature offers brilliant tactics for success, self-improvement, and self-defense."));
 
+        booksAdapter.setMyBooks(myBooks);
+        recyclerView.setAdapter(booksAdapter);
+//    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
     }
 }

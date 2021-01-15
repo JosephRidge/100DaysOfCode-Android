@@ -28,14 +28,14 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View v = LayoutInflater.from(context).inflate(R.layout.activity_book,parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.book,parent, false);
         ViewHolder holder =new ViewHolder(v);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.BookName.setText(myBooks.get(position).getName());
+        holder.bookName.setText(myBooks.get(position).getName());
         Glide.with(context)
                 .asBitmap()
                 .load(myBooks.get(position).getImageURL()).
@@ -55,14 +55,14 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageUrl;
-        private TextView BookName;
+        private TextView bookName;
 //        private String shortDesc;
 //        private String longDesc;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageUrl = itemView.findViewById(R.id.imgBook);
-            BookName = itemView.findViewById(R.id.bookName);
+            bookName = itemView.findViewById(R.id.bookName);
 
         }
     }
