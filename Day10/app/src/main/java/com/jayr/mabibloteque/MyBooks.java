@@ -1,10 +1,13 @@
 package com.jayr.mabibloteque;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -13,6 +16,7 @@ public class MyBooks extends AppCompatActivity {
     ArrayList<Book>myBooks;
     RecyclerView recyclerView;
     BooksAdapter booksAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,8 @@ public class MyBooks extends AppCompatActivity {
                         "how to look behind people's masks, and how to resist conformity to develop your singular sense of purpose." +
                         " Whether at work, in relationships, or in shaping the world around you," +
                         " The Laws of Human Nature offers brilliant tactics for success, self-improvement, and self-defense."));
+
+
 
         booksAdapter.setMyBooks(myBooks);
         recyclerView.setAdapter(booksAdapter);

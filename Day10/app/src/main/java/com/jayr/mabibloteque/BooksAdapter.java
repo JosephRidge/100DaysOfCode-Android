@@ -6,8 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -40,6 +42,13 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
                 .asBitmap()
                 .load(myBooks.get(position).getImageURL()).
                 into(holder.imageUrl);
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, myBooks.get(position).getName()+" Book Selected !", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
     }
 
@@ -56,6 +65,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageUrl;
         private TextView bookName;
+        private CardView cardView;
 //        private String shortDesc;
 //        private String longDesc;
 
@@ -63,6 +73,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
             super(itemView);
             imageUrl = itemView.findViewById(R.id.imgBook);
             bookName = itemView.findViewById(R.id.bookName);
+            cardView = itemView.findViewById(R.id.cardViewParent);
 
         }
     }
