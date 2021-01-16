@@ -1,6 +1,7 @@
 package com.jayr.mabibloteque;
 
 import android.content.Context;
+import android.transition.Transition;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.transition.TransitionManager;
 
 import com.bumptech.glide.Glide;
 
@@ -54,6 +56,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
         holder.expandContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                TransitionManager.beginDelayedTransition(holder.cardView);
                 holder.expandedView.setVisibility(v.VISIBLE);
                 holder.expandContent.setVisibility(v.GONE);
                 notifyItemChanged(position);
