@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,6 +49,20 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
                 Toast.makeText(context, myBooks.get(position).getName()+" Book Selected !", Toast.LENGTH_SHORT).show();
             }
         });
+        holder.bookAuthor.setText(myBooks.get(position).getAuthor());
+        holder.bookDescription.setText(myBooks.get(position).getShortDesc());
+        holder.expandContent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.expandedView.setVisibility(v.VISIBLE);
+            }
+        });
+        holder.minmizeContent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.expandedView.setVisibility(v.GONE);
+            }
+        });
 
 
     }
@@ -66,6 +81,9 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
         private ImageView imageUrl;
         private TextView bookName;
         private CardView cardView;
+        private ImageView expandContent, minmizeContent;
+        private RelativeLayout expandedView;
+        private TextView bookAuthor,bookDescription;
 //        private String shortDesc;
 //        private String longDesc;
 
@@ -74,6 +92,12 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
             imageUrl = itemView.findViewById(R.id.imgBook);
             bookName = itemView.findViewById(R.id.bookName);
             cardView = itemView.findViewById(R.id.cardViewParent);
+
+            bookAuthor = itemView.findViewById(R.id.author);
+            bookDescription = itemView.findViewById(R.id.shortDesc);
+            expandContent = itemView.findViewById(R.id.expandView);
+            minmizeContent = itemView.findViewById(R.id.minimizedView);
+            expandedView = itemView.findViewById(R.id.expandView);
 
         }
     }

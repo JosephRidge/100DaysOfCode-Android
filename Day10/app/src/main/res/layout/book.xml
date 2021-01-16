@@ -91,8 +91,17 @@
             android:text="Description  "
             android:layout_below="@+id/shortTxt"
             android:id="@+id/shortDesc"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/minimizedView"
+            android:layout_below="@+id/shortDesc"
+            android:src="@drawable/ic_arrow_up_24"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true" />
 
     </RelativeLayout>
+
     </RelativeLayout>
 
 </com.google.android.material.card.MaterialCardView>
