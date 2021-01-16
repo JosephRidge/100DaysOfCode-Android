@@ -56,6 +56,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
             public void onClick(View v) {
                 holder.expandedView.setVisibility(v.VISIBLE);
                 holder.expandContent.setVisibility(v.GONE);
+                notifyItemChanged(position);
             }
         });
         holder.minmizeContent.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +64,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
             public void onClick(View v) {
                 holder.expandedView.setVisibility(v.GONE);
                 holder.expandContent.setVisibility(v.VISIBLE);
+                notifyItemChanged(position);
             }
         });
 
