@@ -55,12 +55,14 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
             @Override
             public void onClick(View v) {
                 holder.expandedView.setVisibility(v.VISIBLE);
+                holder.expandContent.setVisibility(v.GONE);
             }
         });
         holder.minmizeContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 holder.expandedView.setVisibility(v.GONE);
+                holder.expandContent.setVisibility(v.VISIBLE);
             }
         });
 
@@ -97,7 +99,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
             bookDescription = itemView.findViewById(R.id.shortDesc);
             expandContent = itemView.findViewById(R.id.expandView);
             minmizeContent = itemView.findViewById(R.id.minimizedView);
-            expandedView = itemView.findViewById(R.id.expandView);
+            expandedView = itemView.findViewById(R.id.relLayoutExpanded);
 
         }
     }
