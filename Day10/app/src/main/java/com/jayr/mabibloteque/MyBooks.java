@@ -3,6 +3,7 @@ package com.jayr.mabibloteque;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -52,6 +53,6 @@ public class MyBooks extends AppCompatActivity {
         booksAdapter.setMyBooks(myBooks);
         recyclerView.setAdapter(booksAdapter);
 //    recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }
