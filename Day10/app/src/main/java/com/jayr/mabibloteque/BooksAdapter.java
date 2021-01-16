@@ -56,7 +56,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
         holder.expandContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TransitionManager.beginDelayedTransition(holder.cardView);
+                TransitionManager.beginDelayedTransition(holder.cardView);//adds animation
                 holder.expandedView.setVisibility(v.VISIBLE);
                 holder.expandContent.setVisibility(v.GONE);
                 notifyItemChanged(position);
@@ -67,7 +67,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
             public void onClick(View v) {
                 holder.expandedView.setVisibility(v.GONE);
                 holder.expandContent.setVisibility(v.VISIBLE);
-                notifyItemChanged(position);
+
             }
         });
 
