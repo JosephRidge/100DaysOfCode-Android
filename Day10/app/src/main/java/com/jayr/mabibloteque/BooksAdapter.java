@@ -78,12 +78,8 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
             }
         });
 
-        Glide.with(context)
-                .asBitmap()
-                .load(myBooks.get(position).getImageURL())
-                .into(holder.imageBook2);
-        holder.bookAuthor2.setText(myBooks.get(position).getAuthor());
-        holder.bookName2.setText(myBooks.get(position).getName());
+
+
     }
 
     @Override

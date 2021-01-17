@@ -1,12 +1,19 @@
-package com.jayr.mabibloteque;
+package com.jayr.mabibloteque.UImain;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.jayr.mabibloteque.BooksAdapter;
 import com.jayr.mabibloteque.Model.Book;
+import com.jayr.mabibloteque.R;
 
 import java.util.ArrayList;
 
@@ -15,7 +22,11 @@ public class MyBooks extends AppCompatActivity {
     ArrayList<Book>myBooks;
     RecyclerView recyclerView;
     BooksAdapter booksAdapter;
+    Book book;
 
+    private ImageView imageBook2;
+    private TextView bookName2, bookAuthor2;
+    private TextView bookDescription2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +37,15 @@ public class MyBooks extends AppCompatActivity {
         recyclerView = findViewById(R.id.bookRecyclerView);
         booksAdapter = new BooksAdapter(this);
 
-        myBooks.add(new Book("A001",
+
+        imageBook2 = findViewById(R.id.imageBook2);
+        bookName2 = findViewById(R.id.bookName2);
+
+        bookAuthor2 = findViewById(R.id.bookAuthor2);
+        bookDescription2 = findViewById(R.id.bookDescription2);
+
+
+        book = (new Book("A001",
                 "Laws Of Human Nature",
                 "Robert Greene",
                 588,
@@ -67,11 +86,12 @@ public class MyBooks extends AppCompatActivity {
                         " Those that neglect it will fall behind. Which side are you on?")
         );
 
+        Glide.with(this)
+                .asBitmap()
+                .load(book.getImageURL())
+                .into(imageBook2);
+        bookAuthor2.setText(book.getAuthor());
+       bookName2.setText(book.getName());
 
-
-        booksAdapter.setMyBooks(myBooks);
-        recyclerView.setAdapter(booksAdapter);
-//    recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }

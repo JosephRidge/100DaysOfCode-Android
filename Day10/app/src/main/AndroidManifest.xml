@@ -12,8 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaBibloteque">
         <activity android:name=".BookAcitivity"></activity>
-        <activity android:name=".MyBooks" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".UImain.MyBooks" />
+        <activity android:name=".UImain.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

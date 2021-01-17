@@ -5,7 +5,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.jayr.mabibloteque.Model.Book;
 
 import java.util.ArrayList;
@@ -13,20 +16,29 @@ import java.util.ArrayList;
 public class BookAcitivity extends AppCompatActivity {
     ArrayList<Book>myBooks;
     RecyclerView recyclerView;
-    BooksAdapter booksAdapter;
+    Book book;
+
+    private ImageView imageBook2;
+    private TextView bookName2, bookAuthor2;
+    private TextView bookDescription2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.book_acitvity);
 
-
-
         myBooks=new ArrayList<>();
         recyclerView = findViewById(R.id.bookRecyclerView);
-        booksAdapter = new BooksAdapter(this);
 
-        myBooks.add(new Book("A001",
+
+        imageBook2 = findViewById(R.id.imageBook2);
+        bookName2 = findViewById(R.id.bookName2);
+
+        bookAuthor2 = findViewById(R.id.bookAuthor2);
+        bookDescription2 = findViewById(R.id.bookDescription2);
+
+
+        book = new Book("A001",
                 "Laws Of Human Nature",
                 "Robert Greene",
                 588,
@@ -44,8 +56,8 @@ public class BookAcitivity extends AppCompatActivity {
                         " from our own emotions and master self-control, how to develop the empathy that leads to insight, " +
                         "how to look behind people's masks, and how to resist conformity to develop your singular sense of purpose." +
                         " Whether at work, in relationships, or in shaping the world around you," +
-                        " The Laws of Human Nature offers brilliant tactics for success, self-improvement, and self-defense."));
-        myBooks.add(new Book(
+                        " The Laws of Human Nature offers brilliant tactics for success, self-improvement, and self-defense.");
+        book = new Book(
                 "A002",
                 "Human + Machine",
                 "Paul R. Daugherty and H. James Wilson",
@@ -64,14 +76,14 @@ public class BookAcitivity extends AppCompatActivity {
                         "in real time, and robots that respond to changes in their environment. Twenty-first-century " +
                         "pioneer companies are already using AI to innovate and grow fast. The bottom line is this: Businesses " +
                         "that understand how to harness AI can surge ahead." +
-                        " Those that neglect it will fall behind. Which side are you on?")
+                        " Those that neglect it will fall behind. Which side are you on?"
         );
 
-
-
-        booksAdapter.setMyBooks(myBooks);
-        recyclerView.setAdapter(booksAdapter);
-//    recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        Glide.with(this)
+                .asBitmap()
+                .load(book.getImageURL())
+                .into(imageBook2);
+        bookAuthor2.setText(book.getAuthor());
+        bookName2.setText(book.getName());
     }
 }
