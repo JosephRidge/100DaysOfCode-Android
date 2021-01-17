@@ -1,7 +1,6 @@
 package com.jayr.mabibloteque;
 
 import android.content.Context;
-import android.transition.Transition;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.transition.TransitionManager;
 
 import com.bumptech.glide.Glide;
+import com.jayr.mabibloteque.Model.Book;
 
 import java.util.ArrayList;
 

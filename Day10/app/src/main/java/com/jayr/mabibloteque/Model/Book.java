@@ -1,4 +1,4 @@
-package com.jayr.mabibloteque;
+package com.jayr.mabibloteque.Model;
 
 public class Book {
     private String id;
