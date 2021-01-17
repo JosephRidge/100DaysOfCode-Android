@@ -38,14 +38,7 @@ public class MyBooks extends AppCompatActivity {
         booksAdapter = new BooksAdapter(this);
 
 
-        imageBook2 = findViewById(R.id.imageBook2);
-        bookName2 = findViewById(R.id.bookName2);
-
-        bookAuthor2 = findViewById(R.id.bookAuthor2);
-        bookDescription2 = findViewById(R.id.bookDescription2);
-
-
-        book = (new Book("A001",
+        myBooks.add(new Book("A001",
                 "Laws Of Human Nature",
                 "Robert Greene",
                 588,
@@ -86,12 +79,11 @@ public class MyBooks extends AppCompatActivity {
                         " Those that neglect it will fall behind. Which side are you on?")
         );
 
-        Glide.with(this)
-                .asBitmap()
-                .load(book.getImageURL())
-                .into(imageBook2);
-        bookAuthor2.setText(book.getAuthor());
-       bookName2.setText(book.getName());
+
+        booksAdapter.setMyBooks(myBooks);
+        recyclerView.setAdapter(booksAdapter);
+//    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
     }
 }

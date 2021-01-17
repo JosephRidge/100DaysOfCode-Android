@@ -31,7 +31,7 @@ public class BookAcitivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.bookRecyclerView);
 
 
-        imageBook2 = findViewById(R.id.imageBook2);
+        imageBook2 = findViewById(R.id.imageBk);
         bookName2 = findViewById(R.id.bookName2);
 
         bookAuthor2 = findViewById(R.id.bookAuthor2);
@@ -82,6 +82,7 @@ public class BookAcitivity extends AppCompatActivity {
         Glide.with(this)
                 .asBitmap()
                 .load(book.getImageURL())
+                .fitCenter()
                 .into(imageBook2);
         bookAuthor2.setText(book.getAuthor());
         bookName2.setText(book.getName());

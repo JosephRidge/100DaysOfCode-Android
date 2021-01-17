@@ -105,7 +105,6 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageUrl = itemView.findViewById(R.id.imgBook);
-            imageBook2 = itemView.findViewById(R.id.imageBook2);
             bookName = itemView.findViewById(R.id.bookName);
             bookName2 = itemView.findViewById(R.id.bookName2);
             cardView = itemView.findViewById(R.id.cardViewParent);

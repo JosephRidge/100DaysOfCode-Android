@@ -21,11 +21,10 @@
 
 
     <ImageView
-        android:id="@+id/imageBook2"
+        android:id="@+id/imageBk"
         android:layout_width="173dp"
         android:layout_height="256dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
+        android:layout_margin="10dp"
         android:layout_marginTop="48dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
@@ -35,12 +34,13 @@
         app:layout_constraintVertical_bias="0.111"
         tools:src="@tools:sample/avatars" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="189dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                app:layout_constraintGuide_begin="185dp" />
 
     <Button
         android:id="@+id/button2"
