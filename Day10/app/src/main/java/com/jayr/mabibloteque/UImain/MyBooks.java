@@ -14,15 +14,16 @@ import com.bumptech.glide.Glide;
 import com.jayr.mabibloteque.BooksAdapter;
 import com.jayr.mabibloteque.Model.Book;
 import com.jayr.mabibloteque.R;
+import com.jayr.mabibloteque.Utility.Utils;
 
 import java.util.ArrayList;
 
 public class MyBooks extends AppCompatActivity {
 
-    ArrayList<Book>myBooks;
+//    ArrayList<Book>myBooks;
     RecyclerView recyclerView;
     BooksAdapter booksAdapter;
-    Book book;
+//    Book book;
 
     private ImageView imageBook2;
     private TextView bookName2, bookAuthor2;
@@ -33,11 +34,11 @@ public class MyBooks extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
 
-        myBooks=new ArrayList<>();
+//        myBooks=new ArrayList<>();
         recyclerView = findViewById(R.id.bookRecyclerView);
         booksAdapter = new BooksAdapter(this);
 
-
+/*
         myBooks.add(new Book("A001",
                 "Laws Of Human Nature",
                 "Robert Greene",
@@ -78,9 +79,9 @@ public class MyBooks extends AppCompatActivity {
                         "that understand how to harness AI can surge ahead." +
                         " Those that neglect it will fall behind. Which side are you on?")
         );
+*/
 
-
-        booksAdapter.setMyBooks(myBooks);
+        booksAdapter.setMyBooks(Utils.getInstance().getAllBooks());
         recyclerView.setAdapter(booksAdapter);
 //    recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

@@ -17,6 +17,7 @@ import androidx.transition.TransitionManager;
 
 import com.bumptech.glide.Glide;
 import com.jayr.mabibloteque.Model.Book;
+import com.jayr.mabibloteque.Utility.Utils;
 
 import java.util.ArrayList;
 
@@ -85,7 +86,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return myBooks.size();
+        return Utils.getInstance().getAllBooks().size();
     }
 
     public void setMyBooks(ArrayList<Book> myBooks) {
