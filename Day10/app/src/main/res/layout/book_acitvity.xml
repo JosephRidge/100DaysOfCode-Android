@@ -9,18 +9,19 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-82dp"
-        tools:layout_editor_absoluteY="-4dp">
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageBook2"
         android:layout_width="173dp"
         android:layout_height="256dp"
         android:layout_marginStart="4dp"
@@ -97,13 +98,20 @@
         android:layout_height="wrap_content"
         android:text="Book : "
         android:textColor="@color/orange"
-        app:layout_constraintBottom_toTopOf="@+id/textView2" />
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/bookName2"
+        android:layout_width="167dp"
+        android:layout_height="16dp"
         android:text="The journey of a Java Dev"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/bookAuthor1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <TextView
         android:id="@+id/textView2"
@@ -111,14 +119,19 @@
         android:layout_height="wrap_content"
         android:text="Author(s) : "
         android:textColor="@color/orange"
-        app:layout_constraintBottom_toTopOf="@+id/textView" />
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/author"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/bookAuthor2"
+        android:layout_width="88dp"
+        android:layout_height="24dp"
         android:text="Joseph Ridge"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/bookDescription2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView"
@@ -126,13 +139,22 @@
         android:layout_height="wrap_content"
         android:text="Book Description : "
         android:textColor="@color/orange"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bookDescription2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bookDescription2" />
+
     <TextView
+        android:id="@+id/bookDescription2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/bookDescription"
-        android:text="This is the gratest book you will ever read.."/>
+        android:text="This is the greatest book you will ever read.."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
 
 
 
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

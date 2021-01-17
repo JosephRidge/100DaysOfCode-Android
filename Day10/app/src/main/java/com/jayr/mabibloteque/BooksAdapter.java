@@ -1,6 +1,7 @@
 package com.jayr.mabibloteque;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,13 +46,19 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
                 .asBitmap()
                 .load(myBooks.get(position).getImageURL()).
                 into(holder.imageUrl);
+
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, myBooks.get(position).getName()+" Book Selected !", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context,BookAcitivity.class);
+                context.startActivity(intent);
+
+
             }
         });
         holder.bookAuthor.setText(myBooks.get(position).getAuthor());
+
         holder.bookDescription.setText(myBooks.get(position).getShortDesc());
         holder.expandContent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +78,12 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
             }
         });
 
-
+        Glide.with(context)
+                .asBitmap()
+                .load(myBooks.get(position).getImageURL())
+                .into(holder.imageBook2);
+        holder.bookAuthor2.setText(myBooks.get(position).getAuthor());
+        holder.bookName2.setText(myBooks.get(position).getName());
     }
 
     @Override
@@ -85,23 +97,27 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private ImageView imageUrl;
-        private TextView bookName;
+        private ImageView imageUrl,imageBook2;
+        private TextView bookName,bookName2, bookAuthor2;
         private CardView cardView;
         private ImageView expandContent, minmizeContent;
         private RelativeLayout expandedView;
-        private TextView bookAuthor,bookDescription;
+        private TextView bookAuthor,bookDescription,bookDescription2;
 //        private String shortDesc;
 //        private String longDesc;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageUrl = itemView.findViewById(R.id.imgBook);
+            imageBook2 = itemView.findViewById(R.id.imageBook2);
             bookName = itemView.findViewById(R.id.bookName);
+            bookName2 = itemView.findViewById(R.id.bookName2);
             cardView = itemView.findViewById(R.id.cardViewParent);
 
-            bookAuthor = itemView.findViewById(R.id.author);
+            bookAuthor2 = itemView.findViewById(R.id.bookAuthor2);
+            bookAuthor = itemView.findViewById(R.id.bookAuthor1);
             bookDescription = itemView.findViewById(R.id.shortDesc);
+            bookDescription2 = itemView.findViewById(R.id.bookDescription2);
             expandContent = itemView.findViewById(R.id.expandView);
             minmizeContent = itemView.findViewById(R.id.minimizedView);
             expandedView = itemView.findViewById(R.id.relLayoutExpanded);
