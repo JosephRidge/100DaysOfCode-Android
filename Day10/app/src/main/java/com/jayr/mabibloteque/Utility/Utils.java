@@ -102,4 +102,14 @@ public class Utils {
     public static ArrayList<Book> getAllBooks() {
         return allBooks;
     }
+
+    public Book getBookById(String id){
+        for (Book b:allBooks) {
+            if (id.equals(b.getId())) {
+                return b;
+            }
+        }
+        return null;
+    }
+
 }

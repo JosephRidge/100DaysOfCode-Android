@@ -9,12 +9,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.util.Util;
 import com.jayr.mabibloteque.Model.Book;
+import com.jayr.mabibloteque.Utility.Utils;
 
 import java.util.ArrayList;
 
 public class BookAcitivity extends AppCompatActivity {
-    ArrayList<Book>myBooks;
+
     RecyclerView recyclerView;
     Book book;
 
@@ -27,7 +29,7 @@ public class BookAcitivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.book_acitvity);
 
-        myBooks=new ArrayList<>();
+
         recyclerView = findViewById(R.id.bookRecyclerView);
 
 
@@ -39,19 +41,28 @@ public class BookAcitivity extends AppCompatActivity {
 
 
 
+
         /* This section of code is amazing !! using the Bundle
         i was able to transfer or rather share the value of a variable from one activity to the next  */
 
         Bundle bundle = getIntent().getExtras();
-        Integer position = bundle.getInt("position");
+        String position = bundle.getString("id","-1");
+        if(position != "-1"){
+            Book  selectedBook = Utils.getInstance().getBookById(position);
+            if (null != selectedBook){
+                Glide.with(this)
+                        .asBitmap()
+                        .load(Utils.getInstance().getBookById(position).getImageURL()).
+                        into(imageBook2);
 
-        Glide.with(this)
-                .asBitmap()
-                .load(myBooks.get(position).getImageURL()).
-                into(imageBook2);
+                bookAuthor2.setText(Utils.getInstance().getBookById(position).getAuthor());
+                bookName2.setText(Utils.getInstance().getBookById(position).getName());
+                bookDescription2.setText(Utils.getInstance().getBookById(position).getLongDesc());
 
-        bookAuthor2.setText(myBooks.get(position).getAuthor());
-        bookName2.setText(myBooks.get(position).getName());
-        bookDescription2.setText(myBooks.get(position).getLongDesc());
-    }
+            }
+        }
+
+
+
+  }
 }
