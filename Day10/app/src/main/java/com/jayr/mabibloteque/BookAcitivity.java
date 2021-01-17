@@ -38,7 +38,7 @@ public class BookAcitivity extends AppCompatActivity {
         bookDescription2 = findViewById(R.id.bookDescription2);
 
 
-        book = new Book("A001",
+        myBooks.add(new Book("A001",
                 "Laws Of Human Nature",
                 "Robert Greene",
                 588,
@@ -56,8 +56,8 @@ public class BookAcitivity extends AppCompatActivity {
                         " from our own emotions and master self-control, how to develop the empathy that leads to insight, " +
                         "how to look behind people's masks, and how to resist conformity to develop your singular sense of purpose." +
                         " Whether at work, in relationships, or in shaping the world around you," +
-                        " The Laws of Human Nature offers brilliant tactics for success, self-improvement, and self-defense.");
-        book = new Book(
+                        " The Laws of Human Nature offers brilliant tactics for success, self-improvement, and self-defense."));
+       myBooks.add(new Book(
                 "A002",
                 "Human + Machine",
                 "Paul R. Daugherty and H. James Wilson",
@@ -77,14 +77,22 @@ public class BookAcitivity extends AppCompatActivity {
                         "pioneer companies are already using AI to innovate and grow fast. The bottom line is this: Businesses " +
                         "that understand how to harness AI can surge ahead." +
                         " Those that neglect it will fall behind. Which side are you on?"
-        );
+        ));
+
+
+        Bundle bundle = getIntent().getExtras();
+        Integer position = bundle.getInt("position");
 
         Glide.with(this)
                 .asBitmap()
+                .load(myBooks.get(position).getImageURL()).
+                into(imageBook2);
+       /*Glide.with(this)
+                .asBitmap()
                 .load(book.getImageURL())
                 .fitCenter()
-                .into(imageBook2);
-        bookAuthor2.setText(book.getAuthor());
-        bookName2.setText(book.getName());
+                .into(imageBook2);*/
+        bookAuthor2.setText(myBooks.get(position).getAuthor());
+        bookName2.setText(myBooks.get(position).getName());
     }
 }

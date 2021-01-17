@@ -52,6 +52,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
             public void onClick(View v) {
                 Toast.makeText(context, myBooks.get(position).getName()+" Book Selected !", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context,BookAcitivity.class);
+                intent.putExtra("position",position);
                 context.startActivity(intent);
 
 
