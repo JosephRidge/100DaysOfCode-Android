@@ -87,11 +87,7 @@ public class BookAcitivity extends AppCompatActivity {
                 .asBitmap()
                 .load(myBooks.get(position).getImageURL()).
                 into(imageBook2);
-       /*Glide.with(this)
-                .asBitmap()
-                .load(book.getImageURL())
-                .fitCenter()
-                .into(imageBook2);*/
+     
         bookAuthor2.setText(myBooks.get(position).getAuthor());
         bookName2.setText(myBooks.get(position).getName());
     }
