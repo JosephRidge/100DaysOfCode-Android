@@ -104,7 +104,7 @@ public class BookAcitivity extends AppCompatActivity {
                   public void onClick(View v) {
                      if (Utils.getInstance().AddToAlreadyAdded(book)){
                          Toast.makeText(BookAcitivity.this, "Book Added", Toast.LENGTH_SHORT).show();
-                         Intent intent = new Intent(BookAcitivity.this, MainActivity.class);
+                         Intent intent = new Intent(BookAcitivity.this, AlreadyReadBook.class);
                          startActivity(intent);
                      }
                      else

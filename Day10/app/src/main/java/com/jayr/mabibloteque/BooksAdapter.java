@@ -42,7 +42,8 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.bookName.setText(myBooks.get(position).getName());
+//        holder.bookName.setText(myBooks.get(position).getName());
+        holder.bookName.setText(Utils.getAllBooks().get(position).getName());
         Glide.with(context)
                 .asBitmap()
                 .load(myBooks.get(position).getImageURL()).
@@ -55,7 +56,6 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
                 Intent intent = new Intent(context,BookAcitivity.class);
                 intent.putExtra("id",myBooks.get(position).getId());
                 context.startActivity(intent);
-
 
             }
         });
