@@ -3,6 +3,7 @@ package com.jayr.mabibloteque;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.jayr.mabibloteque.Model.Book;
+import com.jayr.mabibloteque.UImain.AlreadyReadBook;
+import com.jayr.mabibloteque.UImain.MainActivity;
 import com.jayr.mabibloteque.Utility.Utils;
 
 import java.util.ArrayList;
@@ -101,6 +104,8 @@ public class BookAcitivity extends AppCompatActivity {
                   public void onClick(View v) {
                      if (Utils.getInstance().AddToAlreadyAdded(book)){
                          Toast.makeText(BookAcitivity.this, "Book Added", Toast.LENGTH_SHORT).show();
+                         Intent intent = new Intent(BookAcitivity.this, MainActivity.class);
+                         startActivity(intent);
                      }
                      else
                      {
