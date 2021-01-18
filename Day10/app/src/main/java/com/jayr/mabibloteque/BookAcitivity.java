@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -14,11 +15,12 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.jayr.mabibloteque.Model.Book;
 import com.jayr.mabibloteque.UImain.AlreadyReadBooks;
+import com.jayr.mabibloteque.UImain.MainActivity;
 import com.jayr.mabibloteque.Utility.Utils;
 
 import java.util.ArrayList;
 
-public class BookAcitivity extends AppCompatActivity {
+public class BookAcitivity extends AppCompatActivity  {
 
     private RecyclerView recyclerView;
     private Book book;
@@ -54,17 +56,15 @@ public class BookAcitivity extends AppCompatActivity {
         btnWishList = findViewById(R.id.wishList);
 
 
-
-
         /* This section of code is amazing !! using the Bundle
         i was able to transfer or rather share the value of a variable from one activity to the next  */
 
         Bundle bundle = getIntent().getExtras();
-        String position = bundle.getString("id","-1");
+        String position = bundle.getString("id", "-1");
 
-        if(position != "-1"){
-            Book  selectedBook = Utils.getInstance().getBookById(position);
-            if (null != selectedBook){
+        if (position != "-1") {
+            Book selectedBook = Utils.getInstance().getBookById(position);
+            if (null != selectedBook) {
                 Glide.with(this)
                         .asBitmap()
                         .load(Utils.getInstance().getBookById(position).getImageURL()).
@@ -78,7 +78,15 @@ public class BookAcitivity extends AppCompatActivity {
 
             }
         }
-  }
+    }
+        @Override
+        public void onBackPressed() {
+            Intent intent = new Intent(BookAcitivity.this, MainActivity.class);
+            intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TASK | intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+
+        }
+
 
   /*
   * Enable Disable button Add to AlreadyREAD
@@ -102,10 +110,8 @@ public class BookAcitivity extends AppCompatActivity {
                   @Override
                   public void onClick(View v) {
                      if (Utils.getInstance().AddToAlreadyAdded(book)){
-                         Toast.makeText(BookAcitivity.this, "Book Added", Toast.LENGTH_SHORT).show();
-                         Intent intent = new Intent(BookAcitivity.this, AlreadyReadBooks.class);
-                         startActivity(intent);
-                     }
+                         Toast.makeText(BookAcitivity.this, "Book Added !", Toast.LENGTH_SHORT).show();
+               }
                      else
                      {
                          Toast.makeText(BookAcitivity.this, "Ooops! Something happened, try again..", Toast.LENGTH_SHORT).show();

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -23,12 +24,14 @@ import java.util.ArrayList;
 
 public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
 
-    ArrayList<Book>myBooks ;
+    ArrayList<Book>myBooks=new ArrayList<>();
+
 
 
     Context context;
     public BooksAdapter(Context context) {
         this.context = context;
+
     }
 
     @NonNull
@@ -36,30 +39,32 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(context).inflate(R.layout.book,parent, false);
-        ViewHolder holder =new ViewHolder(v);
-        return holder;
+        return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 //        holder.bookName.setText(myBooks.get(position).getName());
-        holder.bookName.setText(Utils.getAllBooks().get(position).getName());
-        Glide.with(context)
-                .asBitmap()
-                .load(Utils.getAllBooks().get(position).getImageURL()).
-                into(holder.imageUrl);
+        Book book = myBooks.get(position);
+
+            holder.bookName.setText(myBooks.get(position).getName());
+            Glide.with(context)
+                    .asBitmap()
+                    .load(myBooks.get(position).getImageURL()).
+                    into(holder.imageUrl);
+
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, Utils.getAllBooks().get(position).getName()+" Book Selected !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, myBooks.get(position).getName()+" Book Selected !", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context,BookAcitivity.class);
-                intent.putExtra("id",Utils.getAllBooks().get(position).getId());
+                intent.putExtra("id",myBooks.get(position).getId());
                 context.startActivity(intent);
 
             }
         });
-        holder.bookAuthor.setText(Utils.getAllBooks().get(position).getAuthor());
+        holder.bookAuthor.setText(myBooks.get(position).getAuthor());
 
         holder.bookDescription.setText(Utils.getAllBooks().get(position).getShortDesc());
         holder.expandContent.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +105,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
         private ImageView expandContent, minmizeContent;
         private RelativeLayout expandedView;
         private TextView bookAuthor,bookDescription,bookDescription2;
+        private Button viewReadBooks;
 //        private String shortDesc;
 //        private String longDesc;
 
@@ -118,6 +124,8 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
             minmizeContent = itemView.findViewById(R.id.minimizedView);
             expandedView = itemView.findViewById(R.id.relLayoutExpanded);
 
+
         }
+
     }
 }

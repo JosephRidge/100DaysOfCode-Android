@@ -18,30 +18,30 @@ import com.jayr.mabibloteque.Utility.Utils;
 
 import java.util.ArrayList;
 
-public class MyBooks extends AppCompatActivity {
+public class MyBooks extends AppCompatActivity implements BooksAdapter.onBookListener  {
 
 //    ArrayList<Book>myBooks;
     RecyclerView recyclerView;
     BooksAdapter booksAdapter;
 //    Book book;
-
-    private ImageView imageBook2;
-    private TextView bookName2, bookAuthor2;
-    private TextView bookDescription2;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
 
         recyclerView = findViewById(R.id.bookRecyclerView);
-        booksAdapter = new BooksAdapter(this);
+        booksAdapter = new BooksAdapter(this,this);
 
 
         booksAdapter.setMyBooks(Utils.getInstance().getAllBooks());
         recyclerView.setAdapter(booksAdapter);
 //    recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+    }
+
+    @Override
+    public void onBookClick(int position) {
 
     }
 }

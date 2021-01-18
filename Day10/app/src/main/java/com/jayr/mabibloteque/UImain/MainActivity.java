@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.jayr.mabibloteque.R;
+import com.jayr.mabibloteque.Utility.Utils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +36,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
+        Utils.getInstance();
     }
 }

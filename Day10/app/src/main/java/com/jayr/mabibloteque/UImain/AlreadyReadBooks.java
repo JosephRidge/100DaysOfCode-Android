@@ -6,14 +6,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import com.jayr.mabibloteque.BooksAdapter;
 import com.jayr.mabibloteque.R;
 import com.jayr.mabibloteque.Utility.Utils;
 
-public class AlreadyReadBooks extends AppCompatActivity {
+public class AlreadyReadBooks extends AppCompatActivity  {
 
     private RecyclerView recyclerView;
+
     private BooksAdapter booksAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,7 @@ public class AlreadyReadBooks extends AppCompatActivity {
         recyclerView.setAdapter(booksAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        booksAdapter.setMyBooks(Utils.getInstance().getAlreadyReadBooks());
+        booksAdapter.setMyBooks(Utils.getAlreadyReadBooks());
 //    recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
@@ -39,4 +41,5 @@ public class AlreadyReadBooks extends AppCompatActivity {
         intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TASK | intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+
 }
