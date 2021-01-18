@@ -107,6 +107,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
         private TextView bookAuthor,bookDescription,bookDescription2;
         private Button viewReadBooks;
 //        private String shortDesc;
+
 //        private String longDesc;
 
         public ViewHolder(@NonNull View itemView) {
@@ -115,6 +116,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
             bookName = itemView.findViewById(R.id.bookName);
             bookName2 = itemView.findViewById(R.id.bookName2);
             cardView = itemView.findViewById(R.id.cardViewParent);
+
 
             bookAuthor2 = itemView.findViewById(R.id.bookAuthor2);
             bookAuthor = itemView.findViewById(R.id.bookAuthor1);
