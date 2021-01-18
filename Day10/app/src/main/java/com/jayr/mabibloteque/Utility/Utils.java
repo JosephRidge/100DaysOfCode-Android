@@ -8,6 +8,11 @@ public class Utils {
 //    SingleTon Class , that will aid in reducing code boilerplate
 
     private static ArrayList<Book>allBooks;
+    private static ArrayList<Book>alreadyReadBooks;
+    private static ArrayList<Book>currentBookReads;
+    private static ArrayList<Book>bookWishList;
+    private static ArrayList<Book>favouriteBooks;
+
     private static Utils instance;
 
 //    Makes sure there exists an instance of the class and if already instantiated we return the instance
@@ -26,6 +31,22 @@ public class Utils {
         if( null == allBooks  ) {
             allBooks =new ArrayList<>();
             initData();
+        }
+        if( null == alreadyReadBooks  ) {
+            alreadyReadBooks =new ArrayList<>();
+
+        }
+        if( null == currentBookReads  ) {
+            currentBookReads =new ArrayList<>();
+
+        }
+        if( null == bookWishList  ) {
+            bookWishList =new ArrayList<>();
+
+        }
+        if( null == favouriteBooks  ) {
+            favouriteBooks =new ArrayList<>();
+
         }
     }
 
@@ -102,6 +123,40 @@ public class Utils {
     public static ArrayList<Book> getAllBooks() {
         return allBooks;
     }
+
+    public static ArrayList<Book> getAlreadyReadBooks() {
+        return alreadyReadBooks;
+    }
+
+    public static ArrayList<Book> getCurrentBookReads() {
+        return currentBookReads;
+    }
+
+    public static ArrayList<Book> getBookWishList() {
+        return bookWishList;
+    }
+
+    public static ArrayList<Book> getFavouriteBooks() {
+        return favouriteBooks;
+    }
+
+
+    public Boolean AddToAlreadyAdded(Book book){
+        return alreadyReadBooks.add(book);
+    }
+
+    public Boolean AddToCurrentReads(Book book){
+        return currentBookReads.add(book);
+    }
+
+    public Boolean AddToWishList(Book book){
+        return bookWishList.add(book);
+    }
+
+    public Boolean AddToFavourites(Book book){
+        return favouriteBooks.add(book);
+    }
+
 
     public Book getBookById(String id){
         for (Book b:allBooks) {

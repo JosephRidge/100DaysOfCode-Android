@@ -46,21 +46,21 @@
                 app:layout_constraintGuide_begin="184dp" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/wishList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Want to Read"
                 android:textSize="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/button3"
+                app:layout_constraintBottom_toTopOf="@+id/alreadyRead"
                 android:textStyle="bold"
 
-                app:layout_constraintEnd_toEndOf="@+id/button3"
+                app:layout_constraintEnd_toEndOf="@+id/alreadyRead"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/button3"
-                app:layout_constraintTop_toBottomOf="@+id/button" />
+                app:layout_constraintStart_toStartOf="@+id/alreadyRead"
+                app:layout_constraintTop_toBottomOf="@+id/currentReads" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/currentReads"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -68,14 +68,14 @@
                 android:textStyle="bold"
 
                 android:text="Currently Reading"
-                app:layout_constraintBottom_toTopOf="@+id/button2"
-                app:layout_constraintEnd_toEndOf="@+id/button2"
+                app:layout_constraintBottom_toTopOf="@+id/wishList"
+                app:layout_constraintEnd_toEndOf="@+id/wishList"
                 app:layout_constraintHorizontal_bias="0.396"
-                app:layout_constraintStart_toStartOf="@+id/button2"
+                app:layout_constraintStart_toStartOf="@+id/wishList"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/addToFav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
@@ -88,20 +88,20 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
-                app:layout_constraintTop_toBottomOf="@+id/button3" />
+                app:layout_constraintTop_toBottomOf="@+id/alreadyRead" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/alreadyRead"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Already Read"
                 android:textSize="8dp"
                 android:textStyle="bold"
 
-                app:layout_constraintBottom_toTopOf="@+id/button4"
-                app:layout_constraintEnd_toEndOf="@+id/button4"
-                app:layout_constraintStart_toStartOf="@+id/button4"
-                app:layout_constraintTop_toBottomOf="@+id/button2" />
+                app:layout_constraintBottom_toTopOf="@+id/addToFav"
+                app:layout_constraintEnd_toEndOf="@+id/addToFav"
+                app:layout_constraintStart_toStartOf="@+id/addToFav"
+                app:layout_constraintTop_toBottomOf="@+id/wishList" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline2"
