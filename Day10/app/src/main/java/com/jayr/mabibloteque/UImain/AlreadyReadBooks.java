@@ -11,7 +11,7 @@ import com.jayr.mabibloteque.BooksAdapter;
 import com.jayr.mabibloteque.R;
 import com.jayr.mabibloteque.Utility.Utils;
 
-public class AlreadyReadBook extends AppCompatActivity {
+public class AlreadyReadBooks extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private BooksAdapter booksAdapter;
@@ -24,18 +24,18 @@ public class AlreadyReadBook extends AppCompatActivity {
         recyclerView = findViewById(R.id.alreadyReadBooks);
         booksAdapter = new BooksAdapter(this);
 
+        recyclerView.setAdapter(booksAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         booksAdapter.setMyBooks(Utils.getInstance().getAlreadyReadBooks());
-
-        recyclerView.setAdapter(booksAdapter);
 //    recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
     }
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(AlreadyReadBook.this,MainActivity.class);
+        Intent intent = new Intent(AlreadyReadBooks.this,MainActivity.class);
         intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TASK | intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
 
-    ArrayList<Book>myBooks =new ArrayList<>();
+    ArrayList<Book>myBooks ;
 
 
     Context context;
@@ -46,22 +46,22 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
         holder.bookName.setText(Utils.getAllBooks().get(position).getName());
         Glide.with(context)
                 .asBitmap()
-                .load(myBooks.get(position).getImageURL()).
+                .load(Utils.getAllBooks().get(position).getImageURL()).
                 into(holder.imageUrl);
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, myBooks.get(position).getName()+" Book Selected !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, Utils.getAllBooks().get(position).getName()+" Book Selected !", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context,BookAcitivity.class);
-                intent.putExtra("id",myBooks.get(position).getId());
+                intent.putExtra("id",Utils.getAllBooks().get(position).getId());
                 context.startActivity(intent);
 
             }
         });
-        holder.bookAuthor.setText(myBooks.get(position).getAuthor());
+        holder.bookAuthor.setText(Utils.getAllBooks().get(position).getAuthor());
 
-        holder.bookDescription.setText(myBooks.get(position).getShortDesc());
+        holder.bookDescription.setText(Utils.getAllBooks().get(position).getShortDesc());
         holder.expandContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

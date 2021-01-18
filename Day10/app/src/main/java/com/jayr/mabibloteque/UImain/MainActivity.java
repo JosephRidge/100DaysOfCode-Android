@@ -11,7 +11,7 @@ import com.jayr.mabibloteque.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button booksButton;
+    Button booksButton, booksReadBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +19,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         booksButton =findViewById(R.id.btnBooks);
+        booksReadBtn = findViewById(R.id.btnBooksRead);
 
         booksButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this,MyBooks.class);
+                startActivity(i);
+            }
+        });
+        booksReadBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, AlreadyReadBooks.class);
                 startActivity(i);
             }
         });

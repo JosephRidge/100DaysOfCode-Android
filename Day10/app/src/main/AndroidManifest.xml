@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaBibloteque">
-        <activity android:name=".UImain.AlreadyReadBook"></activity>
+        <activity android:name=".UImain.AlreadyReadBooks"></activity>
         <activity android:name=".BookAcitivity" />
         <activity android:name=".UImain.MyBooks" />
         <activity android:name=".UImain.MainActivity">
