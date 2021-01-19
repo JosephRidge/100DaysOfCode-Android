@@ -18,9 +18,8 @@ import com.jayr.mabibloteque.Utility.Utils;
 
 import java.util.ArrayList;
 
-public class MyBooks extends AppCompatActivity implements BooksAdapter.onBookListener  {
+public class MyBooks extends AppCompatActivity implements BooksAdapter.BookActionSelected {
 
-//    ArrayList<Book>myBooks;
     RecyclerView recyclerView;
     BooksAdapter booksAdapter;
 //    Book book;
@@ -33,7 +32,7 @@ public class MyBooks extends AppCompatActivity implements BooksAdapter.onBookLis
         booksAdapter = new BooksAdapter(this,this);
 
 
-        booksAdapter.setMyBooks(Utils.getInstance().getAllBooks());
+        booksAdapter.setMyBooks(Utils.getAllBooks());
         recyclerView.setAdapter(booksAdapter);
 //    recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -41,7 +40,7 @@ public class MyBooks extends AppCompatActivity implements BooksAdapter.onBookLis
     }
 
     @Override
-    public void onBookClick(int position) {
+    public void addToAlreadyRead(Book book) {
 
     }
 }

@@ -1,6 +1,10 @@
 package com.jayr.mabibloteque.Model;
 
-public class Book {
+import com.jayr.mabibloteque.BooksAdapter;
+
+import java.io.Serializable;
+
+public class Book implements Serializable {
     private String id;
     private String name;
     private String author;
@@ -88,4 +92,6 @@ public class Book {
                 ", longDesc='" + longDesc + '\'' +
                 '}';
     }
+
+
 }

@@ -24,13 +24,15 @@ import java.util.ArrayList;
 
 public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
 
-    ArrayList<Book>myBooks=new ArrayList<>();
+    ArrayList<Book>myBooks;
+    BookActionSelected bookActionSelected;
 
 
 
     Context context;
-    public BooksAdapter(Context context) {
+    public BooksAdapter(Context context,BookActionSelected bookActionSelected) {
         this.context = context;
+        this.bookActionSelected = bookActionSelected;
 
     }
 
@@ -45,9 +47,8 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 //        holder.bookName.setText(myBooks.get(position).getName());
-        Book book = myBooks.get(position);
 
-            holder.bookName.setText(myBooks.get(position).getName());
+         holder.bookName.setText(myBooks.get(position).getName());
             Glide.with(context)
                     .asBitmap()
                     .load(myBooks.get(position).getImageURL()).
@@ -92,6 +93,11 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
     public int getItemCount() {
         return Utils.getInstance().getAllBooks().size();
     }
+
+    public interface BookActionSelected {
+        void addToAlreadyRead(Book book);
+    }
+
 
     public void setMyBooks(ArrayList<Book> myBooks) {
         this.myBooks = myBooks;
