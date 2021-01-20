@@ -34,7 +34,7 @@ public class AlreadyReadBooks extends AppCompatActivity {
 
 
         booksAdapter.setMyBooks(Utils.getAlreadyReadBooks());
-        System.out.println(" ******** Jay_R : \n"+Utils.getAlreadyReadBooks()+" \n******** Jay_R : ");
+        System.out.println(" ******** Jay_R : \n"+Utils.getAlreadyReadBooks()+" \n******** Jay_R : ");//debugging purposes
 
 
 //      recyclerView.setLayoutManager(new LinearLayoutManager(this));

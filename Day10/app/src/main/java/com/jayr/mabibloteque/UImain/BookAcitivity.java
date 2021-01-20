@@ -73,6 +73,7 @@ public class BookAcitivity extends AppCompatActivity {
                 bookDescription2.setText(Utils.getInstance().getBookById(position).getLongDesc());
 
                 handleAlreadyRead(selectedBook);
+                handleCurrentReads(selectedBook);
 
             }
         }
@@ -128,7 +129,34 @@ public class BookAcitivity extends AppCompatActivity {
      * Add book to AlreadyRead list
      * @param book
      * */
-      public void handleCurrentReads(Book book){}
+      public void handleCurrentReads(Book book){
+          ArrayList <Book> CurrentReads= Utils.getInstance().getCurrentBookReads();
+
+          Boolean currentRead = false;
+          for (Book b: CurrentReads ) {
+              if (b.getId() == book.getId()){
+                  currentRead = true;
+              }
+          }
+          if(currentRead){
+              btnCurrentReads.setEnabled(false);
+          }else{
+              btnCurrentReads.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View v) {
+                      if (Utils.getInstance().AddToAlreadyAdded(book)){
+                          Toast.makeText(BookAcitivity.this, "Added to Current Reads !",
+                                  Toast.LENGTH_SHORT).show();
+                      }
+                      else
+                      {
+                          Toast.makeText(BookAcitivity.this, "Ooops! Something happened, try again..",
+                                  Toast.LENGTH_SHORT).show();
+                      }
+                  }
+              });
+          }
+      }
 
 
     /*
