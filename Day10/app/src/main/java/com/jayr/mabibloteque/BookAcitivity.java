@@ -20,7 +20,7 @@ import com.jayr.mabibloteque.Utility.Utils;
 
 import java.util.ArrayList;
 
-public class BookAcitivity extends AppCompatActivity  {
+public class BookAcitivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private Book book;
@@ -93,8 +93,8 @@ public class BookAcitivity extends AppCompatActivity  {
   * Add book to AlreadyRead list
   * @param book
   * */
-      public void handleAlreadyRead(Book book){
 
+      public void handleAlreadyRead(Book book){
         ArrayList<Book> alreadyReadBooks = Utils.getInstance().getAlreadyReadBooks();
 
         Boolean alreadyAdded = false;
@@ -110,11 +110,13 @@ public class BookAcitivity extends AppCompatActivity  {
                   @Override
                   public void onClick(View v) {
                      if (Utils.getInstance().AddToAlreadyAdded(book)){
-                         Toast.makeText(BookAcitivity.this, "Book Added !", Toast.LENGTH_SHORT).show();
+                         Toast.makeText(BookAcitivity.this, "Book Added !",
+                                 Toast.LENGTH_SHORT).show();
                }
                      else
                      {
-                         Toast.makeText(BookAcitivity.this, "Ooops! Something happened, try again..", Toast.LENGTH_SHORT).show();
+                         Toast.makeText(BookAcitivity.this, "Ooops! Something happened, try again..",
+                                 Toast.LENGTH_SHORT).show();
                      }
                   }
               });
@@ -145,6 +147,14 @@ public class BookAcitivity extends AppCompatActivity  {
      * */
       public void handleFavouriteBooks(Book book){}
 
-
-
+//
+//    @Override
+//    public void addToAlreadyRead(Book book) {
+//
+//    }
+//
+//    @Override
+//    public void itemClicked(int position) {
+//
+//    }
 }

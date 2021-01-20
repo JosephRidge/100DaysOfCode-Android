@@ -34,7 +34,7 @@ public class Utils {
         }
         if( null == alreadyReadBooks  ) {
             alreadyReadBooks =new ArrayList<>();
-            initData();
+
         }
         if( null == currentBookReads  ) {
             currentBookReads =new ArrayList<>();

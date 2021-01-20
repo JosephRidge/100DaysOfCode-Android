@@ -25,14 +25,11 @@ import java.util.ArrayList;
 public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
 
     ArrayList<Book>myBooks;
-    BookActionSelected bookActionSelected;
-
-
 
     Context context;
-    public BooksAdapter(Context context,BookActionSelected bookActionSelected) {
+
+    public BooksAdapter(Context context) {
         this.context = context;
-        this.bookActionSelected = bookActionSelected;
 
     }
 
@@ -46,7 +43,6 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-//        holder.bookName.setText(myBooks.get(position).getName());
 
          holder.bookName.setText(myBooks.get(position).getName());
             Glide.with(context)
@@ -58,7 +54,9 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, myBooks.get(position).getName()+" Book Selected !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, myBooks.get(position).getName()
+                        +" Book Selected !", Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(context,BookAcitivity.class);
                 intent.putExtra("id",myBooks.get(position).getId());
                 context.startActivity(intent);
@@ -66,8 +64,8 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
             }
         });
         holder.bookAuthor.setText(myBooks.get(position).getAuthor());
-
         holder.bookDescription.setText(Utils.getAllBooks().get(position).getShortDesc());
+
         holder.expandContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,13 +89,12 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return Utils.getInstance().getAllBooks().size();
+        return myBooks.size();
     }
 
-    public interface BookActionSelected {
-        void addToAlreadyRead(Book book);
-    }
-
+    /*
+    * Interface ....
+    * */
 
     public void setMyBooks(ArrayList<Book> myBooks) {
         this.myBooks = myBooks;
@@ -111,6 +108,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
         private ImageView expandContent, minmizeContent;
         private RelativeLayout expandedView;
         private TextView bookAuthor,bookDescription,bookDescription2;
+
         private Button viewReadBooks;
 //        private String shortDesc;
 
@@ -132,8 +130,6 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
             minmizeContent = itemView.findViewById(R.id.minimizedView);
             expandedView = itemView.findViewById(R.id.relLayoutExpanded);
 
-
         }
-
     }
 }

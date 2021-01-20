@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.jayr.mabibloteque.BooksAdapter;
@@ -16,7 +17,7 @@ import com.jayr.mabibloteque.Model.Book;
 import com.jayr.mabibloteque.R;
 import com.jayr.mabibloteque.Utility.Utils;
 
-public class AlreadyReadBooks extends AppCompatActivity implements BooksAdapter.BookActionSelected {
+public class AlreadyReadBooks extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ImageView imageBook;
@@ -32,11 +33,13 @@ public class AlreadyReadBooks extends AppCompatActivity implements BooksAdapter.
 
 
         recyclerView = findViewById(R.id.alreadyReadBooks);
+        booksAdapter = new BooksAdapter(this);
 
-        booksAdapter = new BooksAdapter(this,this);
 
 
         booksAdapter.setMyBooks(Utils.getAlreadyReadBooks());
+        System.out.println(" ******** Jay_R : \n"+Utils.getAlreadyReadBooks()+" \n******** Jay_R : ");
+
 
 //      recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(booksAdapter);
@@ -86,9 +89,6 @@ public class AlreadyReadBooks extends AppCompatActivity implements BooksAdapter.
         startActivity(intent);
     }
 
-    @Override
-    public void addToAlreadyRead(Book book) {
 
-    }
 
 }

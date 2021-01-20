@@ -5,6 +5,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -18,7 +19,7 @@ import com.jayr.mabibloteque.Utility.Utils;
 
 import java.util.ArrayList;
 
-public class MyBooks extends AppCompatActivity implements BooksAdapter.BookActionSelected {
+public class MyBooks extends AppCompatActivity  {
 
     RecyclerView recyclerView;
     BooksAdapter booksAdapter;
@@ -29,7 +30,7 @@ public class MyBooks extends AppCompatActivity implements BooksAdapter.BookActio
         setContentView(R.layout.activity_book);
 
         recyclerView = findViewById(R.id.bookRecyclerView);
-        booksAdapter = new BooksAdapter(this,this);
+        booksAdapter = new BooksAdapter(this);
 
 
         booksAdapter.setMyBooks(Utils.getAllBooks());
@@ -39,8 +40,20 @@ public class MyBooks extends AppCompatActivity implements BooksAdapter.BookActio
 
     }
 
+/*
     @Override
     public void addToAlreadyRead(Book book) {
 
     }
-}
+
+    @Override
+    public void itemClicked(int position) {
+
+        Intent intent = new Intent(this,AlreadyReadBooks.class);
+        intent.putExtra("Name",Utils.getAlreadyReadBooks().get(position).getName());
+        intent.putExtra("ImageUrl",Utils.getAlreadyReadBooks().get(position).getImageURL());
+        intent.putExtra("ShortDescr",Utils.getAlreadyReadBooks().get(position).getShortDesc());
+        startActivity(intent);
+
+    }
+*/}
