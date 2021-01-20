@@ -1,14 +1,16 @@
-package com.jayr.mabibloteque;
+package com.jayr.mabibloteque.UImain;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class CurrentBookRead extends AppCompatActivity {
+import com.jayr.mabibloteque.R;
+
+public class About extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_current_book_read);
+        setContentView(R.layout.activity_about);
     }
 }

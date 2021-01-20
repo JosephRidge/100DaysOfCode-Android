@@ -9,11 +9,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.jayr.mabibloteque.BooksAdapter;
-import com.jayr.mabibloteque.Model.Book;
 import com.jayr.mabibloteque.R;
 import com.jayr.mabibloteque.Utility.Utils;
 

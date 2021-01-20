@@ -1,7 +1,5 @@
 package com.jayr.mabibloteque.Model;
 
-import com.jayr.mabibloteque.BooksAdapter;
-
 import java.io.Serializable;
 
 public class Book implements Serializable {

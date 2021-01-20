@@ -1,11 +1,10 @@
-package com.jayr.mabibloteque;
+package com.jayr.mabibloteque.UImain;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -14,8 +13,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.jayr.mabibloteque.Model.Book;
-import com.jayr.mabibloteque.UImain.AlreadyReadBooks;
-import com.jayr.mabibloteque.UImain.MainActivity;
+import com.jayr.mabibloteque.R;
 import com.jayr.mabibloteque.Utility.Utils;
 
 import java.util.ArrayList;

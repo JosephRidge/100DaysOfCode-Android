@@ -1,23 +1,13 @@
 package com.jayr.mabibloteque.UImain;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.jayr.mabibloteque.BooksAdapter;
-import com.jayr.mabibloteque.Model.Book;
 import com.jayr.mabibloteque.R;
 import com.jayr.mabibloteque.Utility.Utils;
-
-import java.util.ArrayList;
 
 public class MyBooks extends AppCompatActivity  {
 

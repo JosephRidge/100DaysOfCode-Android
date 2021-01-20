@@ -1,8 +1,10 @@
-package com.jayr.mabibloteque;
+package com.jayr.mabibloteque.UImain;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.jayr.mabibloteque.R;
 
 public class FavouriteBooks extends AppCompatActivity {
 

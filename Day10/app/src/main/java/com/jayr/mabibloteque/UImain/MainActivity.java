@@ -7,10 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.jayr.mabibloteque.About;
-import com.jayr.mabibloteque.BookWishList;
-import com.jayr.mabibloteque.CurrentBookRead;
-import com.jayr.mabibloteque.FavouriteBooks;
 import com.jayr.mabibloteque.R;
 import com.jayr.mabibloteque.Utility.Utils;
 

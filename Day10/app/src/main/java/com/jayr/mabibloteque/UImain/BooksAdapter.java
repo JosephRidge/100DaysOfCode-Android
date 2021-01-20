@@ -1,4 +1,4 @@
-package com.jayr.mabibloteque;
+package com.jayr.mabibloteque.UImain;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,6 +18,7 @@ import androidx.transition.TransitionManager;
 
 import com.bumptech.glide.Glide;
 import com.jayr.mabibloteque.Model.Book;
+import com.jayr.mabibloteque.R;
 import com.jayr.mabibloteque.Utility.Utils;
 
 import java.util.ArrayList;
