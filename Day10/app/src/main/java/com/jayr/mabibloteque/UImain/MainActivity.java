@@ -21,7 +21,10 @@ public class MainActivity extends AppCompatActivity {
 
         booksButton =findViewById(R.id.btnBooks);
         booksReadBtn = findViewById(R.id.btnBooksRead);
-
+        booksCurrentBtn = findViewById(R.id.btnBooksRead);
+        booksWishList = findViewById(R.id.btnBooksRead);
+        booksFavourite = findViewById(R.id.btnBooksRead);
+        aboutApp = findViewById(R.id.btnBooksRead);
         booksButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

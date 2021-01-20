@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="100dp"
     tools:context=".UImain.MainActivity">
 
     <TextView
@@ -14,13 +15,12 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/start"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Books"
+        android:text="All Books"
         android:textStyle="bold"
         android:layout_marginTop="15dp"
         android:id="@+id/btnBooks"
@@ -31,12 +31,52 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Books Read "
+        android:text="Current Book  "
         android:textStyle="bold"
         android:layout_marginTop="15dp"
         android:layout_below="@id/btnBooks"
         android:layout_centerHorizontal="true"
         android:backgroundTint="@color/orange"
-        android:id="@+id/btnBooksRead"/>
+        android:id="@+id/btnBooksCurrentRead"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already Read Books "
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/btnBooksCurrentRead"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/orange"
+        android:id="@+id/btnAlreadyRead"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Books WishList "
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/btnAlreadyRead"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/orange"
+        android:id="@+id/btnBookWishlist"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Favourite Books "
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/btnBookWishlist"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/orange"
+        android:id="@+id/btnBooksFavourite"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About "
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/btnBooksFavourite"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/orange"
+        android:id="@+id/btnAbout"/>
 
 </RelativeLayout>
