@@ -1,6 +1,8 @@
 package com.jayr.mabibloteque.UImain;
 
+import android.app.AlertDialog.Builder;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.transition.TransitionManager;
@@ -93,13 +96,28 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
                 holder.deleteItem.setOnClickListener(new View.OnClickListener() {
                   @Override
                   public void onClick(View v) {
-                      if(Utils.getInstance().RemoveFromCurrentReads(myBooks.get(position))){
-                          Toast.makeText(context, "Book Removed from current Reads !", Toast.LENGTH_SHORT).show();
-                          notifyDataSetChanged();
+                      AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+                      alertDialog.setMessage("Are you sure your would like to remove this from your Current Books List ?");
+                      alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                          @Override
+                          public void onClick(DialogInterface dialog, int which) {
+                              if(Utils.getInstance().RemoveFromCurrentReads(myBooks.get(position))){
+                                  Toast.makeText(context, "Book Removed from current Reads !", Toast.LENGTH_SHORT).show();
+                                  notifyDataSetChanged();
 
-                      }else{
-                          Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
-                      }
+                              }else{
+                                  Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
+                              }
+                          }
+                      });
+                      alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                          @Override
+                          public void onClick(DialogInterface dialog, int which) {
+                              Toast.makeText(context, "Great Choice..", Toast.LENGTH_SHORT).show();
+
+                          }
+                      });
+
                   }
               });
 
@@ -109,28 +127,58 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
                 holder.deleteItem.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(Utils.getInstance().RemoveFromAlreadyAdded(myBooks.get(position))){
-                            Toast.makeText(context, "Book Removed from Already Read Books !", Toast.LENGTH_SHORT).show();
-                            notifyDataSetChanged();
+                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+                        alertDialog.setMessage("Are you sure your would like to remove this from your Already Read Books List ?");
+                        alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if(Utils.getInstance().RemoveFromAlreadyAdded(myBooks.get(position))){
+                                    Toast.makeText(context, "Book Removed from Already Read Books !", Toast.LENGTH_SHORT).show();
+                                    notifyDataSetChanged();
 
-                        }else{
-                            Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
-                        }
+                                }else{
+                                    Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                        alertDialog.setPositiveButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(context, "Great Choice..", Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
                     }
                 });
             }
             else if(parentActivity.equals("bookWishList")){
                 holder.deleteItem.setVisibility(View.VISIBLE);
                 holder.deleteItem.setOnClickListener(new View.OnClickListener() {
+
                     @Override
                     public void onClick(View v) {
-                        if(Utils.getInstance().RemoveFromWishList(myBooks.get(position))){
-                            Toast.makeText(context, "Book Removed from Wish List !", Toast.LENGTH_SHORT).show();
-                            notifyDataSetChanged();
+                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+                        alertDialog.setMessage("Are you sure your would like to remove this from your Book Wish List ?");
+                        alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if(Utils.getInstance().RemoveFromWishList(myBooks.get(position))){
+                                    Toast.makeText(context, "Book Removed from Wish List !", Toast.LENGTH_SHORT).show();
+                                    notifyDataSetChanged();
 
-                        }else{
-                            Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
-                        }
+                                }else{
+                                    Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                        alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(context, "Great Choice..", Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
+
                     }
                 });
             }
@@ -139,13 +187,26 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
                 holder.deleteItem.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(Utils.getInstance().RemoveFromFavourites(myBooks.get(position))){
-                            Toast.makeText(context, "Book Removed from Favorites !", Toast.LENGTH_SHORT).show();
-                            notifyDataSetChanged();
+                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+                        alertDialog.setMessage("Are you sure your would like to remove this from your Favourites ?");
+                        alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if(Utils.getInstance().RemoveFromFavourites(myBooks.get(position))){
+                                    Toast.makeText(context, "Book Removed from Favorites !", Toast.LENGTH_SHORT).show();
+                                    notifyDataSetChanged();
 
-                        }else{
-                            Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
-                        }
+                                }else{
+                                    Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                       alertDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                           @Override
+                           public void onClick(DialogInterface dialog, int which) {
+
+                           }
+                       });
                     }
                 });
             }
