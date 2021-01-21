@@ -157,6 +157,19 @@ public class Utils {
         return favouriteBooks.add(book);
     }
 
+    public Boolean RemoveFromFavourites(Book book){
+        return favouriteBooks.remove(book);
+    }
+    public Boolean RemoveFromAlreadyAdded(Book book){
+        return alreadyReadBooks.remove(book);
+    }
+    public Boolean RemoveFromCurrentReads(Book book){
+        return currentBookReads.remove(book);
+    }
+    public Boolean RemoveFromWishList(Book book){
+        return bookWishList.remove(book);
+    }
+
 
     public Book getBookById(String id){
         for (Book b:allBooks) {

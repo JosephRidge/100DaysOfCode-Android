@@ -20,7 +20,7 @@ public class BookWishList extends AppCompatActivity {
 
 
         recyclerView = findViewById(R.id.booksWishList);
-        booksAdapter = new BooksAdapter(this);
+        booksAdapter = new BooksAdapter(this,"bookWishList");
 
 
 

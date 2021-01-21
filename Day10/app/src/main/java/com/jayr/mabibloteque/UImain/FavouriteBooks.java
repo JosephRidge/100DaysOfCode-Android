@@ -19,7 +19,7 @@ public class FavouriteBooks extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favourite_books);
         recyclerView = findViewById(R.id.booksFavouriteList);
-        booksAdapter = new BooksAdapter(this);
+        booksAdapter = new BooksAdapter(this,"favouriteBooks");
 
 
 

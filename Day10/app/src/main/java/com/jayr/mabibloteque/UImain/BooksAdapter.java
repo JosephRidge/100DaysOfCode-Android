@@ -28,10 +28,11 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
     ArrayList<Book>myBooks;
 
     Context context;
+    String parentActivity;
 
-    public BooksAdapter(Context context) {
+    public BooksAdapter(Context context, String parentActivity) {
         this.context = context;
-
+        this.parentActivity = parentActivity;
     }
 
     @NonNull
@@ -84,7 +85,66 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
 
             }
         });
+            if(parentActivity.equals("allBooks")){
+                holder.deleteItem.setVisibility(View.GONE);
 
+            }else if(parentActivity.equals("currentBooks")){
+                holder.deleteItem.setVisibility(View.VISIBLE);
+                holder.deleteItem.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View v) {
+                      if(Utils.getInstance().RemoveFromCurrentReads(myBooks.get(position))){
+                          Toast.makeText(context, "Book Removed from current Reads !", Toast.LENGTH_SHORT).show();
+
+                      }else{
+                          Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
+                      }
+                  }
+              });
+
+            }
+            else if(parentActivity.equals("alreadyReadBooks")){
+                holder.deleteItem.setVisibility(View.VISIBLE);
+                holder.deleteItem.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(Utils.getInstance().RemoveFromAlreadyAdded(myBooks.get(position))){
+                            Toast.makeText(context, "Book Removed from Already Read Books !", Toast.LENGTH_SHORT).show();
+
+                        }else{
+                            Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+            else if(parentActivity.equals("bookWishList")){
+                holder.deleteItem.setVisibility(View.VISIBLE);
+                holder.deleteItem.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(Utils.getInstance().RemoveFromWishList(myBooks.get(position))){
+                            Toast.makeText(context, "Book Removed from Wish List !", Toast.LENGTH_SHORT).show();
+
+                        }else{
+                            Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+            else if(parentActivity.equals("favouriteBooks")){
+                holder.deleteItem.setVisibility(View.VISIBLE);
+                holder.deleteItem.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(Utils.getInstance().RemoveFromFavourites(myBooks.get(position))){
+                            Toast.makeText(context, "Book Removed from Favorites !", Toast.LENGTH_SHORT).show();
+
+                        }else{
+                            Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
 
     }
 
@@ -111,6 +171,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
         private TextView bookAuthor,bookDescription,bookDescription2;
 
         private Button viewReadBooks;
+        private Button deleteItem;
 //        private String shortDesc;
 
 //        private String longDesc;
@@ -130,6 +191,8 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
             expandContent = itemView.findViewById(R.id.expandView);
             minmizeContent = itemView.findViewById(R.id.minimizedView);
             expandedView = itemView.findViewById(R.id.relLayoutExpanded);
+
+            deleteItem = itemView.findViewById(R.id.deleteItem);
 
         }
     }

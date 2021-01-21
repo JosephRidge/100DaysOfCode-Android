@@ -20,7 +20,7 @@ public class CurrentBookRead extends AppCompatActivity {
 
 
         recyclerView = findViewById(R.id.currentReading);
-        booksAdapter = new BooksAdapter(this);
+        booksAdapter = new BooksAdapter(this,"currentBooks");
 
 
 

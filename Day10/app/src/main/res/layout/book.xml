@@ -101,6 +101,16 @@
             android:src="@drawable/ic_arrow_up_24"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true" />
+        <TextView
+            android:id="@+id/deleteItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/pink"
+            android:layout_toLeftOf="@+id/minimizedView"
+            android:layout_below="@id/shortDesc"
+            />
 
     </RelativeLayout>
 
