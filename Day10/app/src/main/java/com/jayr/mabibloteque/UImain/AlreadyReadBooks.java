@@ -29,7 +29,7 @@ public class AlreadyReadBooks extends AppCompatActivity {
 
 
         recyclerView = findViewById(R.id.alreadyReadBooks);
-        booksAdapter = new BooksAdapter(this);
+        booksAdapter = new BooksAdapter(this,"alreadyReadBooks");
 
 
 

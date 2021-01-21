@@ -95,6 +95,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
                   public void onClick(View v) {
                       if(Utils.getInstance().RemoveFromCurrentReads(myBooks.get(position))){
                           Toast.makeText(context, "Book Removed from current Reads !", Toast.LENGTH_SHORT).show();
+                          notifyDataSetChanged();
 
                       }else{
                           Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
@@ -110,6 +111,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
                     public void onClick(View v) {
                         if(Utils.getInstance().RemoveFromAlreadyAdded(myBooks.get(position))){
                             Toast.makeText(context, "Book Removed from Already Read Books !", Toast.LENGTH_SHORT).show();
+                            notifyDataSetChanged();
 
                         }else{
                             Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
@@ -124,6 +126,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
                     public void onClick(View v) {
                         if(Utils.getInstance().RemoveFromWishList(myBooks.get(position))){
                             Toast.makeText(context, "Book Removed from Wish List !", Toast.LENGTH_SHORT).show();
+                            notifyDataSetChanged();
 
                         }else{
                             Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
@@ -138,6 +141,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
                     public void onClick(View v) {
                         if(Utils.getInstance().RemoveFromFavourites(myBooks.get(position))){
                             Toast.makeText(context, "Book Removed from Favorites !", Toast.LENGTH_SHORT).show();
+                            notifyDataSetChanged();
 
                         }else{
                             Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
@@ -171,7 +175,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
         private TextView bookAuthor,bookDescription,bookDescription2;
 
         private Button viewReadBooks;
-        private Button deleteItem;
+        private TextView deleteItem;
 //        private String shortDesc;
 
 //        private String longDesc;
