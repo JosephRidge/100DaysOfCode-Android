@@ -19,7 +19,7 @@ public class CurrentBookRead extends AppCompatActivity {
         setContentView(R.layout.activity_current_book_read);
 
 
-        recyclerView = findViewById(R.id.alreadyReadBooks);
+        recyclerView = findViewById(R.id.currentReading);
         booksAdapter = new BooksAdapter(this);
 
 

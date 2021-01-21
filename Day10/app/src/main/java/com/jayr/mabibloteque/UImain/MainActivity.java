@@ -20,11 +20,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         booksButton =findViewById(R.id.btnBooks);
-        booksReadBtn = findViewById(R.id.btnBooksRead);
-        booksCurrentBtn = findViewById(R.id.btnBooksRead);
-        booksWishList = findViewById(R.id.btnBooksRead);
-        booksFavourite = findViewById(R.id.btnBooksRead);
-        aboutApp = findViewById(R.id.btnBooksRead);
+        booksReadBtn = findViewById(R.id.btnAlreadyRead);
+        booksCurrentBtn = findViewById(R.id.btnBooksCurrentRead);
+        booksWishList = findViewById(R.id.btnBookWishlist);
+        booksFavourite = findViewById(R.id.btnBooksFavourite);
+        aboutApp = findViewById(R.id.btnAbout);
+
         booksButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

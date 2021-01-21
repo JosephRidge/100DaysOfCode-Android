@@ -72,6 +72,9 @@ public class BookAcitivity extends AppCompatActivity {
                 bookName2.setText(Utils.getInstance().getBookById(position).getName());
                 bookDescription2.setText(Utils.getInstance().getBookById(position).getLongDesc());
 
+                switch (int id){
+
+                }
                 handleAlreadyRead(selectedBook);
                 handleCurrentReads(selectedBook);
 
