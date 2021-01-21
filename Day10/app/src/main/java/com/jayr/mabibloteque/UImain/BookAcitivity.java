@@ -167,7 +167,7 @@ public class BookAcitivity extends AppCompatActivity {
               btnCurrentReads.setOnClickListener(new View.OnClickListener() {
                   @Override
                   public void onClick(View v) {
-                      if (Utils.getInstance().AddToAlreadyAdded(book)){
+                      if (Utils.getInstance().AddToCurrentReads(book)){
                           Toast.makeText(BookAcitivity.this, "Added to Current Reads !",
                                   Toast.LENGTH_SHORT).show();
                       }
