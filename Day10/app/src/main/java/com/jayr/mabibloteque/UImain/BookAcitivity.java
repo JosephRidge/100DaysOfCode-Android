@@ -72,12 +72,33 @@ public class BookAcitivity extends AppCompatActivity {
                 bookName2.setText(Utils.getInstance().getBookById(position).getName());
                 bookDescription2.setText(Utils.getInstance().getBookById(position).getLongDesc());
 
-                switch (int id){
 
-                }
-                handleAlreadyRead(selectedBook);
-                handleCurrentReads(selectedBook);
-
+//
+//                handleCurrentReads(selectedBook);
+                btnAddToAlreadyRead.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        handleAlreadyRead(selectedBook);
+                    }
+                });
+                btnCurrentReads.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        handleCurrentReads(selectedBook);
+                    }
+                });
+                btnAddtoFavourites.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        handleWishList(selectedBook);
+                    }
+                });
+                btnWishList.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        handleFavouriteBooks(selectedBook);
+                    }
+                });
             }
         }
     }
@@ -88,7 +109,6 @@ public class BookAcitivity extends AppCompatActivity {
             startActivity(intent);
 
         }
-
 
   /*
   * Enable Disable button Add to AlreadyREAD
@@ -175,6 +195,8 @@ public class BookAcitivity extends AppCompatActivity {
      * @param book
      * */
       public void handleFavouriteBooks(Book book){}
+
+
 
 //
 //    @Override
