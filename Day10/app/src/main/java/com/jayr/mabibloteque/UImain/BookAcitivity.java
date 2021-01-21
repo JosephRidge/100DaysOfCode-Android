@@ -187,14 +187,68 @@ public class BookAcitivity extends AppCompatActivity {
      * Add book to AlreadyRead list
      * @param book
      * */
-      public void handleWishList(Book book){}
+      public void handleWishList(Book book){
+          ArrayList <Book> BookWishList= Utils.getInstance().getBookWishList();
+
+          Boolean wishlist = false;
+          for (Book b: BookWishList ) {
+              if (b.getId() == book.getId()){
+                  wishlist = true;
+              }
+          }
+          if(wishlist){
+              btnWishList.setEnabled(false);
+          }else{
+              btnWishList.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View v) {
+                      if (Utils.getInstance().AddToWishList(book)){
+                          Toast.makeText(BookAcitivity.this, "Added to WishList !",
+                                  Toast.LENGTH_SHORT).show();
+                      }
+                      else
+                      {
+                          Toast.makeText(BookAcitivity.this, "Ooops! Something happened, try again..",
+                                  Toast.LENGTH_SHORT).show();
+                      }
+                  }
+              });
+          }
+      }
 
     /*
      * Enable Disable Add to FavouriteBooks
      * Add book to AlreadyRead list
      * @param book
      * */
-      public void handleFavouriteBooks(Book book){}
+      public void handleFavouriteBooks(Book book){
+          ArrayList <Book> BookWishList= Utils.getInstance().getFavouriteBooks();
+
+          Boolean favorites = false;
+          for (Book b: BookWishList ) {
+              if (b.getId() == book.getId()){
+                  favorites = true;
+              }
+          }
+          if(favorites){
+              btnAddtoFavourites.setEnabled(false);
+          }else{
+              btnAddtoFavourites.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View v) {
+                      if (Utils.getInstance().AddToFavourites(book)){
+                          Toast.makeText(BookAcitivity.this, "Added to WishList !",
+                                  Toast.LENGTH_SHORT).show();
+                      }
+                      else
+                      {
+                          Toast.makeText(BookAcitivity.this, "Ooops! Something happened, try again..",
+                                  Toast.LENGTH_SHORT).show();
+                      }
+                  }
+              });
+          }
+      }
 
 
 
