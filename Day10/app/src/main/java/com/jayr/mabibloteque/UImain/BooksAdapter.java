@@ -104,7 +104,6 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
                               if(Utils.getInstance().RemoveFromCurrentReads(myBooks.get(position))){
                                   Toast.makeText(context, "Book Removed from current Reads !", Toast.LENGTH_SHORT).show();
                                   notifyDataSetChanged();
-
                               }else{
                                   Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
                               }
@@ -135,7 +134,6 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder>{
                                 if(Utils.getInstance().RemoveFromAlreadyAdded(myBooks.get(position))){
                                     Toast.makeText(context, "Book Removed from Already Read Books !", Toast.LENGTH_SHORT).show();
                                     notifyDataSetChanged();
-
                                 }else{
                                     Toast.makeText(context, "Opps! Something went wrong..", Toast.LENGTH_SHORT).show();
                                 }
