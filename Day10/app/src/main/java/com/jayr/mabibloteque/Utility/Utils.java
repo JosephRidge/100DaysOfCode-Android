@@ -16,7 +16,8 @@ public class Utils {
     private static Utils instance;
 
 //    Makes sure there exists an instance of the class and if already instantiated we return the instance
-//TODO: Create SharedPreference, add contect in the utils constructor and instance
+//TODO: Create SharedPreference, add contect in the utils constructor and instance,
+//    we will initalize a new arralist  then convert it to json using the GSON library (Serializing ) then adding it to the shared prefrences...
 
 
     public static Utils getInstance() {
