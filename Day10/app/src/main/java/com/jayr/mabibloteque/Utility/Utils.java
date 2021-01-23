@@ -16,6 +16,8 @@ public class Utils {
     private static Utils instance;
 
 //    Makes sure there exists an instance of the class and if already instantiated we return the instance
+//TODO: Create SharedPreference, add contect in the utils constructor and instance
+
 
     public static Utils getInstance() {
         if(null!=instance){
