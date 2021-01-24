@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +14,7 @@ private EditText customerName;
 private EditText customerAge;
 private  Button viewCustomers, addCustomer;
 private CustomerModel customerModel;
+private Switch isActive ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +23,7 @@ private CustomerModel customerModel;
     customerAge = findViewById(R.id.customerAge);
     viewCustomers = findViewById(R.id.viewAllCustomers);
     addCustomer = findViewById(R.id.AddNewCustomer);
-    customerModel = new CustomerModel();
+    isActive  = findViewById(R.id.activeCustomerSwitch);
 
     viewCustomers.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -32,7 +34,14 @@ private CustomerModel customerModel;
     addCustomer.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Toast.makeText(MainActivity.this, "Add Customer", Toast.LENGTH_SHORT).show();
+//            Integer ID, String name, Integer age, Boolean isActive
+            try {
+            customerModel = new CustomerModel(-1,customerName.getText().toString(),Integer.parseInt(customerAge.getText().toString()),isActive.isChecked());
+            Toast.makeText(MainActivity.this, customerModel.toString(), Toast.LENGTH_SHORT).show();
+        }
+        catch (Exception e){
+            Toast.makeText(MainActivity.this, "Errro Creating Customer", Toast.LENGTH_SHORT).show();
+            }
         }
     });
     }

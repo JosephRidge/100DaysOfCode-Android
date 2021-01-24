@@ -13,8 +13,7 @@ public class CustomerModel {
         this.isActive = isActive;
     }
 
-    public CustomerModel() {
-    }
+
 
     public Integer getID() {
         return ID;
