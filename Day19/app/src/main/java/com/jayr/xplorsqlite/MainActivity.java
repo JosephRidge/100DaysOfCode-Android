@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 private EditText customerName;
 private EditText customerAge;
 private  Button viewCustomers, addCustomer;
-private CustomerModel customerModel;
+
 private Switch isActive ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +35,20 @@ private Switch isActive ;
         @Override
         public void onClick(View v) {
 //            Integer ID, String name, Integer age, Boolean isActive
+             CustomerModel customerModel;
             try {
             customerModel = new CustomerModel(-1,customerName.getText().toString(),Integer.parseInt(customerAge.getText().toString()),isActive.isChecked());
             Toast.makeText(MainActivity.this, customerModel.toString(), Toast.LENGTH_SHORT).show();
         }
         catch (Exception e){
             Toast.makeText(MainActivity.this, "Errro Creating Customer", Toast.LENGTH_SHORT).show();
-            }
+            customerModel = new CustomerModel(-1,"null",0,false);
+
+        }
+
+            DataBaseHelper dataBaseHelper = new DataBaseHelper(MainActivity.this);
+            boolean select =  dataBaseHelper.addOne(customerModel);
+            Toast.makeText(MainActivity.this, "Success == "+select, Toast.LENGTH_SHORT).show();
         }
     });
     }
