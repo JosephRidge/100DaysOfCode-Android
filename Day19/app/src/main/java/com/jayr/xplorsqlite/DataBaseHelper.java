@@ -2,10 +2,14 @@ package com.jayr.xplorsqlite;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
 
@@ -61,4 +65,33 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             return false;
         } else { return true; }
     }
+
+    public List<CustomerModel>getEveryOne(){
+        List<CustomerModel>returnList = new ArrayList<>();
+        String queryCustomers = "SELECT * FROM "+CUSTOMER_TABLE;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+
+        Cursor cursor = db.rawQuery(queryCustomers,null);
+        if(cursor.moveToFirst()){
+            do{
+                int customerID = cursor.getInt(0);
+                String customerName = cursor.getString(1);
+                int customerAge = cursor.getInt(2);
+                Boolean isActive = cursor.getInt(3) == 1 ? true: false;
+                CustomerModel customerModel = new CustomerModel(customerID,customerName,customerAge,isActive);
+                returnList.add(customerModel);
+            }
+            while(cursor.moveToNext());
+
+        }else{
+//
+        }
+        db.close();
+        cursor.close();
+        return returnList;
+    }
+
+
+
 }

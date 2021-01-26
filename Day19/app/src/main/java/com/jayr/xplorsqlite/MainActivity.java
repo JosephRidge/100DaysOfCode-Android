@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 private EditText customerName;
 private EditText customerAge;
@@ -29,6 +31,9 @@ private Switch isActive ;
         @Override
         public void onClick(View v) {
             Toast.makeText(MainActivity.this, "View All Customers", Toast.LENGTH_SHORT).show();
+            DataBaseHelper dataBaseHelper = new DataBaseHelper(MainActivity.this);
+            List<CustomerModel> everyOne = dataBaseHelper.getEveryOne();
+
         }
     });
     addCustomer.setOnClickListener(new View.OnClickListener() {
@@ -41,11 +46,10 @@ private Switch isActive ;
             Toast.makeText(MainActivity.this, customerModel.toString(), Toast.LENGTH_SHORT).show();
         }
         catch (Exception e){
-            Toast.makeText(MainActivity.this, "Errro Creating Customer", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Errrorr Creating Customer", Toast.LENGTH_SHORT).show();
             customerModel = new CustomerModel(-1,"null",0,false);
 
         }
-
             DataBaseHelper dataBaseHelper = new DataBaseHelper(MainActivity.this);
             boolean select =  dataBaseHelper.addOne(customerModel);
             Toast.makeText(MainActivity.this, "Success == "+select, Toast.LENGTH_SHORT).show();
