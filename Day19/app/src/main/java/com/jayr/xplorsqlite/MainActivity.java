@@ -33,6 +33,7 @@ private Switch isActive ;
             Toast.makeText(MainActivity.this, "View All Customers", Toast.LENGTH_SHORT).show();
             DataBaseHelper dataBaseHelper = new DataBaseHelper(MainActivity.this);
             List<CustomerModel> everyOne = dataBaseHelper.getEveryOne();
+            Toast.makeText(MainActivity.this, everyOne.toString(), Toast.LENGTH_SHORT).show();
 
         }
     });
@@ -42,10 +43,13 @@ private Switch isActive ;
 //            Integer ID, String name, Integer age, Boolean isActive
              CustomerModel customerModel;
             try {
+
             customerModel = new CustomerModel(-1,customerName.getText().toString(),Integer.parseInt(customerAge.getText().toString()),isActive.isChecked());
             Toast.makeText(MainActivity.this, customerModel.toString(), Toast.LENGTH_SHORT).show();
+
         }
         catch (Exception e){
+
             Toast.makeText(MainActivity.this, "Errrorr Creating Customer", Toast.LENGTH_SHORT).show();
             customerModel = new CustomerModel(-1,"null",0,false);
 
