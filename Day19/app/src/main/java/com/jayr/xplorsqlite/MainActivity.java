@@ -57,7 +57,8 @@ import java.util.List;
 
                 customerModel = new CustomerModel(-1,customerName.getText().toString(),Integer.parseInt(customerAge.getText().toString()),isActive.isChecked());
                 Toast.makeText(MainActivity.this, customerModel.toString(), Toast.LENGTH_SHORT).show();
-                showDataOnList(dataBaseHelper);
+
+
 
             }
         catch (Exception e){
@@ -72,6 +73,7 @@ import java.util.List;
 
         }
     });
+    showDataOnList(dataBaseHelper);
     }
 
         private void showDataOnList(DataBaseHelper dataBaseHelper) {
