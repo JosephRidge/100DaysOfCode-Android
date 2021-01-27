@@ -87,7 +87,7 @@
     <ListView
         android:id="@+id/Customers"
         android:layout_width="366dp"
-        android:layout_height="486dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/AddNewCustomer"
         app:layout_constraintHorizontal_bias="0.413"
