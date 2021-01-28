@@ -74,7 +74,7 @@ import java.util.List;
             CustomerModel clickedItem = (CustomerModel) parent.getItemAtPosition(position);
             dataBaseHelper.deleteOneOnClick(clickedItem);
             Toast.makeText(MainActivity.this, "Deleted : "
-                    +, Toast.LENGTH_SHORT).show();
+                    +clickedItem.toString(), Toast.LENGTH_SHORT).show();
 
         }
     });
