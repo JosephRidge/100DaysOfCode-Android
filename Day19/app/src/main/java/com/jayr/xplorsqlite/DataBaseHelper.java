@@ -52,6 +52,20 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
+    public Boolean deleteOneOnClick(CustomerModel customerModel){
+
+    SQLiteDatabase db = this.getWritableDatabase();
+    String queryString = "DELETE FROM"+ CUSTOMER_TABLE + " WHERE " +COLUMN_CUSTOMER_ID + " = "+customerModel.getID();
+    Cursor cursor = db.rawQuery(queryString, null);
+
+        if(cursor.moveToFirst()){
+           return true;
+        }else{
+
+        return false;
+
+        }
+    }
 
     public boolean addOne(CustomerModel customerModel) {
         SQLiteDatabase db = this.getWritableDatabase(); // insert data method
