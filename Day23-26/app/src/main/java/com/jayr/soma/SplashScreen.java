@@ -16,6 +16,7 @@ public class SplashScreen extends Activity {
         super.onCreate(savedInstanceState);
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);// clears status bar
         setContentView(R.layout.splash_screen);
+        launchSplashScreen();
     }
         public void launchSplashScreen(){
             new Handler().postDelayed(new Runnable() {
