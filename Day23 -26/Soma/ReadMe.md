@@ -8,11 +8,14 @@ Concepts :
 - SQLite DB
 - Splash Screen
 
+Objectives:
+- Store Books in Local storage (SQLite DB)
+- show overview of book upon click
+- prompt user if they would like to read
+
 Attributes :
-for the Logo :
+Splash Screen Icon -
 <div>Icons made by <a href="https://www.flaticon.com/authors/itim2101" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-
-
 
 
 
