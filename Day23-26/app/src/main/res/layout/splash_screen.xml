@@ -9,19 +9,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        android:textSize="46dp"
+        android:textStyle="bold"
         android:text="Soma"
-        android:textSize="18dp"
-        android:background="@drawable/ic_soma"
-        android:layout_marginTop="200dp"
-        android:textStyle="bold"/>
+        android:textColor="@color/white"
+        />
+
     <ImageView
-    android:layout_width="150dp"
-    android:layout_height="200dp"
-        android:layout_margin="30dp"
+        android:id="@+id/AppLogo"
+        android:layout_width="167dp"
+        android:layout_height="237dp"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_below="@+id/AppTitle"
-    android:src="@drawable/ic_audio_book_book_music_player_headphone_learning_1_"/>
+        android:layout_below="@id/AppTitle"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/ic_audio_book_book_music_player_headphone_learning_1_" />
 
 
 </RelativeLayout>
