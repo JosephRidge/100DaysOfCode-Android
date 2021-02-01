@@ -6,14 +6,14 @@ public class E_Book {
     private String bookTitle;
     private String shortBookDesc;
     private ImageView imageview;
-    private String Chapters;
+    private String bookLiterature;
 
 
-    public E_Book(String bookTitle, String shortBookDesc, ImageView imageview, String chapters) {
+    public E_Book(String bookTitle, String shortBookDesc, ImageView imageview, String bookLiterature) {
         this.bookTitle = bookTitle;
         this.shortBookDesc = shortBookDesc;
         this.imageview = imageview;
-        Chapters = chapters;
+        this.bookLiterature = bookLiterature;
     }
 
     public String getBookTitle() {
@@ -40,12 +40,12 @@ public class E_Book {
         this.imageview = imageview;
     }
 
-    public String getChapters() {
-        return Chapters;
+    public String getBookLiterature() {
+        return bookLiterature;
     }
 
-    public void setChapters(String chapters) {
-        Chapters = chapters;
+    public void setBookLiterature(String bookLiterature) {
+        this.bookLiterature = bookLiterature;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class E_Book {
                 "bookTitle='" + bookTitle + '\'' +
                 ", shortBookDesc='" + shortBookDesc + '\'' +
                 ", imageview=" + imageview +
-                ", Chapters='" + Chapters + '\'' +
+                ", Chapters='" + bookLiterature + '\'' +
                 '}';
     }
 }

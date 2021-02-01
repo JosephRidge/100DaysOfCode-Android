@@ -2,6 +2,7 @@ package com.jayr.soma;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -72,7 +73,11 @@ public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder
     {
-        public ViewHolder(@NonNull View itemView) {
+        private String bookLiterature;
+        private String bookTitle;
+        private String shortBookDesc;
+        private ImageView imageview;
+        private String Chapters;        public ViewHolder(@NonNull View itemView) {
             super(itemView);
         }
     }
