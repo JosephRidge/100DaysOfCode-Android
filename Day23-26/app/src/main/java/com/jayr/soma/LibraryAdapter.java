@@ -77,8 +77,11 @@ public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.ViewHold
         private String bookTitle;
         private String shortBookDesc;
         private ImageView imageview;
-        private String Chapters;        public ViewHolder(@NonNull View itemView) {
+        private String Chapters;
+
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
         }
     }
 

@@ -9,7 +9,9 @@
         android:roundIcon="@drawable/ic_audio_book_book_music_player_headphone_learning"
         android:supportsRtl="true"
         android:theme="@style/Theme.Soma">
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".ReadBook"></activity>
+        <activity android:name=".BookActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
