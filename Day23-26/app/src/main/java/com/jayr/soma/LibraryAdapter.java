@@ -1,14 +1,13 @@
 package com.jayr.soma;
 
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class LibraryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    public class ViewHolder
-    {}
+public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.ViewHolder> {
 
     /**
      * Called when RecyclerView needs a new {@link ViewHolder} of the given type to represent
@@ -32,7 +31,7 @@ public class LibraryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
      */
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return null;
     }
 
@@ -57,7 +56,7 @@ public class LibraryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
      * @param position The position of the item within the adapter's data set.
      */
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
     }
 
@@ -70,4 +69,12 @@ public class LibraryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public int getItemCount() {
         return 0;
     }
+
+    public class ViewHolder extends RecyclerView.ViewHolder
+    {
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+        }
+    }
+
 }
