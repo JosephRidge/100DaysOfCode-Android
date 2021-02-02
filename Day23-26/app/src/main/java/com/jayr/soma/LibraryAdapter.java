@@ -1,5 +1,6 @@
 package com.jayr.soma;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -16,6 +17,8 @@ import java.util.ArrayList;
 public class LibraryAdapter extends RecyclerView.Adapter<LibraryAdapter.ViewHolder> {
 
     ArrayList <E_Book> books = new ArrayList<E_Book>();
+    SQLiteDatabase sqLiteDatabase;
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
