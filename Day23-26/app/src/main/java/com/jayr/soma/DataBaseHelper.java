@@ -21,7 +21,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
      *                newer, {@link #onDowngrade} will be used to downgrade the database
      */
     public DataBaseHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+        super(context, "E_BOOKS", null, 1);
     }
 
     /**
@@ -32,6 +32,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
+        String createTableStatement = "";
+        db.execSQL(createTableStatement);
 
     }
 
@@ -55,6 +57,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
      * @param oldVersion The old database version.
      * @param newVersion The new database version.
      */
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
