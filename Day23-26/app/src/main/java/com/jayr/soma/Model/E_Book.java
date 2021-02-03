@@ -16,6 +16,9 @@ public class E_Book {
         this.bookLiterature = bookLiterature;
     }
 
+    public E_Book() {
+    }
+
     public String getBookTitle() {
         return bookTitle;
     }
