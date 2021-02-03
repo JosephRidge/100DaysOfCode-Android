@@ -3,10 +3,13 @@ package com.jayr.soma;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
+    public static final String EBOOK_TABLE = "EBOOK_TABLE";
+
     /**
      * Create a helper object to create, open, and/or manage a database.
      * This method always returns very quickly.  The database is not actually
@@ -32,7 +35,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTableStatement = "";
+        String createTableStatement = "CREATE TABLE " + EBOOK_TABLE + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, BOOK_TITLE TEXT, " +
+                "SHORT_BOOK_DESC TEXT, IMAGE_VIEW , BOOK_LITERATURE )";
         db.execSQL(createTableStatement);
 
     }
